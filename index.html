@@ -143,7 +143,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .site-nav ul { display: flex; align-items: center; gap: 2px; padding: 3px 6px; border-radius: var(--r-pill); box-shadow: inset 0 0 0 1px rgba(244, 239, 228, 0.3); background: rgba(14, 33, 102, 0.35); }
 .site-nav .link { padding-inline: 14px; min-height: 40px; white-space: nowrap; background-position: 14px calc(50% + 0.75em); }
 .site-nav .link:hover, .site-nav .link:focus-visible { background-size: calc(100% - 28px) 1px; }
-@media (max-width: 719.98px) { .site-nav li:not(:last-child) { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.pill--nav { min-height: 44px; padding: 0 20px; background: var(--paper); color: var(--ink); }
+@media (max-width: 719.98px) { .site-nav ul { display: none; } }
 
 /* the horse gallops right of centre; the canvas reads this box and runs the slope just under its hooves */
 .hero-horse {
@@ -160,7 +162,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* Pixel face, hero-only trial (Anthony, 2026-11-25): every other heading stays Newsreader, body stays Geist. */
 .hero h1 { font-family: var(--font-pixel); font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, min(4.7vw, 9vh), 4.5rem); line-height: 1.04; letter-spacing: 0.01em; }
 .hero h1 span { display: block; white-space: nowrap; }
-.hero-label { margin-bottom: clamp(12px, 1.3vw, 18px); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--paper); }
 .hero-line { margin-top: clamp(12px, 1.3vw, 20px); max-width: 50ch; font-size: clamp(1rem, 1.2vw, 1.125rem); }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: clamp(20px, 2vw, 30px); }
 @media (max-width: 899.98px) {
@@ -187,6 +188,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .svc h3 { font-size: var(--fs-row); font-weight: 400; line-height: 1.08; }
 .svc p { font-size: var(--fs-lead); line-height: 1.5; color: var(--stone); max-width: 38ch; }
 @media (max-width: 899.98px) { .svc { grid-template-columns: minmax(0, 1fr); } }
+.svc-link { color: inherit; }
+.svc-link .more { display: inline-flex; align-items: center; gap: 6px; margin-left: 4px; color: var(--ink); font-size: var(--fs-util); font-weight: 500; white-space: nowrap; }
+.svc-link .more svg { width: 14px; height: 14px; transition: transform 0.45s var(--ease-settle); }
+.svc-link:hover h3, .svc-link:focus-visible h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+.svc-link:hover .more svg, .svc-link:focus-visible .more svg { transform: translate3d(3px, 0, 0); }
+.svc-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
 /* ---------- 4. Example workflow: a navy band, the steps print as a typed log ---------- */
 .flow { padding-block: clamp(104px, 12vw, 184px) 0; }
@@ -358,19 +365,21 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
         <span class="star" aria-hidden="true"></span>
         <img class="wm" alt="WRKHRSE" width="193" height="15" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
       </a>
-      <ul>
-        <li><a class="link" href="#what">What we do</a></li>
-        <li><a class="link" href="#how">How it works</a></li>
-        <li><a class="link" href="#contact">Put us to work</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul>
+          <li><a class="link" href="#what">What we do</a></li>
+          <li><a class="link" href="#work">Our work</a></li>
+          <li><a class="link" href="#how">How it works</a></li>
+        </ul>
+        <a class="pill pill--nav" href="#contact">Book a call</a>
+      </div>
     </nav>
     <div class="hero-horse" id="hero-horse" role="img" aria-label="A silver horse galloping up a hillside at dusk, mountains behind"></div>
     <div class="hero-copy">
-      <p class="hero-label">Websites, search and AI systems for service businesses.</p>
       <h1><span>Turn work into</span> <span>momentum.</span></h1>
-      <p class="hero-line"><span data-studio-name>WRKHRSE</span> is an Ottawa studio. We build the website, booking and AI systems that help a service business get found, turn interest into enquiries, and keep work moving.</p>
+      <p class="hero-line">We build the proper systems for service businesses, so you show up where it matters and get back to the important work.</p>
       <div class="hero-actions">
-        <a class="pill" href="#contact">Put us to work</a>
+        <a class="pill" href="#contact">Book a call</a>
         <a class="link" href="#what">See what we take on</a>
       </div>
     </div>
@@ -381,7 +390,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   <section class="problem band" data-rv aria-labelledby="problem-title">
     <div class="col">
       <h2 class="statement rv" id="problem-title">Your business has grown. Your systems need to catch up.</h2>
-      <p class="lead rv" style="--i:1">Your reputation is bringing in interest. Now you need a clear website, a simple way to book, and follow-up that keeps moving when you get busy.</p>
+      <p class="lead rv" style="--i:1">Your reputation is bringing in interest. You need to show up where people look, make it simple to book, and keep the follow-up moving when you get busy.</p>
     </div>
   </section>
 
@@ -389,7 +398,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     <div class="col">
       <h2 class="statement rv" id="what-title">Give <span data-studio-name>WRKHRSE</span> a job.</h2>
       <ul class="svcs">
-        <li class="svc rv" style="--i:1"><div><span class="mono" aria-hidden="true">01</span><h3>AI agents and automation</h3></div><p>Systems that gather enquiry details, answer common questions and follow up on quotes.</p></li>
+        <li class="rv" style="--i:1"><a class="svc svc-link" href="/ai-agents/"><div><span class="mono" aria-hidden="true">01</span><h3>AI agents and automation</h3></div><p>Systems that gather enquiry details, answer common questions and follow up on quotes. <span class="more">Read more<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7h9M8 3.5 11.5 7 8 10.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></p></a></li>
         <li class="svc rv" style="--i:2"><div><span class="mono" aria-hidden="true">02</span><h3>Websites and funnels</h3></div><p>A home for your business and a clear path from interest to enquiry.</p></li>
         <li class="svc rv" style="--i:3"><div><span class="mono" aria-hidden="true">03</span><h3>Search and content</h3></div><p>Useful articles around the questions your customers ask, and a clearer presence for search engines and AI tools.</p></li>
         <li class="svc rv" style="--i:4"><div><span class="mono" aria-hidden="true">04</span><h3>AI setup and team training</h3></div><p>We set AI up around your business and teach your team to use it.</p></li>
@@ -401,17 +410,17 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     <div class="panel">
       <div class="col">
         <p class="flow-label mono rv">Example workflow</p>
-        <h2 class="rv" id="flow-title" style="--i:1">From a LinkedIn connection to a booked conversation.</h2>
+        <h2 class="rv" id="flow-title" style="--i:1">From a new enquiry to a booked call.</h2>
         <ol class="log" id="flow-log">
-          <li><span class="n" aria-hidden="true">01</span><span class="say-line"><span class="ghost">Interest finds a home.</span><span class="typed" aria-hidden="true"></span></span></li>
-          <li><span class="n" aria-hidden="true">02</span><span class="say-line"><span class="ghost">The offer becomes clear.</span><span class="typed" aria-hidden="true"></span></span></li>
-          <li><span class="n" aria-hidden="true">03</span><span class="say-line"><span class="ghost">The next step is easy.</span><span class="typed" aria-hidden="true"></span></span></li>
-          <li><span class="n" aria-hidden="true">04</span><span class="say-line"><span class="ghost">The details arrive before the call.</span><span class="typed" aria-hidden="true"></span></span></li>
+          <li><span class="n" aria-hidden="true">01</span><span class="say-line"><span class="ghost">The enquiry lands.</span><span class="typed" aria-hidden="true"></span></span></li>
+          <li><span class="n" aria-hidden="true">02</span><span class="say-line"><span class="ghost">The details get gathered.</span><span class="typed" aria-hidden="true"></span></span></li>
+          <li><span class="n" aria-hidden="true">03</span><span class="say-line"><span class="ghost">A time gets booked.</span><span class="typed" aria-hidden="true"></span></span></li>
+          <li><span class="n" aria-hidden="true">04</span><span class="say-line"><span class="ghost">A summary arrives before the call.</span><span class="typed" aria-hidden="true"></span></span></li>
           <li><span class="n" aria-hidden="true">05</span><span class="say-line"><span class="ghost">The follow-up stays on track.</span><span class="typed" aria-hidden="true"></span></span></li>
         </ol>
         <div class="flow-close">
           <p>You bring the expertise. The setup supports the work around it.</p>
-          <a class="pill" href="#contact">Put us to work</a>
+          <a class="pill" href="#contact">Book a call</a>
         </div>
       </div>
     </div>
@@ -518,7 +527,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
         <span class="star" aria-hidden="true"></span>
         <img class="wm" alt="WRKHRSE" width="193" height="15" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
       </a>
-      <span>&copy; 2026 <span data-studio-name>WRKHRSE</span></span>
+      <span>&copy; 2026 <span data-studio-name>WRKHRSE</span> &middot; wrkhrse.ai</span>
     </div>
   </div>
 </footer>
@@ -956,7 +965,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     requestAnimationFrame(tick);
     if (!ready || reduce.matches || document.hidden || now - last < 80) return;
     const dt = Math.min(0.25, (now - last) / 1000); last = now; clock += dt;
-    for (const s of scenes) { if (!s.visible || !s.front || !s.sky) continue; s.time += dt; s.n++; if (s.p.horse || s.n % 4 === 0) s.draw(s.n % 4 === 0); }
+    for (const s of scenes) { if (!s.visible || !s.front || !s.sky) continue; s.time += dt; s.n++; if (s.p.ridge || s.n % 4 === 0) s.draw(s.n % 4 === 0); }
   };
   requestAnimationFrame(tick);
 })();
