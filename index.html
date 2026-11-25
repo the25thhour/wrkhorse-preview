@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>WRKHORSE Homepage</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="An Ottawa studio that builds websites for local businesses and makes sure people find them on Google, on Maps and in AI answers.">
@@ -238,7 +244,8 @@ a:hover { text-decoration-thickness: 2px; }
 .cal-btn:hover:not(:disabled) { background: var(--sand); }
 .cal-btn:disabled { color: var(--rule); cursor: default; }
 .cal-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.cal-dow, .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(44px, 1fr)); gap: 4px; }
+.cal-dow, .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+@media (max-width: 479.98px) { .cal > * { padding: 16px; } .cal-dow, .cal-grid { gap: 0; } }
 .cal-dow { margin-bottom: 4px; }
 .cal-dow span { text-align: center; color: var(--stone); font-size: 0.75rem; }
 .cal-grid .cal-btn { width: 100%; aspect-ratio: 1; max-width: 100%; }
@@ -811,3 +818,6 @@ document.querySelectorAll("[data-home-link]").forEach((el) => el.setAttribute("a
   Promise.race([Promise.all([fontsReady, horseReady]), new Promise((r) => setTimeout(r, 2500))]).then(boot);
 })();
 </script>
+
+<div style="position:fixed;left:12px;bottom:12px;z-index:9999;font:500 12px/1 system-ui,sans-serif;background:#1B1A17;color:#F4EFE4;padding:8px 12px;border-radius:999px;opacity:.9">Preview. Not a live site.</div>
+</html>
