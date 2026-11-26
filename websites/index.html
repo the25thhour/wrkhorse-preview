@@ -464,6 +464,21 @@ video.shot { object-fit: cover; background: var(--ink); }
 .demo-link a:hover { text-decoration-color: currentColor; }
 .demo-link svg { width: 16px; height: 16px; }
 
+/* ---------- One system page ---------- */
+.map .hub-label { position: absolute; left: 50%; top: calc(50% + 36px); transform: translateX(-50%); display: grid; justify-items: center; gap: 4px; padding: 6px 12px; border-radius: var(--r-ctl); background: var(--ink); color: var(--paper); font-weight: 500; text-align: center; white-space: nowrap; }
+.map .hub-label small, .map-list .hub-row small { display: block; font-family: var(--font-mono); font-size: var(--fs-mono); font-weight: 400; letter-spacing: 0.02em; color: rgba(247, 246, 243, 0.78); }
+.map-cap { margin-top: 18px; text-align: center; font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: 0.04em; color: rgba(247, 246, 243, 0.82); }
+.map-list .hub-row { display: flex; align-items: center; gap: 12px; color: var(--paper); font-weight: 500; }
+.map-list .hub-row small { margin-top: 4px; }
+.map-list .hub-row svg { flex: none; color: var(--work); }
+@media (min-width: 720px) { .map-list { display: none; } }
+.sort-grid h3 { display: flex; align-items: center; gap: 10px; }
+.method { display: grid; margin-top: clamp(40px, 4vw, 64px); border-bottom: 1px solid var(--rule); }
+.method li { display: grid; gap: 6px 24px; padding: 22px 0 24px; border-top: 1px solid var(--rule); }
+@media (min-width: 900px) { .method li { grid-template-columns: 90px minmax(0, 0.9fr) minmax(0, 1.3fr); align-items: baseline; } }
+.method h3 { font-size: var(--fs-card); line-height: 1.1; }
+.method p { color: var(--muted); max-width: 46ch; }
+
 .hero.is-home .panel { background: linear-gradient(180deg, var(--blue-shade) 0%, var(--blue) 40%, var(--blue) 51%, var(--blue-deep) 51.2%); }
 @media (max-width: 899.98px) { .hero.is-home .panel { background: linear-gradient(180deg, var(--blue-shade) 0%, var(--blue) 60%, var(--blue) 85%, var(--blue-deep) 85.2%); } }
 
@@ -487,7 +502,7 @@ video.shot { object-fit: cover; background: var(--ink); }
             <ul class="menu-list" id="svc-menu" hidden>
               <li><a href="/ai-implementation/">AI implementation</a></li>
               <li><a href="/websites/" aria-current="page">Websites &amp; funnels</a></li>
-              <li><a href="/connected-systems/">Connected systems</a></li>
+              <li><a href="/one-system/">One system</a></li>
             </ul></li>
           <li><a class="link" href="/#how">How it works</a></li>
           <li><a class="link" href="/demo/">Demo</a></li>
@@ -554,7 +569,7 @@ video.shot { object-fit: cover; background: var(--ink); }
       <h2 class="rv" id="faqs-title">Questions</h2>
       <div class="faqs rv" style="--i:1">
         <details><summary><h3>Will this put us at the top of Google?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">No one can promise that, and we won&rsquo;t. We build a clear, useful site that Google and AI tools can read.</p></details>
-        <details><summary><h3>Can you build the whole setup?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">Yes. Domain, site, booking and the tools behind it. We agree on the pieces before we start.</p></details>
+        <details><summary><h3>Can you build the whole setup?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">Yes. Domain, site, booking and the system behind it. We agree on the pieces before we start.</p></details>
       </div>
     </div>
   </section>
@@ -589,7 +604,7 @@ video.shot { object-fit: cover; background: var(--ink); }
     <ul aria-label="Site">
       <li><a class="link" href="/ai-implementation/">AI implementation</a></li>
       <li><a class="link" href="/websites/" aria-current="page">Websites &amp; funnels</a></li>
-      <li><a class="link" href="/connected-systems/">Connected systems</a></li>
+      <li><a class="link" href="/one-system/">One system</a></li>
       <li><a class="link" href="/demo/">Demo</a></li>
     </ul>
     <small>&copy; 2026 WRKHRSE</small>
@@ -673,7 +688,7 @@ video.shot { object-fit: cover; background: var(--ink); }
   const C = { sky: tok("--blue"), paper: tok("--paper"), sand: tok("--surface"), ink: tok("--ink"), deep: tok("--blue-deep"), far: tok("--blue-far"), work: tok("--work"), light: tok("--work"), tint: tok("--blue-tint") };
   const TINT32 = hexToABGR(C.tint), PAPER32 = hexToABGR(C.paper), INK32 = hexToABGR(C.ink), DEEP32 = hexToABGR(C.deep), FAR32 = hexToABGR(C.far), WORK32 = hexToABGR(C.work), LIGHT32 = hexToABGR(C.light), SCAN32 = ((30 << 24) | (hexToABGR(C.deep) & 0xffffff)) >>> 0;
   const monoFont = (px) => px.toFixed(1) + 'px "Geist Mono", ui-monospace, Menlo, monospace';
-  const FIELD_TEXT = "ai agents \u00b7 websites \u00b7 connected systems \u00b7 ";
+  const FIELD_TEXT = "ai agents \u00b7 websites \u00b7 one system \u00b7 ";
 
   const SCREEN_CSS = 4; // the sky's halftone cell, in CSS pixels
   const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => (v + 0.5) / 16);
