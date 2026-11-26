@@ -490,6 +490,14 @@ video.shot { object-fit: cover; background: var(--ink); }
 .demo-link a:hover { text-decoration-color: currentColor; }
 .demo-link svg { width: 16px; height: 16px; }
 
+/* the statement under the home hero */
+.say-band { padding-top: clamp(88px, 10vw, 144px); }
+.say { max-width: 860px; margin: 0 auto; font-family: var(--font-display); font-weight: 300; font-size: clamp(30px, 3.62vw, 52px); line-height: 1.154; letter-spacing: -0.02em; color: var(--ink); text-align: center; text-wrap: balance; transition: opacity 400ms cubic-bezier(0, 0, 0, 1), transform 400ms cubic-bezier(0, 0, 0, 1); }
+.say em { font-style: italic; }
+.say--wait { opacity: 0; transform: translate3d(0, 12px, 0); }
+#what { padding-top: clamp(88px, 10vw, 144px); }
+@media (max-width: 719.98px) { .say { font-size: 30px; line-height: 37px; } }
+
 /* booking card: the whole card is the link; the embed replaces it on the homepage when ready */
 a.book-card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 a.book-card .book-meta { font-size: 0.875rem; color: var(--muted); }
@@ -560,6 +568,15 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
 </header>
 
 <main id="main">
+  <div class="band say-band">
+    <p class="say" id="say">We map the work, build one system around it and put agents to work inside it, until the only thing left on your desk is <em>the&nbsp;yes</em>.</p>
+  </div>
+  <script>
+  (() => { const el = document.getElementById("say"); if (!el) return; // one fade and a 12px rise when 40% in view; under reduced motion it is simply there
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    el.classList.add("say--wait"); const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) { el.classList.remove("say--wait"); io.disconnect(); } }, { threshold: 0.4 }); io.observe(el); setTimeout(() => { if (el.getBoundingClientRect().top < innerHeight) { el.classList.remove("say--wait"); io.disconnect(); } }, 1500); addEventListener("scroll", function f() { if (el.getBoundingClientRect().top < innerHeight * 0.8) { el.classList.remove("say--wait"); io.disconnect(); removeEventListener("scroll", f); } }, { passive: true }); })();
+  </script>
+
   <section class="sec band" id="what" data-rv aria-labelledby="what-title">
     <div class="col">
       <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>What we do</p>
