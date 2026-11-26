@@ -504,7 +504,150 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
 @media (max-width: 899.98px) { .hero.is-home .panel { background: linear-gradient(180deg, var(--blue-shade) 0%, var(--blue) 60%, var(--blue) 85%, var(--blue-deep) 85.2%); } }
 
 :root { --logo-star: url("data:image/png;base64,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"); --logo-wordmark: url("data:image/png;base64,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"); }
+
+/* ---------- Phone menu (audit fix 1): under 720px the nav links hide, so a Menu pill beside "Let's talk" opens a small sheet of the five links ---------- */
+.hero { position: relative; }   /* the sheet sits outside the panel (which clips), placed under the pill by script */
+.nav-menu-btn {
+  display: none; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: var(--r-pill);
+  font-weight: 500; font-size: var(--fs-util); line-height: 1; white-space: nowrap;
+  color: var(--paper); background: rgba(27, 46, 95, 0.35); box-shadow: inset 0 0 0 1px rgba(247, 246, 243, 0.3);
+}
+.nav-menu-btn svg { width: 10px; height: 10px; flex: none; transition: transform 0.3s var(--ease-out); }
+.nav-menu-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.hero.is-light .nav-menu-btn { color: var(--ink); background: var(--paper); box-shadow: inset 0 0 0 1px var(--rule); }
+.nav-sheet {
+  position: absolute; z-index: 40; top: 0; right: 0; width: min(280px, calc(100vw - 2 * var(--edge)));
+  padding: 8px; border-radius: var(--r-card); background: var(--paper); color: var(--ink); box-shadow: var(--shadow);
+}
+.nav-sheet[hidden] { display: none; }
+.nav-sheet ul { display: grid; gap: 2px; }
+.nav-sheet a { display: flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: var(--r-ctl); font-size: var(--fs-util); color: var(--ink); }
+.nav-sheet a:hover { background: var(--surface); }
+.nav-sheet a:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; background: var(--surface); }
+.nav-sheet a[aria-current="page"] { font-weight: 500; }
+@media (max-width: 719.98px) { .nav-menu-btn { display: inline-flex; } }
+@media (max-width: 559.98px) {   /* wordmark, Menu and "Let's talk" share one line down to 360px */
+  .hero .site-nav { gap: 8px; } .hero .nav-right { gap: 6px; }
+  .wordmark { gap: 6px; } .wordmark .star.star { width: 16px; height: 20px; } .wordmark img.wm { width: 120px; height: 9.3px; }
+  .nav-menu-btn { padding: 0 12px; } .nav-menu-btn svg { display: none; } .hero .pill--nav { padding: 0 14px; }
+}
+@media (max-width: 379.98px) {
+  .hero .site-nav { padding-inline: 16px; }
+  .wordmark img.wm { width: 104px; height: 8.1px; }
+  .nav-menu-btn, .hero .pill--nav { font-size: 0.875rem; }
+}
+@media (min-width: 720px) { .nav-sheet { display: none; } }
+@media (min-width: 720px) and (max-width: 899.98px) {   /* tablets: the full nav was running past the panel edge up to about 800px */
+  .hero .site-nav { gap: 12px; } .hero .nav-right { gap: 8px; }
+  .hero .site-nav ul { padding: 2px 3px; } .hero .site-nav .link { padding-inline: 10px; font-size: 0.875rem; background-position: 10px calc(50% + 0.75em); }
+  .hero .site-nav .link:hover, .hero .site-nav .link:focus-visible { background-size: calc(100% - 20px) 1px; }
+}
+@media (prefers-reduced-motion: no-preference) { .nav-sheet:not([hidden]) { animation: nav-sheet-in 0.2s var(--ease-out); } }
+@keyframes nav-sheet-in { from { opacity: 0; transform: translate3d(0, -8px, 0); } }
+
+/* ---------- Hero headline switch-on (GSAP item 1): script splits the Doto line into words and letters only when motion is allowed ---------- */
+.hero .panel h1 span.wd { display: inline-block; white-space: nowrap; }
+.hero .panel h1 span.ch { display: inline; white-space: inherit; }
+/* Flash guard: while motion is allowed, the hero text waits for the switch-on instead of showing, going dark, then lighting up.
+   If GSAP never arrives it shows anyway after 1.8s. */
+html.wrk-pre .hero h1, html.wrk-pre .hero .hero-line, html.wrk-pre .hero .hero-actions { opacity: 0; animation: wrk-pre-show 0.01s linear 1.8s forwards; }
+@keyframes wrk-pre-show { to { opacity: 1; } }
+@media (max-width: 349.98px) {   /* 320px phones: wordmark, Menu and "Let's talk" still share one line */
+  .wordmark img.wm { width: 80px; height: 6.2px; }
+  .nav-menu-btn { padding: 0 9px; } .hero .pill--nav { padding: 0 10px; }
+}
+html.gsap-on { scroll-behavior: auto; }   /* ScrollTrigger re-measures by jumping; smooth scrolling would offset every trigger */
+
+/* ---------- Business OS, phase 2 ---------- */
+/* Fix 3: the diagram sits on the page colour under the night hero, so the page starts once. Ink lines and labels; the star stays orange. */
+.map-band .node { background: var(--surface); }
+.map-band .map-cap { color: var(--muted); }
+.map-band .map-list::before { border-left-color: var(--muted); }
+.map-band .map-list li { background: var(--surface); }
+.map-band .map-list .hub-row { background: none; color: var(--ink); }
+.map-band .map-list .hub-row small { color: var(--muted); }
+/* "How we build it": one hairline above the group and one below, even rows between */
+.method { border-top: 1px solid var(--rule); padding-block: 10px; }
+.method li { border-top: 0; padding: 16px 0; }
+/* GSAP item 3: wide screens with motion pin one frame and step through the four jobs (class set by script only) */
+.rail-mark { display: none; }
+.jobs-pinned .jobs-stage { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-block: 28px; }
+.jobs-pinned .jobs-stage .sec-tag { margin-bottom: 0; }
+.jobs-pinned .rail-wrap { margin-top: 24px; }
+.jobs-pinned .rail { position: relative; top: auto; }
+.jobs-pinned .rail a, .jobs-pinned .rail a[aria-current="true"] { border-left-color: transparent; }
+.jobs-pinned .rail a[aria-current="true"] { color: var(--ink); }
+.jobs-pinned .rail-mark { display: block; position: absolute; left: 0; top: 0; width: 2px; height: 44px; background: var(--ink); pointer-events: none; }
+.jobs-pinned .chapters { display: grid; grid-template-rows: auto auto auto auto; max-width: calc((100vh - 400px) * 1.6); }
+.jobs-pinned .chapter { grid-column: 1; grid-row: 1 / span 3; display: grid; grid-template-rows: subgrid; margin: 0; }
+.jobs-pinned .chapter .loop { grid-row: 2 / span 2; display: grid; grid-template-rows: subgrid; }
+.jobs-pinned .chapter:not(.is-current) { pointer-events: none; }
+.jobs-pinned .chapters .demo-link { grid-column: 1; grid-row: 4; margin-top: 12px; }
 </style>
+
+<!-- ---------- Motion layer: GSAP 3.13.0 core and ScrollTrigger from cdnjs, deferred. Everything renders in its final state without them. ---------- -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<!-- PAGE PLUGINS GO HERE: page-specific GSAP plugins (SplitText, DrawSVGPlugin, Flip) from the same cdnjs folder
+     (https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/<Plugin>.min.js), each with defer, above the init block below.
+     Register them inside your WRK.onMotion callback, e.g. gsap.registerPlugin(SplitText). -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js"></script>
+<script>
+/* WRK motion hook. Page code registers animations with
+     WRK.onMotion((c, ctx) => { ...; return () => {} });
+   The callback runs only once GSAP has loaded and prefers-reduced-motion is no-preference. It runs inside
+   gsap.matchMedia() with c.motion and c.wide ((min-width: 900px)); it is reverted and run again whenever either
+   condition changes, so pin only when c.wide is true. Tweens and ScrollTriggers made inside are cleaned up
+   automatically; return a function for anything else. Callbacks registered before GSAP is ready are queued.
+   While motion runs, <html> carries .gsap-on: only CSS under .gsap-on may start anything hidden. */
+(() => {
+  const MQ = { motion: "(prefers-reduced-motion: no-preference)", wide: "(min-width: 900px)" };
+  document.documentElement.classList.toggle("wrk-pre", matchMedia(MQ.motion).matches);   // flash guard, see CSS
+  const queue = []; let mm = null;
+  const run = (fn) => mm.add(MQ, (ctx) => (ctx.conditions.motion ? fn(ctx.conditions, ctx) : undefined));
+  window.WRK = { onMotion(fn) { if (mm) run(fn); else queue.push(fn); }, get ready() { return !!mm; } };
+  const init = () => {
+    const g = window.gsap; if (!g || mm) return;   // GSAP blocked or failed: nothing was hidden, so the page stays as written
+    if (window.ScrollTrigger) g.registerPlugin(window.ScrollTrigger);
+    mm = g.matchMedia();
+    run(() => { const r = document.documentElement.classList; r.add("gsap-on"); return () => r.remove("gsap-on"); });
+    queue.splice(0).forEach(run);
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true }); else init();   // deferred scripts have run by DOMContentLoaded
+
+  /* Hero headline: the Doto letters switch on in a random scatter, like a dot-matrix board (about 600ms, once),
+     then the subtext and the button rise 12px. Only opacity and transform move; the letters hold their final box. */
+  let played = false;
+  WRK.onMotion(() => {
+    const h1 = document.querySelector(".hero h1");
+    if (played || !h1) return; played = true;
+    if (!h1.querySelector(".ch")) {
+      const sr = document.createElement("span"); sr.className = "sr-only"; sr.textContent = h1.textContent.replace(/\s+/g, " ").trim();
+      const walk = (el) => [...el.childNodes].forEach((n) => {
+        if (n.nodeType === 1 && !n.matches('svg, img, [aria-hidden="true"]')) return walk(n);
+        if (n.nodeType !== 3 || !n.data.trim()) return;
+        const frag = document.createDocumentFragment();
+        n.data.split(/(\s+)/).forEach((t) => {
+          if (!t) return;
+          if (/^\s+$/.test(t)) return frag.append(" ");
+          const w = document.createElement("span"); w.className = "wd"; w.setAttribute("aria-hidden", "true");
+          [...t].forEach((ch) => { const s = document.createElement("span"); s.className = "ch"; s.textContent = ch; w.append(s); });
+          frag.append(w);
+        });
+        n.replaceWith(frag);
+      });
+      walk(h1); h1.prepend(sr);
+    }
+    const chars = h1.querySelectorAll(".ch");
+    const rise = document.querySelectorAll(".hero .hero-line, .hero .hero-actions");
+    const tl = gsap.timeline();
+    tl.set(chars, { opacity: 0 })
+      .to(chars, { keyframes: { opacity: [0, 1, 0.35, 1] }, duration: 0.12, ease: "none", stagger: { amount: 0.48, from: "random" } }, 0);
+    if (rise.length) tl.from(rise, { y: 12, opacity: 0, duration: 0.45, ease: "power2.out", stagger: 0.08 }, 0.42);
+    gsap.set(chars, { opacity: 0 }); document.documentElement.classList.remove("wrk-pre");
+  });
+})();
+</script>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="star" viewBox="0 0 135 162"><path fill="currentColor" fill-rule="evenodd" transform="translate(10 10)" d="M48.00,82.33 L48.33,82.00 L48.67,82.33 L48.33,82.67Z M49.00,81.33 L49.33,81.00 L49.67,81.33 L49.33,81.67Z M60.67,77.33 L61.00,77.00 L61.67,77.67 L62.00,77.67 L65.00,80.67 L65.33,80.67 L66.00,81.33 L66.00,81.67 L66.33,81.67 L67.00,82.33 L67.00,82.67 L66.67,83.00 L66.00,83.00 L64.67,81.67 L64.67,81.33 L60.67,77.67Z M56.33,73.33 L57.00,73.33 L57.33,73.67 L57.33,74.33 L58.00,75.33 L57.67,76.00 L57.67,81.00 L58.00,81.33 L58.00,82.33 L57.67,82.67 L57.67,84.67 L58.00,85.00 L57.67,85.33 L57.67,108.33 L57.33,108.67 L57.33,111.00 L57.67,111.33 L57.33,111.67 L57.33,117.33 L56.67,118.33 L56.33,118.00 L56.33,116.67 L56.00,116.33 L56.00,108.67 L55.67,108.33 L55.67,102.33 L56.00,102.00 L56.00,101.33 L55.33,100.00 L56.00,98.67 L56.00,97.33 L55.00,96.33 L56.00,95.00 L55.33,93.67 L55.33,93.00 L55.67,92.67 L55.33,91.00 L56.00,90.00 L56.00,89.33 L55.67,89.33 L55.00,88.67 L55.00,88.00 L55.67,87.33 L55.67,86.33 L55.33,86.33 L54.67,85.67 L54.67,85.33 L55.67,84.33 L55.67,83.67 L55.33,83.33 L55.33,81.67 L55.67,81.33 L55.67,80.00 L55.33,79.33 L54.67,80.33 L54.67,81.33 L55.33,82.33 L55.33,83.00 L54.67,83.67 L54.33,83.67 L53.67,82.33 L54.00,82.00 L54.00,79.33 L54.67,78.67 L55.00,78.67 L55.00,78.00 L54.67,77.67 L53.67,77.67 L53.33,77.33 L53.33,76.67 L54.33,75.67 L55.33,75.33Z M85.33,71.00 L85.33,71.33 L87.00,71.33 L86.67,71.00Z M25.33,71.33 L27.00,71.33 L26.33,71.33 L26.00,71.00Z M73.00,70.33 L73.33,70.67 L74.00,70.67 L74.33,70.33 L74.00,70.00 L73.33,70.00Z M63.00,70.00 L63.00,70.33 L63.67,70.33 L63.67,70.00Z M37.67,70.00 L38.00,71.00 L38.33,71.00 L38.67,70.33 L38.33,70.00Z M41.33,69.67 L41.00,70.00 L41.00,70.67 L41.33,71.00 L42.00,70.33Z M49.00,69.33 L48.67,70.00 L49.33,70.33 L49.67,70.00Z M46.33,69.33 L46.00,69.67 L46.00,70.33 L46.67,70.33Z M77.67,70.67 L78.33,71.33 L78.67,71.00 L78.67,70.33 L80.33,69.33 L81.33,70.33 L82.00,70.00 L81.67,69.67 L81.67,69.00 L79.00,69.00 L78.67,69.67Z M71.33,69.00 L71.00,69.33 L71.00,70.00 L71.67,70.00 L71.67,69.33Z M68.33,68.00 L68.33,68.67 L68.67,68.67Z M65.00,67.67 L64.67,68.33 L65.67,68.33 L66.00,68.67 L66.00,69.33 L66.67,69.67 L66.67,69.00 L65.67,68.33 L65.67,67.67Z M75.33,67.33 L74.67,68.00 L74.67,68.33 L75.00,68.67 L76.00,68.67 L76.33,69.00 L76.33,70.00 L76.00,70.33 L76.67,70.33 L76.67,69.33 L77.67,68.33 L77.67,68.00 L77.00,68.33 L76.33,68.33Z M72.67,67.00 L72.33,67.67 L73.00,68.00 L73.33,67.33Z M47.33,67.00 L47.33,67.67 L47.67,67.67 L48.33,68.33Z M45.00,67.00 L44.33,67.00 L44.33,68.00 L45.00,67.67Z M70.67,66.67 L70.00,66.67 L70.00,68.00 L70.67,67.67Z M42.33,66.67 L42.00,67.00 L42.00,67.67 L42.33,68.33 L42.67,67.67Z M67.33,65.67 L66.67,66.00 L66.67,66.67 L67.33,67.00 L67.67,66.67 L67.67,66.00Z M57.67,72.00 L58.33,71.67 L59.33,70.67 L59.67,70.67 L62.00,68.33 L62.33,68.33 L62.33,68.00 L66.67,63.67 L68.00,63.67 L68.67,64.33 L69.33,65.67 L70.00,65.00 L71.33,65.00 L71.67,65.67 L72.33,66.00 L75.00,66.00 L75.67,66.67 L76.67,66.67 L77.67,67.33 L79.00,67.33 L80.00,68.00 L82.00,68.00 L83.67,69.00 L85.33,69.00 L85.67,69.33 L87.00,69.33 L88.33,70.00 L90.67,70.00 L91.33,71.33 L91.67,71.00 L95.00,71.00 L95.33,71.33 L96.33,71.33 L96.67,71.67 L98.33,71.67 L98.67,72.00 L100.00,72.00 L100.67,72.67 L101.33,72.67 L102.33,73.33 L102.00,73.67 L98.67,73.67 L98.33,73.33 L87.67,73.33 L87.33,73.00 L87.00,73.33 L85.67,73.33 L85.33,73.00 L84.33,73.00 L84.00,73.33 L83.00,73.33 L82.67,73.00 L81.33,73.00 L81.00,73.33 L73.67,73.33 L73.33,73.00 L73.00,73.33 L72.00,73.33 L71.67,73.00 L71.00,73.00 L70.67,73.33 L69.67,73.33 L69.33,73.00 L67.33,73.00 L67.00,73.33 L62.00,73.33 L61.67,73.00 L60.67,73.00 L60.33,73.33 L58.67,73.33 L57.67,72.67Z M55.67,72.00 L55.67,72.67 L54.33,73.33 L53.67,73.00 L39.00,73.00 L38.67,73.33 L38.00,73.33 L37.67,73.00 L36.33,73.00 L36.00,73.33 L34.33,73.33 L34.00,73.00 L32.67,73.00 L32.33,73.33 L30.33,73.33 L30.00,73.00 L29.00,73.00 L28.67,73.33 L25.67,73.33 L25.33,73.00 L24.67,73.33 L23.67,73.33 L23.33,73.00 L19.00,73.00 L18.67,73.33 L15.33,73.33 L15.00,73.00 L14.00,73.00 L13.67,72.67 L14.33,72.00 L15.33,72.00 L15.67,71.67 L17.33,71.67 L17.67,71.33 L19.33,71.33 L19.67,71.00 L23.00,71.00 L25.00,70.00 L26.67,70.00 L27.00,69.67 L28.33,69.67 L29.33,71.00 L30.00,71.00 L30.33,70.33 L29.33,69.67 L29.67,69.00 L31.33,69.00 L32.00,69.67 L31.67,70.33 L32.33,70.67 L32.67,70.33 L32.67,69.00 L33.67,68.00 L34.33,67.67 L35.33,67.67 L35.67,68.00 L35.00,68.67 L34.33,68.67 L33.67,69.00 L33.67,69.33 L34.33,70.00 L35.33,70.00 L35.67,69.33 L35.67,68.67 L36.00,68.33 L36.33,68.33 L37.33,69.33 L37.33,68.67 L37.67,68.33 L37.33,68.00 L37.33,67.33 L39.00,66.33 L40.00,66.33 L40.33,66.67 L39.00,68.33 L39.33,69.00 L40.00,69.00 L40.67,68.00 L40.67,67.33 L40.33,67.00 L40.33,66.33 L40.67,66.00 L42.33,66.00 L42.67,65.67 L43.33,65.67 L46.33,63.67 L47.33,64.67 L47.67,64.67 L53.67,70.67 L54.67,71.00Z M55.33,46.33 L54.67,47.00 L54.33,47.00 L54.33,47.33 L55.33,47.33Z M55.00,43.33 L55.00,44.33 L55.33,44.33 L55.33,43.33Z M55.00,40.33 L55.00,41.33 L55.33,41.33 L55.33,40.33Z M55.00,37.67 L55.00,38.33 L55.67,38.67 L55.67,38.33Z M56.33,13.33 L57.33,15.33 L57.33,23.67 L57.67,24.00 L57.67,28.33 L57.33,28.67 L57.67,29.33 L57.67,52.00 L58.00,52.33 L57.67,52.67 L57.67,55.67 L57.33,56.00 L57.67,56.67 L57.67,58.00 L57.33,58.33 L57.67,59.00 L57.67,60.00 L57.33,60.33 L57.33,61.67 L57.67,62.00 L57.67,63.67 L57.33,64.00 L57.33,68.67 L57.67,69.00 L57.67,69.67 L56.67,71.00 L56.33,71.00 L55.00,69.33 L55.00,68.33 L54.33,68.33 L53.67,67.33 L54.33,66.67 L54.67,66.67 L55.33,67.33 L55.33,65.33 L54.00,65.33 L53.67,65.00 L53.67,64.33 L54.00,64.00 L55.00,64.00 L55.67,63.67 L55.67,63.00 L55.33,62.67 L54.67,63.00 L53.67,63.00 L52.67,61.67 L52.67,61.33 L53.33,60.67 L53.67,60.67 L54.33,61.33 L54.33,60.67 L54.00,60.67 L53.00,59.67 L53.00,59.00 L52.67,58.67 L53.33,58.00 L53.33,57.00 L53.00,56.67 L53.00,56.00 L53.67,55.33 L54.00,55.33 L53.67,54.67 L53.67,54.00 L53.00,53.33 L53.00,52.67 L53.33,52.33 L53.67,52.33 L54.00,53.00 L54.67,53.00 L55.00,52.67 L54.33,52.00 L53.67,52.00 L53.33,51.67 L53.33,51.00 L54.00,50.33 L55.33,50.33 L55.33,49.67 L54.67,50.00 L54.00,50.00 L53.33,49.33 L53.33,47.00 L53.67,46.67 L53.67,42.00 L54.00,41.67 L54.00,40.00 L53.67,39.67 L53.67,39.00 L54.00,38.67 L54.00,37.67 L54.67,37.00 L54.67,34.67 L54.33,34.33 L55.00,33.33 L54.33,32.00 L54.33,28.00 L54.67,27.67 L54.67,24.67 L55.00,24.33 L55.00,21.33 L55.33,21.00 L55.33,19.33 L55.67,19.00 L55.67,14.67Z M56.67,4.67 L56.00,6.00 L56.00,9.67 L55.67,10.00 L55.67,10.67 L55.00,12.00 L55.00,14.33 L54.67,14.67 L54.67,15.67 L54.33,16.00 L54.33,18.00 L54.00,18.33 L54.00,20.33 L53.67,20.67 L53.67,22.00 L53.33,22.33 L53.33,24.00 L53.00,24.33 L53.00,26.00 L52.67,26.33 L52.67,27.67 L52.33,28.00 L52.33,29.00 L52.00,29.33 L52.00,31.33 L51.67,31.67 L51.67,33.33 L51.33,33.67 L51.33,35.00 L51.00,35.33 L51.00,37.33 L50.67,37.67 L50.67,39.00 L50.33,39.33 L50.33,40.67 L50.00,41.00 L50.00,43.00 L49.67,43.33 L49.67,44.33 L49.33,44.67 L49.33,45.67 L49.00,46.00 L49.00,48.33 L48.67,48.67 L48.67,49.67 L48.33,50.00 L48.33,51.33 L48.00,51.67 L48.00,54.00 L47.67,54.33 L47.67,55.67 L47.33,56.00 L47.33,57.33 L47.00,57.67 L47.00,59.67 L46.67,60.00 L46.67,61.33 L46.33,61.67 L46.33,62.33 L44.67,63.33 L44.00,63.33 L42.67,64.00 L41.00,64.00 L40.67,64.33 L40.00,64.33 L39.67,64.67 L38.67,64.67 L38.33,65.00 L37.33,65.00 L36.00,65.67 L33.00,66.00 L32.00,66.67 L31.00,66.67 L30.67,67.00 L29.00,67.00 L28.67,67.33 L27.67,67.33 L27.33,67.67 L26.33,67.67 L26.00,68.00 L24.67,68.00 L23.33,68.67 L21.67,68.67 L21.33,69.00 L20.33,69.00 L19.33,69.67 L17.67,69.67 L17.33,70.00 L15.67,70.00 L14.67,70.67 L11.67,71.00 L11.33,71.33 L10.67,71.33 L9.33,72.00 L7.67,72.00 L6.33,72.67 L5.00,72.67 L4.67,73.00 L3.00,73.00 L2.67,73.67 L3.33,73.67 L3.67,74.00 L4.67,74.00 L5.00,74.33 L6.00,74.33 L6.33,74.67 L7.33,74.67 L8.67,75.33 L10.00,75.33 L10.33,75.67 L12.33,75.67 L12.67,76.00 L13.33,76.00 L14.67,76.67 L16.00,76.67 L16.33,77.00 L17.33,77.00 L17.67,77.33 L18.67,77.33 L19.00,77.67 L20.33,77.67 L21.67,78.33 L22.67,78.33 L23.00,78.67 L24.33,78.67 L25.67,79.33 L28.67,79.67 L29.00,80.00 L29.67,80.00 L31.00,80.67 L32.33,80.67 L33.67,81.33 L36.00,81.67 L36.33,82.00 L37.00,82.00 L37.33,82.33 L38.33,82.33 L38.67,82.67 L40.33,82.67 L40.67,83.00 L41.33,83.00 L42.67,83.67 L45.67,84.00 L46.67,85.00 L46.67,86.33 L47.00,86.67 L47.00,88.00 L47.33,88.33 L47.33,89.67 L47.67,90.00 L47.67,91.33 L48.00,91.67 L48.00,93.67 L48.33,94.00 L48.33,95.00 L48.67,95.33 L48.67,96.33 L49.00,96.67 L49.00,98.67 L49.33,99.00 L49.33,100.00 L50.00,101.33 L50.00,103.00 L50.33,103.33 L50.33,105.00 L50.67,105.33 L50.67,106.67 L51.00,107.00 L51.00,109.00 L51.33,109.33 L51.33,110.67 L51.67,111.00 L51.67,112.00 L52.00,112.33 L52.00,114.00 L52.33,114.33 L52.33,115.67 L52.67,116.00 L52.67,117.00 L53.00,117.33 L53.00,118.67 L53.33,119.00 L53.33,121.00 L53.67,121.33 L53.67,122.33 L54.00,122.67 L54.00,124.33 L54.33,124.67 L54.33,126.33 L54.67,126.67 L54.67,128.00 L55.00,128.33 L55.00,130.67 L56.00,132.67 L56.00,135.67 L56.33,136.00 L56.33,137.33 L57.00,137.67 L57.67,136.67 L57.67,133.67 L58.00,133.33 L58.00,132.33 L58.33,132.00 L58.33,131.00 L58.67,130.67 L58.67,128.67 L59.00,128.33 L59.00,126.67 L59.33,126.33 L59.67,123.33 L60.00,123.00 L60.00,122.00 L60.33,121.67 L60.33,120.67 L60.67,120.33 L60.67,118.33 L61.00,118.00 L61.00,117.00 L61.33,116.67 L61.33,115.67 L61.67,115.33 L61.67,113.33 L62.00,113.00 L62.00,112.33 L62.33,112.00 L62.33,111.00 L62.67,110.67 L62.67,108.67 L63.00,108.33 L63.00,107.67 L63.67,106.33 L63.67,104.33 L64.00,104.00 L64.00,102.33 L64.67,101.00 L64.67,98.67 L65.33,97.33 L65.33,96.33 L65.67,96.00 L65.67,94.33 L66.00,94.00 L66.00,93.00 L66.33,92.67 L66.33,91.67 L66.67,91.33 L66.67,89.67 L67.00,89.33 L67.00,88.33 L67.67,87.00 L67.67,84.67 L68.67,83.67 L70.33,83.67 L71.67,83.00 L72.67,83.00 L73.00,82.67 L74.67,82.67 L75.00,82.33 L75.67,82.33 L76.00,82.00 L77.00,82.00 L77.33,81.67 L79.33,81.67 L81.33,80.67 L82.67,80.67 L83.00,80.33 L84.00,80.33 L85.33,79.67 L86.67,79.67 L87.00,79.33 L88.00,79.33 L89.00,78.67 L90.33,78.67 L90.67,78.33 L91.67,78.33 L92.00,78.00 L94.33,77.67 L95.67,77.00 L97.33,77.00 L97.67,76.67 L98.67,76.67 L99.00,76.33 L99.67,76.33 L100.00,76.00 L101.00,76.00 L101.33,75.67 L102.67,75.67 L103.00,75.33 L104.00,75.33 L104.33,75.00 L105.00,75.00 L105.33,74.67 L106.33,74.67 L106.67,74.33 L108.00,74.33 L108.33,74.00 L110.00,74.00 L111.00,73.33 L110.67,73.00 L109.33,73.00 L109.00,72.67 L106.67,72.67 L105.67,72.00 L104.67,72.00 L104.33,71.67 L103.00,71.67 L101.67,71.00 L100.67,71.00 L100.33,70.67 L99.00,70.67 L97.67,70.00 L96.33,70.00 L96.00,69.67 L95.00,69.67 L94.67,69.33 L93.67,69.33 L93.33,69.00 L92.00,69.00 L91.67,68.67 L91.00,68.67 L89.67,68.00 L88.00,68.00 L87.67,67.67 L87.00,67.67 L85.67,67.00 L84.33,67.00 L84.00,66.67 L83.00,66.67 L82.00,66.00 L80.33,66.00 L80.00,65.67 L78.67,65.67 L77.67,65.00 L76.33,65.00 L76.00,64.67 L74.33,64.67 L73.33,64.00 L72.33,64.00 L71.00,63.33 L68.67,63.00 L67.67,62.00 L67.33,61.33 L67.33,60.33 L67.00,60.00 L67.00,58.00 L66.67,57.67 L66.67,55.33 L66.33,55.00 L66.33,54.00 L66.00,53.67 L66.00,52.67 L65.67,52.33 L65.67,50.33 L65.33,50.00 L65.33,48.67 L64.67,47.33 L64.67,46.00 L64.33,45.67 L64.33,44.00 L64.00,43.67 L64.00,42.67 L63.67,42.33 L63.67,40.00 L63.33,39.67 L63.33,38.67 L63.00,38.33 L63.00,37.33 L62.67,37.00 L62.67,34.67 L62.33,34.33 L62.33,33.33 L62.00,33.00 L62.00,31.00 L61.67,30.67 L61.67,29.33 L61.00,28.00 L61.00,26.67 L60.67,26.33 L60.67,24.67 L60.33,24.33 L60.33,23.00 L60.00,22.67 L60.00,21.67 L59.67,21.33 L59.67,19.67 L59.33,19.33 L59.33,18.00 L59.00,17.67 L59.00,15.33 L58.67,15.00 L58.67,13.00 L58.33,12.67 L58.33,11.67 L58.00,11.33 L58.00,9.67 L57.67,9.33 L57.67,5.67 L57.33,5.00Z"/></symbol></svg>
 <a class="skip" href="#main">Skip to content</a>
@@ -528,6 +671,7 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
           <li><a class="link" href="/#how">How it works</a></li>
           <li><a class="link" href="/demo/">Demo</a></li>
         </ul>
+        <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="nav-sheet">Menu<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
         <a class="pill pill--nav" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" data-cal-link="anthony-balatti-c9qhw5/15min" data-cal-namespace="wrkhrse-15min" data-cal-config='{"layout":"month_view","theme":"light"}'>Let&rsquo;s talk</a>
       </div>
     </nav>
@@ -540,16 +684,45 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
       </div>
     </div>
   </div>
+  <div class="nav-sheet" id="nav-sheet" hidden>
+    <ul>
+      <li><a href="/ai-implementation/">AI implementation</a></li>
+      <li><a href="/websites/">Websites &amp; funnels</a></li>
+      <li><a href="/os/" aria-current="page">Business OS</a></li>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/demo/">Demo</a></li>
+    </ul>
+  </div>
 </header>
+<script>
+(() => { // Phone menu: the Menu pill opens the sheet; Escape (focus returns to the pill), a tap outside or picking a link closes it
+  const btn = document.querySelector(".nav-menu-btn"), sheet = document.getElementById("nav-sheet");
+  if (!btn || !sheet) return;
+  const host = sheet.parentElement, phone = matchMedia("(max-width: 719.98px)");
+  const isOpen = () => btn.getAttribute("aria-expanded") === "true";
+  const place = () => { // under the pills, right edge in line with "Let's talk"
+    const h = host.getBoundingClientRect(), b = btn.getBoundingClientRect(), a = (btn.closest(".nav-right") || btn).getBoundingClientRect();
+    sheet.style.top = Math.round(b.bottom - h.top + 8) + "px"; sheet.style.right = Math.max(0, Math.round(h.right - a.right)) + "px"; };
+  const set = (open, back) => {
+    btn.setAttribute("aria-expanded", String(open)); sheet.hidden = !open;
+    if (open) { place(); sheet.querySelector("a").focus(); } else if (back) btn.focus();
+  };
+  btn.addEventListener("click", () => set(!isOpen()));
+  document.addEventListener("click", (e) => { if (isOpen() && !sheet.contains(e.target) && !btn.contains(e.target)) set(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && isOpen()) set(false, true); });
+  sheet.addEventListener("focusout", (e) => { if (e.relatedTarget && !sheet.contains(e.relatedTarget) && e.relatedTarget !== btn) set(false); });
+  sheet.addEventListener("click", (e) => { if (e.target.closest("a")) set(false); });
+  phone.addEventListener("change", () => { if (!phone.matches && isOpen()) set(false); });
+  addEventListener("resize", () => { if (isOpen()) place(); });
+})();
+</script>
 
 <main id="main">
-  <section class="sec band" id="map" data-rv aria-labelledby="map-title">
-    <div class="night-panel on-sky rv">
-      <canvas class="dither" data-stars aria-hidden="true"></canvas>
-      <div class="col">
+  <section class="sec band" id="map" aria-labelledby="map-title">
+    <div class="col map-band">
         <h2 class="sr-only" id="map-title">Your system, with the tools you keep connected</h2>
         <div class="map" aria-hidden="true">
-          <svg class="lines" viewBox="0 0 880 420" style="color:var(--work)"><line x1="160" y1="84" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/><line x1="720" y1="84" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/><line x1="160" y1="336" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/><line x1="720" y1="336" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/></svg>
+          <svg class="lines" viewBox="0 0 880 420" style="color:var(--ink)"><defs><mask id="map-draw" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="420"><line x1="160" y1="84" x2="440" y2="210" stroke="#fff" stroke-width="14" stroke-linecap="round"/><line x1="720" y1="84" x2="440" y2="210" stroke="#fff" stroke-width="14" stroke-linecap="round"/><line x1="160" y1="336" x2="440" y2="210" stroke="#fff" stroke-width="14" stroke-linecap="round"/><line x1="720" y1="336" x2="440" y2="210" stroke="#fff" stroke-width="14" stroke-linecap="round"/></mask></defs><g mask="url(#map-draw)"><line x1="160" y1="84" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/><line x1="720" y1="84" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/><line x1="160" y1="336" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/><line x1="720" y1="336" x2="440" y2="210" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 9" stroke-linecap="round"/></g></svg>
           <svg class="hub" viewBox="0 0 135 162"><use href="#star"/></svg>
           <span class="hub-label">Your system<small>Inquiries &middot; Jobs &middot; Customers &middot; Documents</small></span>
           <span class="node" style="left:18%;top:20%">Email</span>
@@ -568,13 +741,11 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
           <li><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>No inquiry gets lost.</li>
           <li><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>One place to see each customer.</li>
         </ul>
-      </div>
     </div>
   </section>
 
   <section class="sec band" id="sort" data-rv aria-labelledby="sort-title">
     <div class="col">
-      <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>Keep, replace, cancel</p>
       <h2 class="statement rv" id="sort-title">Fewer tools, <span class="tt2">not more.</span></h2>
       <ul class="how-grid sort-grid">
         <li class="rv" style="--i:1"><h3><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>Keep.</h3><p>Tools that do one job well. Accounting, email, calendar.</p></li>
@@ -586,7 +757,6 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
 
   <section class="sec band" id="method" data-rv aria-labelledby="method-title">
     <div class="col">
-      <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>The method</p>
       <h2 class="statement rv" id="method-title">How we build it.</h2>
       <ol class="method">
         <li class="rv" style="--i:1"><span class="how-num"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>01</span><h3>Map the work.</h3><p>We sit with your team and list every job, handoff and thing typed twice.</p></li>
@@ -601,14 +771,15 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
 
   <section class="sec band" id="jobs" data-rv aria-labelledby="jobs-title">
     <div class="col">
+      <div class="jobs-stage">
       <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>In one system</p>
       <h2 class="sr-only" id="jobs-title">Four jobs it handles</h2>
       <div class="rail-wrap">
-        <nav class="rail" aria-label="Jobs"><ol><li><a href="#job-answer" aria-current="true">Answer inquiries</a></li><li><a href="#job-quotes" aria-current="false">Chase quotes</a></li><li><a href="#job-paperwork" aria-current="false">File the paperwork</a></li><li><a href="#job-owed" aria-current="false">Know what&rsquo;s owed</a></li></ol></nav>
+        <nav class="rail" aria-label="Jobs"><span class="rail-mark" aria-hidden="true"></span><ol><li><a href="#job-answer" aria-current="true">Answer inquiries</a></li><li><a href="#job-quotes" aria-current="false">Chase quotes</a></li><li><a href="#job-paperwork" aria-current="false">File the paperwork</a></li><li><a href="#job-owed" aria-current="false">Know what&rsquo;s owed</a></li></ol></nav>
         <div class="chapters">
         <article class="chapter" id="job-answer" aria-labelledby="job-answer-h">
           <h3 id="job-answer-h">Answer inquiries. <span class="tt2">New inquiries got a reply.</span></h3>
-          <figure class="loop rv">
+          <figure class="loop">
         <div class="loop-frame">
           <video class="loop-v" muted loop playsinline preload="none" width="1600" height="1000" poster="/loops/b-reply-and-ripple-poster.webp" aria-label="Sample system: a reply is sent, the job moves and the visit lands on the calendar">
             <source src="/loops/b-reply-and-ripple.webm" type="video/webm"><source src="/loops/b-reply-and-ripple.mp4" type="video/mp4">
@@ -620,7 +791,7 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
         </article>
         <article class="chapter" id="job-quotes" aria-labelledby="job-quotes-h">
           <h3 id="job-quotes-h">Chase quotes. <span class="tt2">I draft quotes from your price sheet. I never send one without you.</span></h3>
-          <figure class="loop rv">
+          <figure class="loop">
         <div class="loop-frame">
           <video class="loop-v" muted loop playsinline preload="none" width="1600" height="1000" poster="/loops/d-quote-drafted-poster.webp" aria-label="Sample system: Maple drafts a quote from the price sheet and it is sent on a yes">
             <source src="/loops/d-quote-drafted.webm" type="video/webm"><source src="/loops/d-quote-drafted.mp4" type="video/mp4">
@@ -632,7 +803,7 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
         </article>
         <article class="chapter" id="job-paperwork" aria-labelledby="job-paperwork-h">
           <h3 id="job-paperwork-h">File the paperwork. <span class="tt2">A receipt filed itself.</span></h3>
-          <figure class="loop rv">
+          <figure class="loop">
         <div class="loop-frame">
           <video class="loop-v" muted loop playsinline preload="none" width="1600" height="1000" poster="/loops/c-receipt-files-itself-poster.webp" aria-label="Sample system: a receipt is read, filed to its job and the numbers update">
             <source src="/loops/c-receipt-files-itself.webm" type="video/webm"><source src="/loops/c-receipt-files-itself.mp4" type="video/mp4">
@@ -644,7 +815,7 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
         </article>
         <article class="chapter" id="job-owed" aria-labelledby="job-owed-h">
           <h3 id="job-owed-h">Know what&rsquo;s owed. <span class="tt2">Ask who owes you money. The reminder waits for your yes.</span></h3>
-          <figure class="loop rv">
+          <figure class="loop">
         <div class="loop-frame">
           <video class="loop-v" muted loop playsinline preload="none" width="1600" height="1000" poster="/loops/e-know-whats-owed-poster.webp" aria-label="Sample system: Maple lists who owes money and a reminder is sent on a yes">
             <source src="/loops/e-know-whats-owed.webm" type="video/webm"><source src="/loops/e-know-whats-owed.mp4" type="video/mp4">
@@ -656,6 +827,7 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
         </article>
           <p class="demo-link"><a href="/demo/">See a sample system run.<svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M2.5 7h9M8 3.5 11.5 7 8 10.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></p>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -1142,12 +1314,82 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
   const sync = (v) => { const b = btn(v), p = v.paused; b.querySelector("span").textContent = p ? "Play" : "Pause"; b.setAttribute("aria-label", (p ? "Play: " : "Pause: ") + b.dataset.label); b.querySelector("svg").innerHTML = p ? '<path d="M7 4v16l13 -8z" fill="currentColor"/>' : '<path d="M7 5h3v14h-3zM14 5h3v14h-3z" fill="currentColor"/>'; };
   vids.forEach((v) => { sync(v); v.addEventListener("play", () => sync(v)); v.addEventListener("pause", () => sync(v));
     btn(v).addEventListener("click", () => { v.dataset.user = "1"; if (v.paused) { v.preload = "auto"; v.play().catch(() => {}); } else v.pause(); }); });
-  if ("IntersectionObserver" in window) { const io = new IntersectionObserver((es) => es.forEach((e) => { const v = e.target; if (e.isIntersecting && !rm.matches && !v.dataset.user) { v.preload = "auto"; v.play().catch(() => {}); } else if (!e.isIntersecting) v.pause(); }), { threshold: 0.5 }); vids.forEach((v) => io.observe(v)); }
+  if ("IntersectionObserver" in window) { const io = new IntersectionObserver((es) => es.forEach((e) => { const v = e.target; if (e.isIntersecting && !rm.matches && !v.dataset.user && !v.dataset.hold) { v.preload = "auto"; v.play().catch(() => {}); } else if (!e.isIntersecting) v.pause(); }), { threshold: 0.5 }); vids.forEach((v) => io.observe(v)); }
   rm.addEventListener("change", () => { if (rm.matches) vids.forEach((v) => v.pause()); });
   const rail = [...document.querySelectorAll(".rail a")]; if (!rail.length || !("IntersectionObserver" in window)) return;
-  const io2 = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) rail.forEach((a) => a.setAttribute("aria-current", a.hash === "#" + e.target.id ? "true" : "false")); }), { rootMargin: "-45% 0px -45% 0px" });
+  const io2 = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && !document.documentElement.classList.contains("jobs-pinned")) rail.forEach((a) => a.setAttribute("aria-current", a.hash === "#" + e.target.id ? "true" : "false")); }), { rootMargin: "-45% 0px -45% 0px" });
   document.querySelectorAll(".chapter").forEach((c) => io2.observe(c));
 })();
+</script>
+<script>
+/* ---------- GSAP item 6: the diagram's lines draw from each tool into the centre, then the star pulses once ---------- */
+(() => {
+  let drawn = false;
+  WRK.onMotion(() => {
+    const map = document.querySelector(".map");
+    if (drawn || !map || !window.DrawSVGPlugin || getComputedStyle(map).display === "none") return;
+    gsap.registerPlugin(DrawSVGPlugin);
+    const masks = map.querySelectorAll("#map-draw line"), hub = map.querySelector(".hub");
+    gsap.set(masks, { drawSVG: "0%" });
+    gsap.set(hub, { x: 0, y: 0, xPercent: -50, yPercent: -50 });
+    gsap.timeline({ scrollTrigger: { trigger: map, start: "top 78%", once: true }, onComplete: () => { drawn = true; } })
+      .to(masks, { drawSVG: "100%", duration: 0.55, ease: "power2.inOut", stagger: 0.15 })
+      .to(hub, { scale: 1.15, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1 }, "-=0.05");
+  });
+})();
+
+/* ---------- GSAP item 3: "In one system". Wide screens with motion pin one frame; the four jobs crossfade as you
+   scroll, the rail marker follows, only the visible loop plays. Phones, reduced motion and no GSAP keep the stack. ---------- */
+WRK.onMotion((c) => {
+  const stage = document.querySelector(".jobs-stage");
+  if (!c.wide || !stage) return;
+  const root = document.documentElement, rail = stage.querySelector(".rail"), mark = stage.querySelector(".rail-mark");
+  const chapters = [...stage.querySelectorAll(".chapter")], links = [...stage.querySelectorAll(".rail a")];
+  const vids = chapters.map((ch) => ch.querySelector("video.loop-v")), n = chapters.length;
+  root.classList.add("jobs-pinned");
+  let cur = -1, st = null;
+  const onScreen = () => { const r = stage.getBoundingClientRect(); return r.bottom > innerHeight * 0.3 && r.top < innerHeight * 0.7; };
+  const setCur = (i) => {
+    if (i === cur) return; cur = i;
+    chapters.forEach((ch, k) => ch.classList.toggle("is-current", k === i));
+    links.forEach((a, k) => a.setAttribute("aria-current", k === i ? "true" : "false"));
+    vids.forEach((v, k) => {
+      if (!v) return;
+      if (k !== i) { v.dataset.hold = "1"; if (!v.paused) v.pause(); return; }
+      delete v.dataset.hold;
+      if (v.paused && !v.dataset.user && onScreen()) { v.preload = "auto"; v.play().catch(() => {}); }
+    });
+  };
+  gsap.set(chapters.slice(1), { opacity: 0 });
+  gsap.set(mark, { y: () => links[0].offsetTop });
+  const tl = gsap.timeline({ defaults: { ease: "none" }, scrollTrigger: {
+    trigger: stage, start: "top top", end: () => "+=" + innerHeight * n, pin: true, scrub: 0.5, anticipatePin: 1, invalidateOnRefresh: true,
+    onUpdate: (self) => setCur(Math.min(n - 1, Math.floor(self.progress * n))),
+    onToggle: (self) => { if (self.isActive) { const k = cur; cur = -1; setCur(k < 0 ? 0 : k); } } } });
+  st = tl.scrollTrigger;
+  for (let i = 1; i < n; i++) {   // each step holds for most of a viewport; the swap takes the middle 30%
+    const at = i - 0.15;
+    tl.to(chapters[i - 1], { opacity: 0, duration: 0.3 }, at)
+      .fromTo(chapters[i - 1].querySelector("h3"), { y: 0 }, { y: -10, duration: 0.3 }, at)
+      .fromTo(chapters[i], { opacity: 0 }, { opacity: 1, duration: 0.3 }, at)
+      .fromTo(chapters[i].querySelector("h3"), { y: 10 }, { y: 0, duration: 0.3 }, at)
+      .to(mark, { y: () => links[i].offsetTop, duration: 0.3 }, at);
+  }
+  tl.to({}, { duration: 0.15 }, n - 0.15);   // timeline runs 0..n, one unit per step
+  setCur(Math.min(n - 1, Math.floor(st.progress * n)));
+  const goTo = (i, smooth) => { const t = i === 0 ? 0.35 : i === n - 1 ? n - 0.35 : i + 0.5; window.scrollTo({ top: Math.ceil(st.start + (st.end - st.start) * t / n), behavior: smooth ? "smooth" : "auto" }); };
+  const onClick = (e) => { const i = links.indexOf(e.target.closest("a")); if (i < 0) return; e.preventDefault(); e.stopPropagation(); goTo(i, !matchMedia("(prefers-reduced-motion: reduce)").matches); };
+  const onFocus = (e) => { const k = chapters.findIndex((ch) => ch.contains(e.target)); if (k >= 0 && k !== cur) goTo(k, false); };   // keyboard focus inside a faded step brings that step up
+  rail.addEventListener("click", onClick, true);
+  stage.addEventListener("focusin", onFocus);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
+  return () => {
+    rail.removeEventListener("click", onClick, true); stage.removeEventListener("focusin", onFocus);
+    root.classList.remove("jobs-pinned");
+    chapters.forEach((ch) => ch.classList.remove("is-current"));
+    vids.forEach((v) => v && delete v.dataset.hold);
+  };
+});
 </script>
 
 <div style="position:fixed;left:12px;bottom:12px;z-index:9999;font:500 12px/1 system-ui,sans-serif;background:#141518;color:#F7F6F3;padding:8px 12px;border-radius:999px;opacity:.9">Preview. Not a live site.</div>
