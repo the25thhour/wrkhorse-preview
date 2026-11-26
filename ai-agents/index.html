@@ -1,11 +1,924 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
-<meta http-equiv="refresh" content="0; url=/ai-implementation/">
-<link rel="canonical" href="https://wrkhrse.ai/ai-implementation/">
-<title>Moved</title>
-</head>
-<body><p>This page has moved to <a href="/ai-implementation/">/ai-implementation/</a>.</p></body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WRKHRSE AI Agents</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="WRKHRSE builds AI agents and automation for service businesses: enquiry details gathered, common questions answered, quotes followed up, with clear rules for when your team takes over.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Doto:wght@700..900&family=Geist+Mono&family=Geist:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap">
+<style>
+/* Layout: a cream page that opens and closes on one deep blue panel. Between them, one left-aligned column,
+   one idea per screen: the problem, four service rows, a navy band where the example workflow prints as a typed log,
+   a sand panel of linked work, four steps, three answers, then the booking.
+   Single deliberate light world: the deep blue dusk sky, its orange light and the silver horse are the brand, so no dark token set. */
+:root {
+  --paper: #F4EFE4;      /* page ground; text and buttons on blue */
+  --sand:  #E7DDC9;      /* occasional supporting surface */
+  --ink:   #1B1A17;      /* text on light; darkest card */
+  --stone: #5C574D;      /* secondary text on light */
+  --rule:  #C9BFA9;      /* decorative dividers on light */
+  --sky:   #17369A;      /* deep blue, hue 225: hero, closing panel, the workflow band */
+  --sky-low: #1E44B8;    /* the lighter blue band the sky falls to at the horizon; blue only, no orange mixed in */
+  --sky-deep: #0E2166;   /* art only: the hill and the near range */
+  --sky-far:  #152F8A;   /* art only: the far range */
+  --live: #2A5BD7;       /* one small role: the Live marker */
+  --work-light: #F58A4E; /* art only: lit cloud edges, the rim on the peaks and the crest */
+  --work:  #E8590C;      /* sunset light: clouds, the horizon, work-in-progress dots */
+  --ink-row: rgba(27, 26, 23, 0.32);
+  --shadow: 0 1px 2px rgba(27, 26, 23, 0.10), 0 22px 44px -20px rgba(27, 26, 23, 0.45);
+
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-pixel: "Doto", "Geist Mono", ui-monospace, Menlo, monospace;   /* hero headline only: a trial, not yet the system */
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-h1: clamp(2.75rem, min(6.2vw, 11.5vh), 5.75rem);
+  --fs-statement: clamp(2.25rem, 4.4vw, 4rem);   /* section statements: 56 to 64px at desktop */
+  --fs-lead: clamp(1.125rem, 1.4vw, 1.25rem);     /* lead paragraphs: 20px at desktop */
+  --fs-h2: clamp(2rem, 3.05vw, 3.25rem);
+  --fs-row: clamp(1.6rem, 2.3vw, 2.4rem);
+  --fs-card: clamp(1.6rem, 2.05vw, 2.1rem);
+  --fs-body: 1rem;
+  --fs-util: 0.9375rem;
+  --fs-mono: 0.8125rem;
+
+  --hero-pad: clamp(20px, 5.6vw, 80px);   /* the logo and the hero text share this left edge */
+  --edge: 16px;                       /* panel inset from the page edge */
+  --col: min(72vw, 1180px);           /* the one content column */
+  /* Radius rule, four steps and nothing else: pills and buttons 999px; panels 16px;
+     cards (process, work, booking) 12px; small controls (calendar days, slots, thumbnails) 8px. Dots are circles. */
+  --r-pill: 999px;
+  --r-panel: 16px;
+  --r-card: 12px;
+  --r-ctl: 8px;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-settle: cubic-bezier(0.22, 1.15, 0.36, 1);
+  --focus: var(--ink);
+  color-scheme: light;
+}
+@media (max-width: 899.98px) { :root { --col: 100%; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+::selection { background: var(--sky); color: var(--paper); }
+.on-sky ::selection { background: var(--paper); color: var(--ink); }
+
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3, .statement {
+  font-family: var(--font-display); font-weight: 400; font-optical-sizing: auto;
+  line-height: 1.04; letter-spacing: -0.028em; text-wrap: balance;
+}
+em { font-style: italic; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; text-underline-offset: 0.24em; text-decoration-thickness: 1px; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; text-align: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.on-sky { --focus: var(--paper); }
+
+.mono { font-family: var(--font-mono); font-size: var(--fs-mono); line-height: 1.3; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+
+/* every band's inner wrapper carries the side gutter */
+.band { padding-left: max(var(--edge), env(safe-area-inset-left, 0px)); padding-right: max(var(--edge), env(safe-area-inset-right, 0px)); }
+.col { width: var(--col); max-width: 100%; margin-inline: auto; }
+
+.skip { position: absolute; left: 24px; top: 24px; z-index: 50; background: var(--paper); color: var(--ink); padding: 12px 18px; border-radius: var(--r-pill); font-weight: 500; transform: translateY(-300%); }
+.skip:focus { transform: none; }
+
+/* ---------- Wordmark, links, button ---------- */
+.wordmark { display: inline-flex; align-items: center; gap: 11px; min-height: 44px; }
+@media (max-width: 479.98px) {
+  .wordmark { gap: 8px; } .wordmark .star.star { width: 18px; height: 22px; } .wordmark img.wm { width: 134px; height: 10.4px; }
+  .hero .site-nav ul { padding: 2px 3px; } .hero .site-nav .link { padding-inline: 10px; font-size: 0.875rem; background-position: 10px calc(50% + 0.75em); }
+  .hero .site-nav .link:hover, .hero .site-nav .link:focus-visible { background-size: calc(100% - 20px) 1px; }
+}
+/* Anthony's star mark and wordmark, used as masks so one file prints cream on blue and ink on cream */
+.wordmark .star { width: 21px; height: 26px; flex: none; background: currentColor; -webkit-mask: var(--logo-star) center / contain no-repeat; mask: var(--logo-star) center / contain no-repeat; }
+.wordmark img { display: block; width: 193px; height: 15px; flex: none; background: currentColor; -webkit-mask: var(--logo-wordmark) center / contain no-repeat; mask: var(--logo-wordmark) center / contain no-repeat; }
+
+.link { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--fs-util); background: linear-gradient(currentColor, currentColor) 0 calc(50% + 0.75em) / 0 1px no-repeat; transition: background-size 0.45s var(--ease-out); }
+.link:hover, .link:focus-visible { background-size: 100% 1px; }
+
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: 0 24px; border-radius: var(--r-pill);
+  font-weight: 500; font-size: var(--fs-util); line-height: 1;
+  background: var(--paper); color: var(--ink);
+  box-shadow: 0 1px 0 rgba(27, 26, 23, 0.25), 0 14px 28px -16px rgba(27, 26, 23, 0.6);
+  transition: transform 0.4s var(--ease-settle), box-shadow 0.4s ease, background-color 0.3s ease;
+}
+.pill:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(27, 26, 23, 0.25), 0 20px 30px -16px rgba(27, 26, 23, 0.7); }
+.pill:active { transform: translateY(0); background: var(--sand); }
+
+/* ---------- 1. Hero ---------- */
+.hero { padding-block: var(--edge) 0; }
+.panel { position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-panel); background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 30%, var(--sky-low) 100%); color: var(--paper); }
+/* First paint is the plain gradient with the words readable. The canvas stays hidden until one whole frame
+   has been built offscreen, then fades in. */
+.panel-art { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; display: block; opacity: 0; transition: opacity 0.5s ease; }
+.panel-art.is-on { opacity: 1; }
+
+.hero .panel.hero-short { min-height: clamp(540px, calc(78svh - 2 * var(--edge)), 700px); background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 40%, var(--sky-low) 82%, var(--sky-deep) 82.2%); }
+@media (min-width: 900px) { .hero-short .hero-copy { padding-bottom: clamp(150px, 24vh, 210px); } }
+@media (max-width: 899.98px) { .hero .panel.hero-short { min-height: clamp(560px, calc(86svh - 2 * var(--edge)), 720px); background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 40%, var(--sky-low) 80%, var(--sky-deep) 80.2%); } }
+.hero .panel {
+  min-height: clamp(620px, calc(100svh - 2 * var(--edge)), 940px);
+  display: grid; grid-template-rows: auto minmax(0, 1fr);
+  background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 20%, var(--sky-low) 51%, var(--sky-deep) 51.2%);
+}
+.site-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(14px, 2.4vh, 26px) var(--hero-pad) 0; }
+.site-nav ul { display: flex; align-items: center; gap: 2px; padding: 3px 6px; border-radius: var(--r-pill); box-shadow: inset 0 0 0 1px rgba(244, 239, 228, 0.3); background: rgba(14, 33, 102, 0.35); }
+.site-nav .link { padding-inline: 14px; min-height: 40px; white-space: nowrap; background-position: 14px calc(50% + 0.75em); }
+.site-nav .link:hover, .site-nav .link:focus-visible { background-size: calc(100% - 28px) 1px; }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.pill--nav { min-height: 44px; padding: 0 20px; background: var(--paper); color: var(--ink); }
+@media (max-width: 719.98px) { .site-nav ul { display: none; } }
+
+/* the horse gallops right of centre; the canvas reads this box and runs the slope just under its hooves */
+.hero-horse {
+  position: absolute; right: 7%; bottom: 50%; width: 39%; aspect-ratio: 553 / 274;
+  background: var(--horse) center bottom / contain no-repeat;
+}
+.art-on .hero-horse { opacity: 0; transition: opacity 0.5s ease; }   /* the canvas has taken over the drawing */
+
+/* the words sit lower left, on the dark of the hill; the sky owns everything above */
+.hero-copy {
+  grid-row: 2; align-self: end; display: grid; justify-items: start; text-align: left;
+  padding: 0 var(--hero-pad) clamp(64px, 10.4vh, 96px);
+}
+/* Pixel face, hero-only trial (Anthony, 2026-11-25): every other heading stays Newsreader, body stays Geist. */
+.hero h1 { font-family: var(--font-pixel); font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, min(4.7vw, 9vh), 4.5rem); line-height: 1.04; letter-spacing: 0.01em; }
+.hero h1 span { display: block; white-space: nowrap; }
+.hero-line { margin-top: clamp(12px, 1.3vw, 20px); max-width: 50ch; font-size: clamp(1rem, 1.2vw, 1.125rem); }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: clamp(20px, 2vw, 30px); }
+@media (max-width: 899.98px) {
+  .hero .panel { min-height: clamp(720px, calc(100svh - 2 * var(--edge)), 880px); background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 40%, var(--sky-low) 85%, var(--sky-deep) 85.2%); }
+  .hero-copy { align-self: start; padding: 22px var(--hero-pad) 0; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 3.5rem); }
+  .hero-horse { right: 6%; bottom: 15%; width: 82%; }
+}
+
+/* ---------- Shared section type: one left edge ---------- */
+.band h2 { font-size: var(--fs-h2); }
+.band .statement { font-size: var(--fs-statement); font-weight: 350; max-width: 18ch; line-height: 1.04; }
+.lead { margin-top: clamp(20px, 2vw, 28px); max-width: 40ch; font-size: var(--fs-lead); line-height: 1.5; color: var(--stone); text-wrap: pretty; }
+.on-sky .lead { color: var(--paper); }
+.sec { padding-block: clamp(104px, 12vw, 184px) 0; }
+
+/* ---------- 2. The problem ---------- */
+.problem { padding-top: clamp(120px, 14vw, 216px); }
+
+/* ---------- 3. What we do ---------- */
+.svcs { margin-top: clamp(44px, 4.4vw, 72px); border-bottom: 1px solid var(--rule); }
+.svc { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 10px 48px; align-items: baseline; padding-top: clamp(22px, 2vw, 30px); padding-bottom: clamp(24px, 2.2vw, 32px); border-top: 1px solid var(--rule); }
+.svc .mono { display: block; margin-bottom: 0.45rem; color: var(--stone); }
+.svc h3 { font-size: var(--fs-row); font-weight: 400; line-height: 1.08; }
+.svc p { font-size: var(--fs-lead); line-height: 1.5; color: var(--stone); max-width: 38ch; }
+@media (max-width: 899.98px) { .svc { grid-template-columns: minmax(0, 1fr); } }
+.svc-link { color: inherit; }
+.svc-link .more { display: inline-flex; align-items: center; gap: 6px; margin-left: 4px; color: var(--ink); font-size: var(--fs-util); font-weight: 500; white-space: nowrap; }
+.svc-link .more svg { width: 14px; height: 14px; transition: transform 0.45s var(--ease-settle); }
+.svc-link:hover h3, .svc-link:focus-visible h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+.svc-link:hover .more svg, .svc-link:focus-visible .more svg { transform: translate3d(3px, 0, 0); }
+.svc-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+/* ---------- 4. Example workflow: a navy band, the steps print as a typed log ---------- */
+.flow { padding-block: clamp(104px, 12vw, 184px) 0; }
+.flow .panel { background: var(--sky); padding-block: clamp(64px, 7.5vw, 112px); padding-inline: clamp(20px, 4vw, 56px); }
+.flow .col { position: relative; }
+.flow-label { color: var(--paper); text-transform: uppercase; letter-spacing: 0.08em; }
+.flow h2 { margin-top: 18px; font-size: var(--fs-statement); font-weight: 350; max-width: 17ch; line-height: 1.04; }
+.log { margin-top: clamp(40px, 4.4vw, 64px); border-top: 1px solid rgba(244, 239, 228, 0.28); font-family: var(--font-mono); font-size: clamp(1.05rem, 1.6vw, 1.5rem); line-height: 1.35; letter-spacing: 0; }
+.log li { display: grid; grid-template-columns: 3.2em minmax(0, 1fr); gap: 0 12px; padding-top: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(244, 239, 228, 0.28); }
+.log .n { color: rgba(244, 239, 228, 0.8); }
+.log .say-line { position: relative; min-width: 0; }
+.log .typed { position: absolute; inset: 0; pointer-events: none; }
+.log.is-typing .ghost { color: transparent; }
+.log:not(.is-typing) .typed { display: none; }
+.log li.is-active .typed::after { content: ""; display: inline-block; width: 0.58em; height: 1.05em; margin-left: 2px; vertical-align: -0.16em; background: var(--paper); animation: caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+.flow-close { margin-top: clamp(36px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; }
+.flow-close p { font-family: var(--font-display); font-size: clamp(1.5rem, 2.2vw, 2rem); line-height: 1.2; letter-spacing: -0.015em; max-width: 28ch; }
+
+/* ---------- AI agents page ---------- */
+.gets { margin-top: clamp(40px, 4vw, 64px); border-bottom: 1px solid var(--rule); }
+.gets li { padding-top: 20px; padding-bottom: 22px; border-top: 1px solid var(--rule); font-family: var(--font-display); font-size: var(--fs-row); line-height: 1.15; letter-spacing: -0.015em; }
+.flow h2.flow-label { margin-top: 0; font-family: var(--font-mono); font-size: var(--fs-mono); font-weight: 400; letter-spacing: 0.08em; line-height: 1.3; }
+.example-text { margin-top: 22px; max-width: 34ch; font-family: var(--font-display); font-size: clamp(1.6rem, 2.6vw, 2.4rem); font-weight: 350; line-height: 1.3; letter-spacing: -0.015em; text-wrap: pretty; }
+.example-note { margin-top: 28px; font-size: var(--fs-util); color: var(--paper); opacity: 0.9; }
+
+/* ---------- 6. How it works ---------- */
+.steps { display: grid; gap: 0 32px; margin-top: clamp(44px, 4.4vw, 72px); }
+.steps li { display: grid; align-content: start; gap: 8px; padding-top: 20px; padding-bottom: 24px; border-top: 1px solid var(--rule); }
+.steps .mono { color: var(--stone); }
+.steps h3 { font-size: clamp(1.5rem, 1.9vw, 1.75rem); font-weight: 400; line-height: 1.1; }
+.steps p { color: var(--stone); }
+@media (min-width: 720px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* ---------- 7. FAQs ---------- */
+.faqs { margin-top: clamp(36px, 4vw, 56px); border-bottom: 1px solid var(--rule); }
+.faqs details { border-top: 1px solid var(--rule); }
+.faqs summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 44px; padding-top: 22px; padding-bottom: 22px; cursor: pointer; list-style: none; }
+.faqs summary::-webkit-details-marker { display: none; }
+.faqs summary h3 { font-size: clamp(1.35rem, 1.8vw, 1.6rem); font-weight: 400; line-height: 1.2; }
+.faqs summary:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.faqs .toggle { width: 16px; height: 16px; flex: none; transition: transform 0.4s var(--ease-settle); }
+.faqs details[open] .toggle { transform: rotate(45deg); }
+.faqs .answer { padding-bottom: 26px; max-width: 58ch; font-size: var(--fs-lead); line-height: 1.5; color: var(--stone); }
+.faqs + .faq-end { padding-bottom: clamp(88px, 10vw, 152px); }
+
+/* ---------- 5. Our work: every card is one link ---------- */
+.bench-panel { background: var(--sand); border-radius: var(--r-panel); padding-block: clamp(64px, 7.5vw, 112px); padding-inline: clamp(16px, 4vw, 56px); }
+.bench-head { display: grid; justify-items: start; gap: 12px; width: min(100%, 1180px - 112px, 72vw); margin: 0 auto clamp(36px, 3.6vw, 56px); }
+@media (max-width: 899.98px) { .bench-head { width: 100%; } }
+.bench-head p { color: var(--stone); font-size: var(--fs-lead); }
+.work-grid { display: grid; gap: 16px; width: min(100%, 1180px - 112px, 72vw); margin-inline: auto; }
+@media (max-width: 899.98px) { .work-grid { width: 100%; } }
+@media (min-width: 720px) { .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .work-card--lead { grid-column: 1 / -1; } }
+.work-card {
+  display: flex; flex-direction: column; background: var(--paper); color: var(--ink); border-radius: var(--r-card); overflow: hidden; min-width: 0;
+  box-shadow: 0 1px 2px rgba(27, 26, 23, 0.06);
+  transition: opacity 0.9s ease, transform 0.6s var(--ease-settle), box-shadow 0.5s ease;
+}
+.work-strip { display: block; width: 100%; height: 132px; background: var(--paper) repeating-linear-gradient(to bottom, transparent 0 5px, var(--ink-row) 5px 7px); opacity: 0.72; transition: opacity 0.5s ease; }
+.work-card--lead .work-strip { height: clamp(150px, 19vw, 272px); }
+.work-body { display: flex; flex-direction: column; gap: 6px; padding: 22px 24px 20px; flex: 1; }
+.work-body h3 { font-size: clamp(1.4rem, 1.8vw, 1.65rem); font-weight: 450; line-height: 1.1; letter-spacing: -0.015em; }
+.work-card--lead h3 { font-size: clamp(1.9rem, 2.9vw, 2.75rem); font-weight: 400; letter-spacing: -0.025em; }
+.work-body p { color: var(--stone); }
+.work-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 20px; margin-top: auto; padding-top: 18px; }
+.work-status { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-transform: uppercase; letter-spacing: 0.06em; }
+.work-dest { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; font-size: var(--fs-util); font-weight: 500; color: var(--ink); }
+.work-dest svg { width: 14px; height: 14px; flex: none; transition: transform 0.45s var(--ease-settle); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--work); flex: none; }   /* orange: work in progress */
+.dot--live { background: var(--live); }   /* blue: live */
+.work-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.work-card:focus-visible, .work-card:active { transform: translate3d(0, -4px, 0); box-shadow: 0 2px 4px rgba(27, 26, 23, 0.08), 0 26px 40px -24px rgba(27, 26, 23, 0.55); }
+.work-card:focus-visible .work-strip, .work-card:active .work-strip { opacity: 1; }
+.work-card:focus-visible .work-dest svg { transform: translate3d(3px, -3px, 0); }
+@media (hover: hover) {
+  .work-card:hover { transform: translate3d(0, -4px, 0); box-shadow: 0 2px 4px rgba(27, 26, 23, 0.08), 0 26px 40px -24px rgba(27, 26, 23, 0.55); }
+  .work-card:hover .work-strip { opacity: 1; }
+  .work-card:hover .work-dest svg { transform: translate3d(3px, -3px, 0); }
+}
+.js-anim [data-rv]:not(.in) .work-card.rv { transition-delay: 0s; }
+.work-card.rv { transition: opacity 0.9s ease, transform 0.6s var(--ease-settle), box-shadow 0.5s ease; transition-delay: 0s; }
+
+/* ---------- 6. Close: the booking, then the utility line ---------- */
+.end { padding-block: var(--edge) 0; }
+.end .panel { display: grid; justify-items: center; padding: clamp(72px, 8.5vw, 128px) clamp(16px, 4vw, 56px) clamp(40px, 5vw, 80px); }
+.end h2 { font-size: clamp(2.75rem, 5.2vw, 5.25rem); font-weight: 350; text-align: center; }
+.end-line { margin-top: 16px; max-width: 40ch; text-align: center; font-size: var(--fs-lead); color: var(--paper); }
+
+/* Booking preview, laid out like a Cal.com month view. Nothing books. */
+.cal-wrap { width: 100%; max-width: 880px; margin-top: clamp(36px, 4vw, 56px); display: grid; gap: 12px; text-align: left; }
+.cal-label { color: var(--paper); text-transform: uppercase; letter-spacing: 0.06em; }
+.cal { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--paper); color: var(--ink); border-radius: var(--r-card); box-shadow: var(--shadow); }
+.cal > * { padding: 24px; min-width: 0; }
+.cal > * + * { border-top: 1px solid var(--rule); }
+@media (min-width: 820px) {
+  .cal { grid-template-columns: 220px minmax(0, 1fr) 208px; }
+  .cal > * + * { border-top: 0; border-left: 1px solid var(--rule); }
+}
+.cal-host { display: grid; gap: 10px; align-content: start; }
+.cal-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font: 500 0.875rem/1 var(--font-body); letter-spacing: 0.02em; }
+.cal-host .who { color: var(--stone); font-size: 0.95rem; }
+.cal-host h3 { font-size: 1.5rem; font-weight: 450; line-height: 1.1; letter-spacing: -0.01em; }
+.cal-meta { display: grid; gap: 8px; margin-top: 6px; font-size: 0.95rem; color: var(--stone); }
+.cal-meta li { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.cal-meta svg { width: 16px; height: 16px; flex: none; color: var(--ink); }
+.cal-meta .tz { overflow-wrap: anywhere; }
+.cal-month-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+.cal-month-head h3, .cal-slots h3 { font-family: var(--font-body); font-size: 1rem; font-weight: 500; letter-spacing: 0; line-height: 1.3; }
+.cal-month-head h3 span, .cal-slots h3 span { color: var(--stone); font-weight: 400; }
+.cal-nav { display: flex; gap: 4px; }
+.cal-btn {
+  display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0;
+  border: 0; border-radius: var(--r-ctl); background: transparent; color: var(--ink);
+  font: 500 0.95rem/1 var(--font-body); font-variant-numeric: tabular-nums; cursor: pointer;
+  transition: background-color .15s, color .15s;
+}
+.cal-btn svg { width: 16px; height: 16px; }
+.cal-btn:hover:not(:disabled) { background: var(--sand); }
+.cal-btn:disabled { color: var(--rule); cursor: default; }
+.cal-btn:focus-visible, .cal-slot:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.cal-dow, .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+@media (max-width: 479.98px) { .cal > * { padding: 16px; } .cal-dow, .cal-grid { gap: 0; } .cal-btn { min-width: 0; } }
+.cal-dow { margin-bottom: 4px; }
+.cal-dow span { text-align: center; color: var(--stone); font-size: 0.75rem; }
+.cal-grid .cal-btn { width: 100%; aspect-ratio: 1; max-width: 100%; }
+.cal-grid .cal-btn.is-open { background: var(--sand); }
+.cal-grid .cal-btn.is-open:hover { background: var(--rule); }
+.cal-grid .cal-btn.is-today { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.cal-grid .cal-btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.cal-slots { display: grid; gap: 10px; align-content: start; }
+.cal-slots h3 { margin-bottom: 2px; }
+.cal-slot-list { display: grid; gap: 8px; }
+.cal-slot {
+  width: 100%; min-height: 44px; padding: 10px 16px; text-align: center;
+  border: 1px solid var(--stone); border-radius: var(--r-ctl); background: var(--paper); color: var(--ink);
+  font: 500 0.95rem/1.2 var(--font-body); font-variant-numeric: tabular-nums; cursor: pointer;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.cal-slot:hover { border-color: var(--ink); }
+.cal-slot[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.cal-note { font-size: 0.9rem; line-height: 1.45; color: var(--ink); }
+.cal-note:empty { display: none; }
+.cal-note:not(:empty) { padding: 12px 14px; background: var(--sand); border-radius: var(--r-ctl); }
+
+.util { padding-block: 10px 14px; }
+.util-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 28px; padding-inline: clamp(0px, 0.9vw, 12px); color: var(--stone); font-size: var(--fs-util); }
+.util-row .wordmark { color: var(--ink); }
+.util-row ul { display: flex; flex-wrap: wrap; gap: 0 clamp(18px, 2vw, 30px); }
+.util-row .link { color: var(--ink); }
+.util-id { display: flex; align-items: center; gap: 18px; }
+
+/* ---------- Reveals: a short rise from an already-readable state ---------- */
+.rv { transition: opacity 0.9s ease, transform 1.1s var(--ease-out); transition-delay: calc(var(--i, 0) * 95ms); }
+.js-anim [data-rv]:not(.in) .rv { opacity: 0.28; transform: translate3d(0, 22px, 0); transition-delay: 0s; }
+@media (prefers-reduced-motion: reduce) {
+  .rv, .card, .card::after, .thumb, .thumb canvas, .svc::before, .svc-name, .pill, .link, .cal-btn, .cal-slot, .work-card, .work-strip, .work-dest svg, .panel-art, .hero-horse { transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+  .log li.is-active .typed::after { animation: none; }
+  .faqs .toggle { transition: none; }
+}
+
+/* Horse from Anthony's own artwork (References/images/2026-11-25-wrkhrse-dusk-gallop-hero.webp).
+   To swap the horse, replace this one data URI and the HORSE numbers in the script. */
+:root { --logo-star: url("data:image/png;base64,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"); --logo-wordmark: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAekAAAAmCAYAAADgB2NCAAAcm0lEQVR42u2debwdZXnHvzPnJDcQEiBABSVFQEEWWQQsFLWy4wIFhEpLRS0VrGgVVKxLC6LSqmhdYkWLolQFFUV2EBBxRRaBgiyBBIGwLyG5BJJ7z5npH8/z9D6M8845594zc+aQO5/PfHKTnHtmeZ/3WX/P74nSNGX6GMgRAXV6+Q39sz29NDSB1iR+J51+f9NHBxlp12zfmy5qAImedsTABsBWwE7AFsAYMEf/HuvnUv15sZ6zgEXAHcBNwCjwZOaasZ51fB/1Wpw0TX8JjLvFwr14gLWAo/Vlx5lFnIwhSIC9gU8BT+dc1wxFDJwG/KAP17Xf3wr4SuCaqf7bMuAwfSf9NqR2HzsBpwPL9VmjCtfcnucPwC+AJfrz8sx7GeTGsfd0qr6rtnMi/Fq1gKOA+/q0VpGeCfAXwImqcPL2hn0u1T2yCngr8MeSHDB7J7sDn3CKMbuu48CxwN192DfdOJmnAVvqdeLMHm4AVwMnlXwveff1RWC7HNmpYn9FKpM3AHeqwXoAeNbpwXaNnHN/L5sBewFvBF4EvARYewrf/7Qa6YXArcB3gXuBBzP3kFYkH9n99EKV4Tlu7epwJHovpzSBx4GDOvzCW/tkpE2IDwd26eKzGwPnuJeXTmHjAhwB7NHhsz9S5V/mRmoBOwxYCPYA3q0/Pwhcow7MzzJCPMhjry7e0/p9MtI+ej4a+DSwTpe/+wvgOFU+ZWVIIqdEO8nwSIVZoP2AF3dQ0lSo/Cw6Wx947YDl90j9c5XusW+oQXiiJvvLdNxM4BDgUOBAYEbAaKQ58piViTTj8K6l50bAX6kDuQK4FLgQuAh4zK0dFb+XdYADahxInxMDpzCRpsue4/rC9tcXPpWozzbPFsDB+nMrcF37vxcDO+ZEDb0qlLYuxtHuufKuNwZ8NCNsZRwz9VpFz1/22XKpphfqJr0SOBvYUNe9MWABHdV7HOvwHFM1OGag1wHOA76mP7cL5AR1cI9R5fP7ijIQY4F3Yuv5jDOMVRzLAntqlf55e8VGOnKOp7+PQZ2JOk2bAp8EblFDNcj9FTl9fBBwPXAW8CY10P7eU6e/G+6MM2eU+UycMdxtp29m67XOAG4GzgR2y0m3V5FRXKhOfnvA+jh72v5eFesmusUZQb8Q5lFtCbxuisbSfm9PYF39rmbmev5Er3/UFDe5Ccs2SH0l1u/11zJFfR9wTwX14lEXrccF76DMs+me3W+iNwO/1IitPWBD3c27iaYYSaS6Fgfocx+gf08DMtlUJ+siJPX8daeo0grrh0VnTLXRWNE5MiDZmTGgfZW3FpbKbWlEuQD4yID2V+Si+JOAc4GXZ4xo1tDijG3qDHg783OSE+BEGZnN6puNgLcAv9as6a6Z61YhJ3WRlVz9FqvX/R8FL8Vy44dP0Viah3Rwl99jiuZQYJ4KeDQFr+moglSKCdYn1YMpW+EudTXvontOSjjTDoq/hdShrnCGOobnLYhnPeBk4HxgW/23ZgAn0VAH62SkZrcwALiZPv40YqnjkVS0x8wwNp2x/tSADLVlFs9AMBdtF9VnnV6718QZ2ygnuIgzRj3KRKZJgb7xYMs3qfM7UmF9OO3yM8mAztSU0Y+A24Ct+VMASMNFwHNUSfUaaVrt4zXAvl2meiwdswHwN0gtJ+6xTmyffylSj05zrmv3cj8CaqiiJtJNBBiVKKSJe+4oUJvdFLhMo8XHalJD62ck0ULAYWfpsyYZec86lw1VIP+MIFi9Mpo+htN5KNP5bLkMS15mzwz1vap3qgCT2TVOAN6mgUIzAKJNM/dvQcUTmnFs5Dix6+heigL6vZXzf5ELDpq6v56tmb4pUxd3ClJnWspzDKmp5RlpU0QvQoAYF07CWNr3HOYUX9zDZvo7NdLJJB40ReouM50g5HlS51QAGOsFHTqGtDD0UzgsvfSCTPtEnqEe14j6BOADz5NouuHSbEcCXwXWDMgFmShnAfBelcGmS4lPH8PrrN2D1NQbfd6/L1G5Cum6yAU6Hwd+DKwsucxmOnsTjaCTgmDB7u82JA19EXCj/ttyzQQSACy+QPfHDpqJ2xHp0NjS7bHEOQGRy16dqw5LlQY66hIHstBlFKpEd9/fdC9jgRrRmQUpgQOBCyaZXgFB6xJQ+HnGwhZxJwTpvaTHBTRh2LdgQcyQn14T5WECeyrwMZeW7ZcCWQdB1u8HvAtpMcp795bGPQT4kAMNpkMcPZuT8jngb52MNAPprYYq8n8Afp6JwqeP4TzM8bpKnfcVJcj05giG53AmAFFxwGHcHMnynT7J/vxeW472K3BMU4fROB7BW4x3yfEQISC9+/Tvi3kuUHZ7BO+yK5Kd89F1A2kZfPsAgoGiPm17RwuADw4ogEtiJ0C/Ay4PpPCsdnAY8Oc91intcwcF+ikpqD/YvayJILN7qYnbs+0CvCqQ6rb0yzkIgC6uUfryjhJqIal6wT8F3o/UgEYDaHYzSOsj6G+oTw/hZMBhbVUCv1MDnQRSnm2XgrtIlezPB9TLOX2UdyzXs4x6413Al5BWuYsLAgvbd7tWZIxAspIhfWv74e1IO2YrB80dctRTpzPiDDh1DLhOM3KvAl6PdFAkLt1+hGY1oor32FzHhRA6Hh5gTfr/FVTsatOhSCRBmtrf36PCtsV7TwEgK2Ki0T+UjjgG6bfrtg3Mnu2dugjtgu8+t4IaVa/HiBP6qM+noW4vRsByec6JOUhzdGMNm5GOnOe7jiqdbwLznZOZJSixKOsp4B0IOOyRmpFPTB/9SW9u5fRav/eYdZCsQvA0jwQMtV335a5OHZXY1z4XKWlGObrO3sMf1Q54BsJ2B+BpHsDKA8c8cC4CLlG9vC9CpPQF4NqK95k9/0sRYHIRUG1Gibq40/mc5vEUAQqtdFFDnnAf0EPPtAnmhghIJ5vqNqG9C6lh3JBDTWmGfX1NmURdGFNLSc5DUvR5gCCLrJfqc1fZRJ90kWJLSzzbDthydQHC1O5x2Iy0j5730+j5XRkka179p6Ey+CpNP8bT4LChN8YU1BnTkvZagqSJG0g6/foAktjucVuknEeJRhrVh2t0+MwsNUoW5cZ9KrMlOa2NVwI7I0RA0YCyVN2iuwd1PsdIx+rxXRxI65nBnY+QN9DFAkYu1T07x7AnjqJyIUIkkZd6tcjnuC6JRuwau6txzyv427WvQnhlqwQrrBVg9alaOBNN5XSiQB1h+MBhs5Ca2iUIgU4r0ENssrUSwQDspvLY6NKZquNRlccf19hxa/cBMNSvdbi7g0FolKwPEkfw8mSBw2AB1Rf0/8fd78bOkW2Sz3GRJ3ehtbHAYGXGENbRSEc8F1DXVQTcxe/0FPJ7I3xmwZcYAcmJXTygLfoMTR0WXf/7+vnzHbFI3vCHvRwbVtwFMu5jgfu01MY48NkKN61dY2ukzt4eoJIzJbuNGrSkQ6/8sBimtmZ7fuXkLgmgt82rX4i0GH7KZRjaQ9xa9IzLJKQlRYqpS2vWsS97To0chfkddExVDsMY0vIVMoix45S4TPfP5pnsn2XhWgF2taysZOvTjRz8BwPmS6CLdjqzF93ukSzjWm6U3OsN2gu7XCOJbXKMof28A4KSfaggAjVFtzMCw09yFsjSiz/Qa9+BAAx2yaRgI0fb+BYE+Vx03QQBuG0biPjtXm5EOKvrmNKMSv7uJlIz275Dq0iKpIvrTEzhEdfvV/nw6MyowJE7BwElLnVI+mSIp6rN0DVd6cgzynrf2+k+q9tgAlTnDLJE03D3s22He3kIeLTkPWZ68Xzg1QXXseBqXz2fRVqxlmtG7V7NDDyCDMxoOqO0DBkmYkHe4wXy1xhwAGDPb214axfIsdWsN+jCwGafe16ga2nUZRG6NtIWVTwD/DZgpD0P9j4adccdFuJ9BdEsCNLY+G1XaTRzboHR2luj36RDb/QxHXpgAb6TaaanZmxIjQA+oB9pbjPQxweQ76lLHV9XYyNthmhjBBi2j/Pom12QWfxIDfSsbjfNEIDlztNnikuWz/VrwO8+VT6CuKTvNaf/w0jfdFIA1roWYX4ss+Rm33u+6thGgVHymaQ1kBZYO/6yw3UezfShP6WG+wbNWK1UfdIe8AhPu9Zj+u7XLrCP70VKvJt2kJfUge8eRcqaL8u845Y60j9EcDIdwXIhJfZj4B8DNxQ51PTZgT46W+T5SJsPgT5BExqfGvqVvrTs6DCrEe6DDPy4LPCAttivD1zXXuQ4Uo+ua1vNiEsj9fuYh7TTnayKNg2wDpkQ319jI/2Ebp6rHXK70UNkcbp60peU3Kda5TETIZWo0tgN27Gy5PnfL0LYs04o2Df27u6qYPJc4ko7H0a4AloF7GCNHNBU9r7zIsQ/c3/fIHAv1yIkKZch4LHWAEd4dgOOm0VvbXLrd/GZDSebjzcQzSVIb+hrc5SeLcwrVRHcnyNckRtj18j5jrZD913r0mcxAmy4RiPmbIrcaosHI6POooDi3R7pyQ71wTYROsiba9heY8/7r+qQ9JNHPFUFvrNT4iEl21aP76suFdyqYSR0BsJsNL+AoKGdw65kP8/WaPoQlanng6FOnydlGUpsvXmF6rjHXcq2n3t49w6tPakjADmzotSv6dPPa+T4b5maaxwYQRlNUva8gfdgw1fqeZxG2Bci87+XDkAf98Ld3QtLZhoIEluO0XHSRXNbkE+rkY4C/bMxMmf6kznKz9LXHw5sZHuAy53hTZyx/rIaqCiwwfbWVMKKDCrZjPThmqbJU9r2nZcOiJO1W6W3kRtGQkmglhA611Iyt+vmiWtcs39tATgscf2ZRfW3NZASizl/M3rZRAxf+xHTLVjETHSplM1uRsEe+xBwZ0XGKXXYoxM1QPoXJlosvUGKJmmkoy7WIHGGeyc9D0Oys7+sYeAU9VjWiejMAz4pdHe2dvF7BCwQB+D6EVL3Hcmg9OzzezMxuCDOqXU+jYB2/DVtYX5BPijNjMVmCCtOmgGXWfT3xg6AsfsQetO0xijetMRZpWkBb685NssQkN6ymoPG2gEv1zIzS4FvM4F4TgPZl1lqqPdXAz0DhjqSLpsJqa4AO5ODm7uQ23YFeyxPv5p8na5RbaPid5k6Rr09EbrOCxGQWJTDMJZkUN0tNx0rmUSrop+aZf3TWyMlq6NqMCI3pIv7ziY2WSNtC/go8JmCnulUo72dAgCMIwMN6mbQv4sACryA2rWXqUcV6udLEUDaGhlGmxRBnm8bSHXbd52lTkKjxsYnKnNGaYEQNpESxus1FdWoOdq5kUOQY89xnaYd3wYcW4Di94b6J85QN4Z80leZZ6OmQ1ciNw52qrOw+7nHEuc4zkDaTt/RA7lRWVH+ONJdc4DqzX10D9yp51imjcqfccaYhxygVgegr59PcBpS/01qJF9Zx2Uq50z9c02m2COWOrrMjzsDGOXUdg8DfpOJdLfT1GEewtY+84MOIf8ChFIvDjgImyF155sznzkoc39Z52MlUmdlCIgqkgrGq6WZdM6l6s0+OIR0mN4D/6hGKSt1Y3wLqVufHCiDxK5M8xOVo0uH7B3YWj6tTnZZA1Ei4CaEWvNlNQWPNXusHZa5v3BKegkC2vqC+/10gPslcrK/WM8r3P1upvp8DtJBsYVLh++IYDpSNTob5mBrQiMwQyRETaRG7+UqHfB+elIdlg37cC+mo/63H0Y6QqDkixF+0yzZhb3oNyKkISscndyB+nMrpxe7gdQ6rwoYIquV/kY/s0cAeNZEEOjvdmjt2c47DbU73ImwbEVD0A8bV4C8jdQgXwN8A2GcYwiNk5UybkUQtZdkSBwawCf0zxMDKW1vqM/VLNFtQwImS93eOAApGZW1hpaRmIdwDcyvWeRDl7S7U8WkJD2wLt6qxud7wAMu2EhrksolQ8BhGamFenai4J2jBt108yvc/IHtkfr/S933R4HvSpCWtT0QYHHZeqgoi2HP8mXgJDfuuJ8BWHsqRtp6pk9FJpakAUKDlyC1y9P0gmsD/9Qhnf65TB9uiCzhO7pYIQT0mzQyekz//momaEBDM1w/gyAq6654U6R2Hk1SADYp2BD2b48Ab1BHbGlGqQyLgW67dNwXEVT8aA4xiRnxk5CSyF8XGGqjFbWa3T1D5rQsz7A/leVAPqly8+cUk2NQ07T4KNLCF/f4ey2k1Wh2gaG2f38PUrq7WwMZaqJ7opxAJelAhZl1fnyL6DJ12HCYJn/MUVtxJFKqLHpvTYRI5coS5SdyGdn1Onz2WeeYJnVKCdnNnAl8RJV+HrkJSKvVafr/2yGjDdMAYGw5kuouSue2Xep1TD2YNCM4bU0/vA4BBoE0h+dFyHbftyJN5INmGEs7UNA1NR02mXnSZmT2QupeIwFlaVPN5qqiHXFUfwxRBG1ENMciXN0EyGl8G8WbVQYPDKS+zSC/WGVwX4Rpqc6GOnKOyMaqMMuMpJMAhW/2GK9pSeABje4e7JGZzfbXpgjHw2YdIupdkNJd5LKLrZq8h6JAKe0yIxFCc2d1/6jK5I367j9bEEzBBEtbu2Qd/Ije20gX2YJ+9rGn/Uin+hruTQEAWcMRh+ysfz8h8Fl72Vcwwa6TdmBueRhp08oz6CZkB7rm8N0KUt2oRzteA8BYN/WyGzWTMaoeeLfnqP7eBZrhyBMs84xnIent3TS7MEyHPdMNqmy/7gA77Q6KaRWCpTi/wAkyQ78Fwoq3SQ1Rp6GNv1YV03k6ROqmbLevWWYmdSQ4izRKGp3E/vqDOm+PB/STGfMjNYBJqQcOxtZlPc0o+UzUVIx9tqOgleH49kDYUxHSqiKjt2ZF72OFBoLdyEy/909fap6RYyCLCkgvZiIgLhsNGBW0XX2M7iePJMApBYxlkV4vZiLV3c6ZE2zOxrdrMjDiYTrPjp3lIpXJTChqIiQdZwe85cghmr+NIPXbNUXsFqXrjkbwCzO6pBb0jHNmqEO0sGbAh8VQmzw9XaN7WlrTtHfT1WDjSe6vRQjIMhRwmFwdg5QA69DaZ3rza0j3w8GuxSoqUbazte8VHZyWdsWDeRhWYJK1DJyFDFnIU/axqw8f69h78kZSXoOAxrpJG5jQXKe/E+XUTBKkLvROjeSLvucK9wyDJnVfrEJalE1ImPrM6BgB191WsHYtBNDxTXW2oiEhw4icjPaa1rVU7Zga6hsK6oQNZ6gvQ1LJdTTUqQPJ3VKDqM2ufW+fQJBlgQ0nu7+sTHI+krptFMhPotHjLgNu7TMZP1T1daQB2KUIr4UnO2n2ec0i50jPQxjH0oJrNGsYEOSNmuz3+Mo/OeMuDfk4AuIiACBDPbIFASVvRvvSHknt7dq/KkgpAXwFSbPnQf/ryDDWrOA+7J2vAI7QTEJeO4NR1O0P/HtO6xpDgIBvTwGZO4Yw1C3uIvW9JYJpGKlx1iGtIY/48/WwvfJRBE3fDGSsQNK356lDPAjZMWfhZcCXnKOaItnIyzPG2vc2+1GTvWQd/O/ZfOp1kXbIdTvMDLinRs7dmHsnWarTXhw7PzCp6zPuofZ3lSr6UD03KQAgGDnKWT0OtEhdz3SRB5p24Kp9QAWjLgxjacVK5CZkkkvIoBmg5XgmUM/N1YCn2uTjblVUiwuiclPAuyLtWXNr2HbEtNMwkGh8HCHMuT+QqbN9t5FGrjMrLgFErla8gIl+Xz+DPWusj0dq1jhCknaP2Qf/eyMIUcqVSEdJ0mGA02U1KJPYtTfRe10bwXus5XAfszL/FjrXcGj4JoJ2n13w+Vl6Rs0eFNkfkD7adwWirbiDofg1vRNkJK7x+2zg7wOpxqhDtHStRpTDRs7Rj8PScl9H2LeOLEA0J0jae2/KRQfXkQDlbgQIdDmC3M2TM3sfr0Pas97ABHVuwvSxOh6mo+5BqIovDbQ+WjZmW4QO9Ei359KKjM1nkK6PrGw3Mu2M++mZANcjraC/1fMZhD9jZUDvmkOwLlIi2hFJ8++AjD+mQ/tVhJTnfuja3RjwsKNjgNcwMTDFjkUIR8BIFzOmx9SGGhh13QLdGrmxubc3e8zJ/5QJekV6SEemCDgpmoKQfRdBK0eTSIV+eTVXJLYpj0FYonYJTDdLVRAvQBDTi1YTA2TvYpF6+50M9TgylOBihDhk6bShXu33V1OjxBORec15jrDVhN+iTvB/VtAzbY7lPsAHOhAdNTLjfptMTKw61H3ufqRDIiogullPdUleVjYuAJbNQOr37RoFCTOQ1uLsMb/H79lsEteeF/cghCCj3f7YA/gqcUMOrpzk7GbfarOkh9GN5pXdzwQPeLIapxxT9c6OQNpI4kBaroXMwv1eBln+fE+VZg31PQVybuWB3dWhmdcBBDN9rD4Zq1MQ/E4nIOLnkQlurZKBZKYHr0eIfpY5hHerAIPRzAz5abn9OB8hJtk859wMqbvPc3VcPwQnLgD3zkD4Ic6oYRavaMhML0Np2j0OsFkR94gcXY4gGenBUAL8jMkPtLCa9uMOvNbuATj1LbeBUqbTcnepJx+ixDMg2St1rQcJJGsOOKJ+qKCO33SG+ntOthusXuMg68woNog9FiMjeu8LkKRELmt1JsJcVia2wRz0pchY4ZcjrHuPZUBdrcC9NpzRjgoMVpIzFSvKAM7yBo6YXnoK+CAyY7qOWamiITO9DKXpeVBHPImI9n+YIO/PG8+WZvruEgQ13A+k8iUuzZLkXD/JtBE8jAAl6kZz6e815GmlJablzkMoNJvOQ/b3YSnd9yGAmEG1jTzhNnPRSMAy3tEi9+yxu1aS4QofQ+p3Z2eigqrGUObtgSozHWOZ99KuQI67OVZ12F9lvCeLWpcAh7h346/bdu9tPvDfOTOcy3JabMLdx5H07fsQbEW25arT+nVjXKKA3LYyc95jpGy0O5LmjgcgN6G9lNUz7YrPBEjiSfRhjmrqJA6MZ4sy/3c9AvyKp2Ao/Zzpu5w3kr1+nBkrdrEq+rqMpPSUd+vkjEBrICCEuANNXT+M0AeREsSMwGhDI134BgKoGkTbyJruXYRGAjZLTF3+FOknbTv5zhJgzHQ8ARcjtewyI8wRtz5x5j00EBRpVes0T1OcnnSnUZEcdyqRbOPWx+8ve2+zS95fN2hUmNVP/v2AMCZ+X2W9TLlJHe9FQwOYLyIDkvZH2lgX89wRnnGGy789hZnjUcYw360Zhz0RAOZtPdKz9lMnr+nurWj0aKPC097TWs1JPtRx6gVGyFQpEL7ujZkgW38MqVt8zim9ZIrphkRTi8c4cvzH3f/N1/swmrcf1iwdZwrkKXU2Zmam8dyqC7QFQuBSRl3WRxeHa1Q9PxMBeoa4RNdwT13TKkfHLUQAKHdmInnPGvZISe/JZPYCpC3tVF2vlUj7RJJB8S5FCHU+gXQhRCXJzp0qO8+owbnD/f96SJvPMxVmhG5BBmwYm9Zi3ZMzNVpbVDG+IHWsfkvcBDR0T42qXro9A5jst+w0gP/S9PJrECzPVmqMVmbIeHZDxvJ+q6KpTz6V3UbanS7T1p+tkQlW+2kwMQd4QR8yaUt1PX6CkEpd7ZjxogEiuduqd0eQEkWcI09r6Dre43RgFdH9psBDUZpOWj5n6Rd53tO5TEwNGde/Ly/hAebodfP4puc6Q7SC+h5ruNGetuijTHAvP12BB2nGeHbmPjx71bi+76cHtIkGPTHIj6+coe9kVo6RXumi6hUVyM64WyN/zK5Y7huZaVDLM/t0dIBrNzewv+KKgKQmHzN1nUL7eqbK1ooBU4W2cjJZc53h3hDpDIm6KE0+5cC+dyFp9iWZgSvNmnBXjHQxu6AsW9ZJfuL/Ax4FrcffypyMAAAAAElFTkSuQmCC"); }
+/* No horse on this page. */
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero band on-sky" id="top">
+  <div class="panel hero-short" id="hero-panel">
+    <canvas class="panel-art" id="hero-art" aria-hidden="true"></canvas>
+    <nav class="site-nav" aria-label="Main">
+      <a class="wordmark" href="/" title="WRKHRSE home">
+        <span class="star" aria-hidden="true"></span>
+        <img class="wm" alt="WRKHRSE" width="193" height="15" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      </a>
+      <div class="nav-right">
+        <ul>
+          <li><a class="link" href="/#what">What we do</a></li>
+          <li><a class="link" href="/#work">Our work</a></li>
+          <li><a class="link" href="/#how">How it works</a></li>
+        </ul>
+        <a class="pill pill--nav" href="#contact">Book a call</a>
+      </div>
+    </nav>
+    <div class="hero-copy">
+      <h1><span>Put routine</span> <span>work in motion.</span></h1>
+      <p class="hero-line">We build the proper systems for the repeat work around an enquiry, so your team gets back to the important work.</p>
+      <div class="hero-actions">
+        <a class="pill" href="#contact">Book a call</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="problem band" data-rv aria-labelledby="get-title">
+    <div class="col">
+      <h2 class="statement rv" id="get-title">What you get.</h2>
+      <ul class="gets">
+        <li class="rv" style="--i:1">Enquiry details gathered for you.</li>
+        <li class="rv" style="--i:2">Common questions answered.</li>
+        <li class="rv" style="--i:3">Quotes followed up.</li>
+        <li class="rv" style="--i:4">Records updated.</li>
+        <li class="rv" style="--i:5">Clear rules for when a person steps in.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="flow band on-sky" id="example" data-rv aria-labelledby="example-title">
+    <div class="panel">
+      <div class="col">
+        <h2 class="flow-label mono rv" id="example-title">Example</h2>
+        <p class="example-text rv" style="--i:1">A new enquiry comes in while you are on a job. The system asks what the customer needs and saves the details. It answers the common questions. It offers a time to talk. Before the call, an AI assistant can prepare a summary for your review. Afterwards, the next steps are recorded, with reminders or approved messages based on your process.</p>
+        <p class="example-note rv" style="--i:2">This is an example, not a client result.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" id="how" data-rv aria-labelledby="how-title">
+    <div class="col">
+      <h2 class="statement rv" id="how-title">How it works.</h2>
+      <ol class="steps">
+        <li class="rv" style="--i:1"><span class="mono" aria-hidden="true">01</span><h3>Find the right job</h3><p>We look at what happens after someone enquires and where work gets repeated or delayed.</p></li>
+        <li class="rv" style="--i:2"><span class="mono" aria-hidden="true">02</span><h3>Define the work</h3><p>We map the steps and the tools involved, and agree on the scope and cost before building.</p></li>
+        <li class="rv" style="--i:3"><span class="mono" aria-hidden="true">03</span><h3>Build and test</h3><p>We test how the pieces work together, including the exceptions and the points that need a person&rsquo;s approval.</p></li>
+        <li class="rv" style="--i:4"><span class="mono" aria-hidden="true">04</span><h3>Put it to work</h3><p>We walk your team through it and document how it works.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec band" id="faqs" data-rv aria-labelledby="faqs-title">
+    <div class="col faq-end">
+      <h2 class="rv" id="faqs-title">FAQs</h2>
+      <div class="faqs rv" style="--i:1">
+        <details><summary><h3>Do I need to know what I want to automate?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">No. Start with what keeps taking up your time. We will help you work out whether AI, a simpler automation, or a change to the process is the right fit.</p></details>
+        <details><summary><h3>Can you work with the tools we already use?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">That is where we start. We check what your existing tools can connect to and explain any limitations before agreeing on the build.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="end band on-sky" id="contact" data-rv aria-labelledby="end-title">
+    <div class="panel" id="end-panel">
+      <canvas class="panel-art" id="end-art" aria-hidden="true"></canvas>
+      <h2 class="rv" id="end-title">Put us to <em>work.</em></h2>
+      <p class="end-line rv" style="--i:1">Tell us what keeps landing back on your desk.</p>
+      <div class="cal-wrap" id="cal-wrap">
+        <p class="cal-label mono">Booking preview &middot; Cal.com</p>
+        <div class="cal" role="group" aria-label="Book an intro call (preview)">
+          <div class="cal-host">
+            <div class="cal-avatar" aria-hidden="true">AB</div>
+            <p class="who">Anthony Balatti</p>
+            <h3>Intro call</h3>
+            <ul class="cal-meta">
+              <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8l2.5 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>15 min</li>
+              <li><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="4" width="9" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 7l4-2.25v6.5l-4-2.25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Video call</li>
+              <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.75 8h12.5M8 1.75c1.9 2 1.9 10.5 0 12.5M8 1.75c-1.9 2-1.9 10.5 0 12.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span class="tz" id="cal-tz">Your time zone</span></li>
+            </ul>
+          </div>
+          <div class="cal-month">
+            <div class="cal-month-head">
+              <h3 id="cal-month-title">Month</h3>
+              <div class="cal-nav">
+                <button class="cal-btn" type="button" id="cal-prev" aria-label="Previous month"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+                <button class="cal-btn" type="button" id="cal-next" aria-label="Next month"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </div>
+            <div class="cal-dow" aria-hidden="true" id="cal-dow"></div>
+            <div class="cal-grid" id="cal-grid"></div>
+          </div>
+          <div class="cal-slots">
+            <h3 id="cal-day-title">Pick a day</h3>
+            <div class="cal-slot-list" id="cal-slots"></div>
+            <p class="cal-note" id="cal-note" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="util band">
+  <div class="util-row">
+    <div class="util-id">
+      <a class="wordmark" href="/" title="WRKHRSE home">
+        <span class="star" aria-hidden="true"></span>
+        <img class="wm" alt="WRKHRSE" width="193" height="15" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      </a>
+      <span>&copy; 2026 <span data-studio-name>WRKHRSE</span> &middot; wrkhrse.ai</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+(() => {
+  const doc = document.documentElement;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  /* ---------- Reveals ---------- */
+  const sections = [...document.querySelectorAll("[data-rv]")];
+  if ("IntersectionObserver" in window && !reduce.matches) {
+    doc.classList.add("js-anim");
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    sections.forEach((s) => io.observe(s));
+  } else {
+    sections.forEach((s) => s.classList.add("in", "settled"));
+  }
+
+  /* ---------- Example workflow: the five steps print as a typed log when the band arrives ---------- */
+  (() => {
+    const log = document.getElementById("flow-log");
+    if (!log || reduce.matches || !("IntersectionObserver" in window)) return; // static and fully visible
+    const lines = [...log.querySelectorAll("li")];
+    log.classList.add("is-typing");
+    const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+    const run = async () => {
+      for (const li of lines) {
+        const full = li.querySelector(".ghost").textContent, out = li.querySelector(".typed");
+        li.classList.add("is-active");
+        for (let n = 1; n <= full.length; n++) { out.textContent = full.slice(0, n); await wait(reduce.matches ? 0 : 24); }
+        await wait(260);
+        li.classList.remove("is-active");
+      }
+      log.classList.remove("is-typing");
+    };
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); run(); } }, { threshold: 0.4 });
+    io.observe(log);
+  })();
+
+  /* ---------- In-page links scroll in place, so they work inside any preview frame ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", (e) => {
+    const target = document.getElementById(a.getAttribute("href").slice(1)); if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "start" });
+  }));
+
+  /* ---------- Booking preview (looks like a Cal.com month view; nothing books) ---------- */
+  (() => {
+    const grid = document.getElementById("cal-grid");
+    if (!grid) return;
+    const title = document.getElementById("cal-month-title"), dow = document.getElementById("cal-dow");
+    const slotsEl = document.getElementById("cal-slots"), dayTitle = document.getElementById("cal-day-title");
+    const note = document.getElementById("cal-note"), prev = document.getElementById("cal-prev"), next = document.getElementById("cal-next");
+    const locale = undefined;
+    try { document.getElementById("cal-tz").textContent = Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, " "); } catch (e) {}
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const isOpen = (d) => d >= today && d.getDay() !== 0 && d.getDay() !== 6;
+    const SLOTS = [[9, 0], [9, 30], [10, 30], [13, 0], [14, 30], [16, 0]];
+    let view = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selected = new Date(today); while (!isOpen(selected)) selected.setDate(selected.getDate() + 1);
+    const sameDay = (a, b) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    // Monday-first weekday labels
+    for (let i = 0; i < 7; i++) { const d = new Date(2024, 0, 1 + i); const s = document.createElement("span"); s.textContent = d.toLocaleDateString(locale, { weekday: "short" }).toUpperCase(); dow.append(s); }
+    function renderMonth() {
+      const m = view.getMonth(), y = view.getFullYear();
+      const name = view.toLocaleDateString(locale, { month: "long" });
+      title.innerHTML = ""; title.append(name + " "); const ys = document.createElement("span"); ys.textContent = String(y); title.append(ys);
+      prev.disabled = y === today.getFullYear() && m === today.getMonth();
+      const limit = new Date(today.getFullYear(), today.getMonth() + 2, 1);
+      next.disabled = new Date(y, m + 1, 1) >= limit;
+      grid.innerHTML = "";
+      const lead = (new Date(y, m, 1).getDay() + 6) % 7;
+      for (let i = 0; i < lead; i++) grid.append(document.createElement("span"));
+      const days = new Date(y, m + 1, 0).getDate();
+      for (let n = 1; n <= days; n++) {
+        const d = new Date(y, m, n), b = document.createElement("button");
+        b.type = "button"; b.className = "cal-btn"; b.textContent = String(n);
+        b.setAttribute("aria-label", d.toLocaleDateString(locale, { weekday: "long", month: "long", day: "numeric" }) + (isOpen(d) ? ", available" : ", unavailable"));
+        if (sameDay(d, today)) { b.classList.add("is-today"); b.setAttribute("aria-current", "date"); }
+        if (isOpen(d)) {
+          b.classList.add("is-open");
+          b.setAttribute("aria-pressed", String(sameDay(d, selected)));
+          b.addEventListener("click", () => { selected = d; note.textContent = ""; renderMonth(); renderSlots(); grid.querySelector('[aria-pressed="true"]')?.focus(); });
+        } else b.disabled = true;
+        grid.append(b);
+      }
+    }
+    function renderSlots() {
+      dayTitle.innerHTML = ""; dayTitle.append(selected.toLocaleDateString(locale, { weekday: "short" }) + " ");
+      const ds = document.createElement("span"); ds.textContent = selected.toLocaleDateString(locale, { month: "short", day: "numeric" }); dayTitle.append(ds);
+      slotsEl.innerHTML = "";
+      for (const [h, mi] of SLOTS) {
+        const t = new Date(selected); t.setHours(h, mi, 0, 0);
+        const b = document.createElement("button");
+        b.type = "button"; b.className = "cal-slot"; b.setAttribute("aria-pressed", "false");
+        b.textContent = t.toLocaleTimeString(locale, { hour: "numeric", minute: "2-digit" });
+        b.addEventListener("click", () => {
+          slotsEl.querySelectorAll(".cal-slot").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+          note.textContent = "";
+          requestAnimationFrame(() => { note.textContent = "Preview only. Booking isn\u2019t connected yet, so nothing was booked."; });
+        });
+        slotsEl.append(b);
+      }
+    }
+    prev.addEventListener("click", () => { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); renderMonth(); });
+    next.addEventListener("click", () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); renderMonth(); });
+    renderMonth(); renderSlots();
+  })();
+
+  /* ---------- Art: one halftone printer for the sky, the ridge and the horse ---------- */
+  const css = getComputedStyle(doc);
+  const tok = (n) => css.getPropertyValue(n).trim();
+  const hexToABGR = (hex) => { const n = parseInt(hex.replace("#", ""), 16); return ((255 << 24) | ((n & 255) << 16) | (n & 0xff00) | (n >> 16)) >>> 0; };
+  const C = { sky: tok("--sky"), paper: tok("--paper"), sand: tok("--sand"), ink: tok("--ink"), deep: tok("--sky-deep"), far: tok("--sky-far"), work: tok("--work"), light: tok("--work-light") };
+  const PAPER32 = hexToABGR(C.paper), INK32 = hexToABGR(C.ink), DEEP32 = hexToABGR(C.deep), FAR32 = hexToABGR(C.far), WORK32 = hexToABGR(C.work), LIGHT32 = hexToABGR(C.light), SCAN32 = ((30 << 24) | (hexToABGR(C.deep) & 0xffffff)) >>> 0;
+  const monoFont = (px) => px.toFixed(1) + 'px "Geist Mono", ui-monospace, Menlo, monospace';
+  const FIELD_TEXT = "websites \u00b7 booking flows \u00b7 ai systems \u00b7 ";
+
+  const SCREEN_CSS = 4; // the sky's halftone cell, in CSS pixels
+  const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => (v + 0.5) / 16);
+  const bayer = (i, j) => BAYER[(j & 3) * 4 + (i & 3)];
+  const clamp01 = (x) => Math.min(1, Math.max(0, x));
+  const smooth = (a, b, x) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+  const hash = (x, y, s) => { let h = (Math.imul(x, 374761393) + Math.imul(y, 668265263) + Math.imul(s, 1442695041)) | 0; h = Math.imul(h ^ (h >>> 13), 1274126177); h ^= h >>> 16; return (h >>> 0) / 4294967295; };
+  const vnoise = (x, y, s) => {
+    const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+    const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+    const a = hash(xi, yi, s), b = hash(xi + 1, yi, s), c = hash(xi, yi + 1, s), d = hash(xi + 1, yi + 1, s);
+    return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
+  };
+  const fbm = (x, y, s) => vnoise(x, y, s) * 0.57 + vnoise(x * 2.03, y * 2.03, s + 17) * 0.29 + vnoise(x * 4.11, y * 4.11, s + 31) * 0.14;
+  const rng = (seed) => () => { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+
+  /* The one place the horse is described. A new horse needs its data URI in --horse and these numbers. */
+  const HORSE = { w: 553, h: 274, hoofX: 0.14, clear: 7 }; // pixel size; where the trailing hoof is, as a fraction of width; px of air under it
+  const HB = HORSE;
+  const horseImg = new Image();
+  const horseSrc = (tok("--horse").match(/url\(\s*["']?([^"')]+)["']?\s*\)/) || [])[1];
+  const horseReady = new Promise((res) => { if (!horseSrc) return res(); horseImg.onload = res; horseImg.onerror = res; horseImg.src = horseSrc; });
+
+  /* A scene is a sky of soft cumulus printed through one fine diagonal halftone screen and, in the hero,
+     a far range, and the horse on a hill set in moving type. */
+  class Scene {
+    constructor(host, canvas, plan) {
+      this.host = host; this.canvas = canvas; this.ctx = canvas.getContext("2d"); this.plan = plan;
+      this.t = 0; this.time = 0; this.n = 0; this.visible = false;
+    }
+    layout() { // everything is built offscreen first; the visible canvas is resized and painted in one go at the end
+      const r = this.host.getBoundingClientRect();
+      const W = Math.round(r.width), H = Math.round(r.height); if (W < 40 || H < 40) return false;
+      const dpr = Math.min(window.devicePixelRatio || 1, 3);
+      Object.assign(this, { W, H, dpr, box: r, cw: Math.round(W * dpr), ch: Math.round(H * dpr) });
+      this.cell = Math.max(2, Math.round(2.4 * dpr)); this.cs = this.cell / dpr;
+      this.gw = Math.ceil(this.cw / this.cell); this.gh = Math.ceil(this.ch / this.cell);
+      const p = this.plan(this); if (!p) return false; this.p = p;
+      this.buildBack();
+      this.buildSky();
+      this.buildFront();
+      if (this.canvas.width !== this.cw || this.canvas.height !== this.ch) { this.canvas.width = this.cw; this.canvas.height = this.ch; }
+      this.draw(true);
+      this.canvas.classList.add("is-on");
+      return true;
+    }
+    ridgeTop(x) { return this.p.ridge(x) - 5 * (fbm(x / 14, 2.1, 5) - 0.35); }
+    buildBack() { // two ranges of mountains, printed once
+      const { cs, gw, gh, W, H } = this, p = this.p; this.back = null; if (!p.range) return;
+      const m = document.createElement("canvas"); m.width = gw; m.height = gh;
+      const mg = m.getContext("2d"), img = mg.createImageData(gw, gh), u = new Uint32Array(img.data.buffer);
+      const R = p.range, peak = (x, f, seed) => { const a = 1 - Math.abs(2 * fbm(x / W * f, 1.3, seed) - 1), b = 1 - Math.abs(2 * vnoise(x / W * f * 3.1, 4.2, seed + 5) - 1); return Math.pow(a, 1.7) * 0.74 + b * 0.26; };
+      const farTop = (x) => R.y - R.far * R.env(x) * peak(x, R.freq, 21), nearTop = (x) => R.y + R.near * 0.25 - R.near * (0.4 + 0.6 * R.env(x)) * peak(x + 400, R.freq * 1.5, 37);
+      for (let i = 0; i < gw; i++) {
+        const x = (i + 0.5) * cs, yf = farTop(x), yn = nearTop(x), tall = Math.max(8, R.y - yf);
+        const lit = smooth(-0.25, 0.7, (farTop(x + 4) - farTop(x - 4)) / 8), litN = smooth(-0.2, 0.6, (nearTop(x + 4) - nearTop(x - 4)) / 8); // faces that fall away to the right catch the last light
+        for (let j = Math.max(0, Math.floor(Math.min(yf, yn) / cs)); j < gh; j++) {
+          const y = (j + 0.5) * cs, o = j * gw + i, b = bayer(i, j);
+          if (y >= yn) { u[o] = y - yn < cs * 1.2 && 0.25 + 0.6 * litN > b ? LIGHT32 : DEEP32; continue; }
+          if (y >= yf) { const d = y - yf; u[o] = d < cs * 1.3 && 0.3 + 0.7 * lit > b ? LIGHT32 : 0.62 * lit * (1 - d / (tall * 0.5)) > b ? PAPER32 : FAR32; continue; }
+        }
+      }
+      mg.putImageData(img, 0, 0); this.back = m;
+    }
+    buildFront() { // the lit crest and its grass, in front of the horse; static
+      const { W, H, dpr, cs, gw, gh } = this, p = this.p;
+      const c = document.createElement("canvas"); c.width = this.cw; c.height = this.ch;
+      const g = c.getContext("2d");
+      if (p.ridge) {
+        this.rows = document.createElement("canvas"); this.rows.width = c.width; this.rows.height = c.height; this.rctx = this.rows.getContext("2d");
+        const hp = new Path2D(); hp.moveTo(-2, H + 2); for (let x = -2; x <= W + 4; x += 4) hp.lineTo(x, this.ridgeTop(x) + 6); hp.lineTo(W + 4, H + 2); hp.closePath(); this.hillPath = hp;
+        const rc = new Float32Array(gw); for (let i = 0; i < gw; i++) rc[i] = this.ridgeTop((i + 0.5) * cs);
+        if (p.words) { // a dithered shade under the words: the type thins out there instead of fighting them
+          const r = p.words, vm = document.createElement("canvas"); vm.width = gw; vm.height = gh;
+          const vg = vm.getContext("2d"), vi = vg.createImageData(gw, gh), vu = new Uint32Array(vi.data.buffer);
+          for (let j = 0; j < gh; j++) for (let i = 0; i < gw; i++) { const x = (i + 0.5) * cs, y = (j + 0.5) * cs; if (y < rc[i] + 8) continue; const d = Math.hypot(Math.max(r.x0 - x, 0, x - r.x1), Math.max(r.y0 - y, 0, y - r.y1)); if (1.08 * smooth(130, 0, d) > bayer(i, j)) vu[j * gw + i] = DEEP32; }
+          vg.putImageData(vi, 0, 0); this.shade = vm;
+        } else this.shade = null;
+        // the last light on the crest: a tight warm rim along the top of the hill, stronger toward the sun
+        const m = document.createElement("canvas"); m.width = gw; m.height = gh;
+        const mg = m.getContext("2d"), img = mg.createImageData(gw, gh), u = new Uint32Array(img.data.buffer);
+        for (let i = 0; i < gw; i++) {
+          const x = (i + 0.5) * cs, top = rc[i] + 5, sun = 0.35 + 0.65 * smooth(W * 0.1, W * 0.85, x);
+          for (let j = Math.max(0, Math.floor(top / cs)); j < gh; j++) { const d = (j + 0.5) * cs - top; if (d < 0) continue; if (d > 9) break; if (0.95 * sun * Math.exp(-d / 3.2) > bayer(i, j)) u[j * gw + i] = d < 3 ? LIGHT32 : WORK32; }
+        }
+        mg.putImageData(img, 0, 0); g.imageSmoothingEnabled = false; g.drawImage(m, 0, 0, gw * this.cell, gh * this.cell);
+        // grass strokes along the crest
+        g.save(); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.strokeStyle = C.light; g.lineCap = "round";
+        const r = rng(7), n = Math.round(W / 14);
+        for (let k = 0; k < n; k++) {
+          const x = W * r(), base = this.ridgeTop(x) + 4 + r() * 6, len = (6 + r() * 22) * (p.grass || 1), lean = (r() - 0.42) * 0.7;
+          g.globalAlpha = 0.5 + r() * 0.45; g.lineWidth = 0.8 + r() * 0.7;
+          g.beginPath(); g.moveTo(x, base); g.quadraticCurveTo(x + lean * len * 0.2, base - len * 0.6, x + lean * len, base - len); g.stroke();
+        }
+        g.restore();
+      }
+      this.front = c;
+    }
+    drawRows() { // the hill: rows of type in perspective, sliding slowly past each other
+      const p = this.p; if (!p.ridge || !this.rows) return;
+      const g = this.rctx, { W, dpr } = this, t = this.time;
+      g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, this.rows.width, this.rows.height);
+      g.setTransform(dpr, 0, 0, dpr, 0, 0); g.save(); g.clip(this.hillPath);
+      g.globalAlpha = 1; g.fillStyle = C.deep; g.fillRect(0, 0, W, this.H);
+      g.textAlign = "center"; g.textBaseline = "alphabetic";
+      const L = FIELD_TEXT.length, ROWS = p.rows;
+      for (let k = 1; k <= ROWS; k++) {
+        const f0 = Math.pow((k - 1) / ROWS, 1.35), f = Math.pow(k / ROWS, 1.35), size = 7 + (p.type - 7) * Math.pow(k / ROWS, 1.3), adv = size * 0.62;
+        const off = t * (7 + k * 1.6) * (k % 2 ? 1 : -1), base = 0.3 + 0.6 * (k / ROWS);
+        g.font = monoFont(size); g.fillStyle = k <= 2 ? C.light : C.paper; // the rows nearest the crest catch the light
+        const first = Math.floor((off - adv) / adv), lastSlot = Math.ceil((W + off + adv) / adv);
+        for (let slot = first; slot <= lastSlot; slot++) {
+          const ch = FIELD_TEXT[(((slot + k * 7) % L) + L) % L]; if (ch === " ") continue;
+          const x = slot * adv - off + adv / 2, top = this.ridgeTop(x) + 12, depth = p.floor - top;
+          const fit = depth * (f - f0) / size; if (fit < 0.85) continue; // rows drop out where the hill is too shallow to hold them
+          g.globalAlpha = base * Math.min(1, (fit - 0.85) * 4);
+          g.fillText(ch, x, top + depth * f);
+        }
+      }
+      g.restore();
+    }
+    buildSky() { // the slow part, done once per layout: a soft cloud field, the keep-clear mask and the halftone screen
+      const p = this.p, { W, H } = this; this.sky = null;
+      const skyH = Math.max(8, Math.min(H, Math.ceil(p.skyBottom || H))), sc = this.dpr; // the screen is printed at device resolution, never resampled
+      const q = 6, lw = Math.round(W * 1.6 / q), lh = Math.ceil(skyH / q) + 1, FW = lw * q; // the field is wider than the panel and wraps, so it can pan for ever
+      const S0 = Math.max(W, 820) / (p.cloudScale || 3), seed = p.seed || 3, cover = p.cover || 0;
+      const at = (X, Y) => { // multi-octave noise, domain-warped so the edges billow
+        let px = X / S0, py = Y / (S0 * 0.6);
+        const wx = fbm(px * 1.4 + 5.2, py * 1.4, seed + 40) - 0.5, wy = fbm(px * 1.4, py * 1.4 + 9.1, seed + 60) - 0.5;
+        px += 0.55 * wx; py += 0.4 * wy;
+        return smooth(0.5 - cover, 0.7 - cover, fbm(px, py, seed) * 0.8 + fbm(px * 5.3, py * 5.3, seed + 7) * 0.2);
+      };
+      const dens = new Float32Array(lw * lh);
+      for (let j = 0; j < lh; j++) for (let i = 0; i < lw; i++) {
+        const X = i * q, Y = j * q, uu = X / FW; let d = at(X, Y);
+        if (uu > 0.8) { const w = smooth(0.8, 1, uu); d = d * (1 - w) + at(X - FW, Y) * w; }
+        dens[j * lw + i] = d;
+      }
+      // volume: a cell is bright where the cloud thins out above it (a lit top) and shaded, then warmed, where cloud sits over it (a base)
+      const lo = document.createElement("canvas"); lo.width = lw; lo.height = lh;
+      const lg = lo.getContext("2d"), li = lg.createImageData(lw, lh), k = Math.max(1, Math.round(S0 * 0.05 / q));
+      for (let j = 0; j < lh; j++) for (let i = 0; i < lw; i++) {
+        const d = dens[j * lw + i], g = d - dens[Math.max(0, j - k) * lw + i], light = smooth(-0.1, 0.2, g), o = (j * lw + i) * 4;
+        li.data[o] = Math.pow(d * (0.36 + 0.64 * light), 0.9) * 238;
+        li.data[o + 1] = d * smooth(0.03, -0.13, g) * (0.25 + 0.75 * j / lh) * 255;
+        li.data[o + 3] = 255;
+      }
+      lg.putImageData(li, 0, 0);
+      const hi = document.createElement("canvas"); hi.width = FW; hi.height = skyH;
+      const hg = hi.getContext("2d", { willReadFrequently: true }); hg.imageSmoothingEnabled = true; hg.imageSmoothingQuality = "high"; hg.drawImage(lo, 0, 0, lw, lh, 0, 0, FW, lh * q);
+      const src = hg.getImageData(0, 0, FW, skyH).data, tone = new Uint8Array(FW * skyH), warm = new Uint8Array(FW * skyH);
+      for (let i = 0, n = FW * skyH; i < n; i++) { tone[i] = src[i * 4]; warm[i] = src[i * 4 + 1]; }
+      const mq = 4, mw = Math.ceil(W / mq), mh = Math.ceil(skyH / mq), mask = new Uint8Array(mw * mh), base = new Uint8Array(skyH); // the keep-clear mask is soft, so a quarter of the resolution is plenty
+      for (let y = 0; y < mh; y++) for (let x = 0; x < mw; x++) mask[y * mw + x] = clamp01(p.clear(x * mq + 2, y * mq + 2)) * 255;
+      for (let y = 0; y < skyH; y++) base[y] = 10 + 26 * Math.pow(y / skyH, 1.6); // the sky's own gradient goes through the screen too
+      // one 45 degree screen: dots that grow from their centres as the tone rises.
+      // The cell is a fixed SCREEN_CSS in CSS pixels at any devicePixelRatio, so the Artifact and GitHub Pages print the same screen.
+      const T = Math.max(3, Math.round(SCREEN_CSS * sc)), order = [];
+      for (let y = 0; y < T; y++) for (let x = 0; x < T; x++) order.push([Math.cos(2 * Math.PI * (x + y + 0.5) / T) * Math.cos(2 * Math.PI * (x - y) / T) + hash(x, y, 91) * 0.02, y * T + x]);
+      order.sort((a, b) => b[0] - a[0]); const lut = new Uint8Array(T * T); order.forEach(([, idx], r) => { lut[idx] = 4 + r / (T * T) * 250; });
+      const cv = document.createElement("canvas"); cv.width = this.cw; cv.height = Math.round(skyH * sc);
+      const cg = cv.getContext("2d"), img = cg.createImageData(cv.width, cv.height);
+      const xc = new Int32Array(Math.round(FW * sc)); for (let i = 0; i < xc.length; i++) xc[i] = Math.min(FW - 1, (i / sc) | 0);
+      const xm = new Int32Array(cv.width); for (let i = 0; i < xm.length; i++) xm[i] = Math.min(mw - 1, (i / sc / mq) | 0);
+      this.sky = { cv, cg, img, px: new Uint32Array(img.data.buffer), tone, warm, mask, base, lut, T, sc, FW, skyH, xc, xm, mq, mw };
+    }
+    renderSky() { // the fast part: slide the field under the fixed screen and threshold it
+      const S = this.sky; if (!S) return;
+      const { px, tone, warm, mask, base, lut, T, sc, FW, skyH, xc, xm, mq, mw } = S, dw = S.cv.width, dh = S.cv.height, FWd = xc.length, scanEvery = Math.max(2, Math.round(3 * sc));
+      const start = ((-Math.floor(this.time * 1.3 * sc)) % FWd + FWd) % FWd;
+      for (let yd = 0; yd < dh; yd++) {
+        const yc = Math.min(skyH - 1, (yd / sc) | 0), rowT = yc * FW, rowM = ((yc / mq) | 0) * mw, b = base[yc], l1 = (yd % T) * T, l2 = ((yd + 3) % T) * T, scan = yd % scanEvery === 0;
+        let o = yd * dw, xp = start, tx = 0, tw = 2;
+        for (let xd = 0; xd < dw; xd++, o++) {
+          const m = mask[rowM + xm[xd]], f = rowT + xc[xp];
+          if (((b * m) >> 8) + ((tone[f] * m) >> 8) > lut[l1 + tx]) /* on this page the kept-clear sky behind the words prints no dots at all */ px[o] = ((warm[f] * m) >> 8) > lut[l2 + tw] ? WORK32 : PAPER32;
+          else px[o] = scan ? SCAN32 : 0; // faint scan lines, every third line of the sky
+          if (++xp === FWd) xp = 0; if (++tx === T) tx = 0; if (++tw === T) tw = 0;
+        }
+      }
+      S.cg.putImageData(S.img, 0, 0);
+    }
+    draw(clouds) {
+      const g = this.ctx;
+      if (clouds) this.renderSky();
+      this.drawRows();
+      g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, this.cw, this.ch);
+      if (this.sky) { g.imageSmoothingEnabled = false; g.drawImage(this.sky.cv, 0, 0); }
+      g.imageSmoothingEnabled = false;
+      if (this.back) g.drawImage(this.back, 0, 0, this.gw * this.cell, this.gh * this.cell);
+      if (this.rows && this.p.ridge) g.drawImage(this.rows, 0, 0);
+      if (this.shade) g.drawImage(this.shade, 0, 0, this.gw * this.cell, this.gh * this.cell);
+      const hs = this.p.horse;
+      if (hs && horseImg.naturalWidth) { // mid-gallop and perfectly still: the horse never moves
+        const d = this.dpr; g.setTransform(d, 0, 0, d, 0, 0); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = "high";
+        g.drawImage(horseImg, hs.x, hs.y, hs.w, hs.h);
+        g.setTransform(1, 0, 0, 1, 0, 0); g.imageSmoothingEnabled = false;
+      }
+      g.drawImage(this.front, 0, 0);
+    }
+  }
+
+  const heroPanel = document.getElementById("hero-panel"), heroH1 = document.querySelector(".hero h1");
+  const endPanel = document.getElementById("end-panel");
+  const scenes = [
+    // hero: the horse gallops where the layout put it; the hill climbs left to right just under its hooves
+    new Scene(heroPanel, document.getElementById("hero-art"), (s) => {
+      const narrow = s.W < 900, feet = s.H * (narrow ? 0.87 : 0.86), x0 = s.W * (narrow ? 0.5 : 0.62), lift = s.W * (narrow ? 0.05 : 0.08), run = lift / 0.06;
+      const ridge = (x) => feet - lift * Math.tanh((x - x0) / run);
+      const cb = document.querySelector(".hero-copy").getBoundingClientRect(), hb = heroH1.getBoundingClientRect();
+      const depth = s.H - feet, cr = cb.right - s.box.left, horizon = narrow ? feet - lift - 6 : Math.max(feet - lift - 6, cb.bottom - s.box.top + 20); // the horizon stays below the words
+      const words = { x0: -40, y0: cb.top - s.box.top - 18, x1: Math.max(hb.right, cb.left + Math.min(cb.width, 620)) - s.box.left + 44, y1: cb.bottom - s.box.top + 30 };
+      const copyBottom = cb.bottom - s.box.top;
+      return {
+        horse: null, ridge, floor: s.H + 6, rows: Math.max(6, Math.min(12, Math.round(depth / 19))), type: Math.max(14, Math.min(22, depth / 8)),
+        range: { y: horizon, far: s.H * (narrow ? 0.07 : 0.11), near: s.H * 0.045, freq: narrow ? 3.2 : 5.5, env: narrow ? (x) => 0.3 + 0.7 * smooth(s.W * 0.86, s.W * 0.2, x) : (x) => smooth(cr + 40, cr + 260, x) }, // mountains only right of the words
+        words: narrow ? null : words, skyBottom: horizon + 4, seed: 7, cover: 0.15, cloudScale: narrow ? 2.2 : 3.2,
+        clear: narrow ? (x, y) => smooth(copyBottom + 6, copyBottom + 70, y) : (x, y) => smooth(46, 104, y) * Math.max(smooth(cr - 20, cr + 220, x), smooth(cb.top - s.box.top - 30, cb.top - s.box.top - 150, y)), // clouds above and right; the words sit on clear sky
+      };
+    }),
+    // close: sky only, kept well clear of the headline and the booking card
+    new Scene(endPanel, document.getElementById("end-art"), (s) => {
+      const rects = [document.getElementById("end-title"), document.querySelector(".end-line"), document.getElementById("cal-wrap")].map((el) => { const b = el.getBoundingClientRect(); return { x0: b.left - s.box.left - 24, y0: b.top - s.box.top - 24, x1: b.right - s.box.left + 24, y1: b.bottom - s.box.top + 24 }; });
+      const narrow = s.W < 900;
+      return {
+        seed: 5, cover: 0.04, cloudScale: 2.6,
+        clear: (x, y) => { let m = 1; for (const r of rects) { m = Math.min(m, smooth(0, 110, Math.hypot(Math.max(r.x0 - x, 0, x - r.x1), Math.max(r.y0 - y, 0, y - r.y1)))); if (!m) break; } return m; },
+      };
+    }),
+  ];
+
+  /* ---------- Work strips: each site's own header, printed in ink dots on the card's cream ---------- */
+  const SHOTS = {};
+  const shotImgs = {};
+  function drawStrip(canvas) {
+    const key = canvas.dataset.shot; if (!SHOTS[key]) return;
+    let im = shotImgs[key];
+    if (!im) { im = shotImgs[key] = new Image(); im.onload = () => drawStrip(canvas); im.src = SHOTS[key]; }
+    if (!im.naturalWidth) return;
+    const rect = canvas.getBoundingClientRect(), W = Math.max(1, Math.round(rect.width)), H = Math.max(1, Math.round(rect.height));
+    const dpr = Math.min(window.devicePixelRatio || 1, 3), cell = Math.max(2, Math.round(2 * dpr));
+    const gw = Math.ceil(W * dpr / cell), gh = Math.ceil(H * dpr / cell);
+    const off = document.createElement("canvas"); off.width = gw; off.height = gh;
+    const octx = off.getContext("2d", { willReadFrequently: true });
+    // cover crop, anchored where this header's headline sits
+    const k = Math.max(gw / im.naturalWidth, gh / im.naturalHeight), dw = im.naturalWidth * k, dh = im.naturalHeight * k;
+    octx.imageSmoothingQuality = "high"; octx.drawImage(im, (gw - dw) / 2, (gh - dh) * (parseFloat(canvas.dataset.focus) || 0), dw, dh);
+    const img = octx.getImageData(0, 0, gw, gh), px = img.data, u = new Uint32Array(px.buffer), n = gw * gh;
+    const hist = new Uint32Array(256); for (let i = 0; i < n; i++) hist[px[i * 4]]++;
+    let lo = 0, hi = 255, acc = 0; for (let v = 0; v < 256; v++) { acc += hist[v]; if (acc >= n * 0.03) { lo = v; break; } }
+    acc = 0; for (let v = 255; v >= 0; v--) { acc += hist[v]; if (acc >= n * 0.03) { hi = v; break; } }
+    const span = Math.max(24, hi - lo);
+    for (let j = 0; j < gh; j++) for (let i = 0; i < gw; i++) {
+      const o = j * gw + i, lum = clamp01((px[o * 4] - lo) / span);
+      u[o] = (1 - Math.pow(lum, 0.85)) * 0.94 > bayer(i, j) ? INK32 : PAPER32;
+    }
+    octx.putImageData(img, 0, 0);
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    const g = canvas.getContext("2d"); g.imageSmoothingEnabled = false; g.drawImage(off, 0, 0, gw * cell, gh * cell);
+    canvas.style.background = "none";
+  }
+  const strips = [...document.querySelectorAll(".work-strip")];
+
+  /* ---------- Run ---------- */
+  let ready = false, clock = 0, shown = false, laid = "";
+  const sizeKey = () => [heroPanel, endPanel].map((el) => el.offsetWidth + "x" + el.offsetHeight).join("|") + "@" + (window.devicePixelRatio || 1);
+  const below = () => { // everything under the fold waits its turn, so the hero is never held up
+    scenes[1].layout();
+    strips.forEach(drawStrip);
+    laid = sizeKey();
+  };
+  const layoutAll = () => {
+    if (!ready) return;
+    if (scenes[0].layout() && horseImg.naturalWidth) heroPanel.classList.add("art-on");
+    if (shown) return below();
+    shown = true;
+    if (window.requestIdleCallback) requestIdleCallback(below, { timeout: 500 }); else setTimeout(below, 60);
+  };
+  let timer = 0;
+  const queueLayout = () => { clearTimeout(timer); timer = setTimeout(() => { if (sizeKey() !== laid) layoutAll(); }, 120); };
+  let fontsIn = false;
+  const fontsReady = (document.fonts && document.fonts.load ? Promise.all([document.fonts.load('12px "Geist Mono"'), document.fonts.load('900 40px "Doto"'), document.fonts.ready]).catch(() => {}) : Promise.resolve()).then(() => { fontsIn = true; });
+  // the horse must be decoded before the first composite; fonts get a short head start, then the frame is redone once if they land late
+  const horseDecoded = horseReady.then(() => (horseImg.naturalWidth && horseImg.decode ? Promise.race([horseImg.decode().catch(() => {}), new Promise((r) => setTimeout(r, 400))]) : null));
+  Promise.all([horseDecoded, Promise.race([fontsReady, new Promise((r) => setTimeout(r, 700))])]).then(() => {
+    ready = true; const hadFonts = fontsIn; layoutAll();
+    if (!hadFonts) fontsReady.then(() => { laid = ""; queueLayout(); });
+  });
+  if ("ResizeObserver" in window) { const ro = new ResizeObserver(queueLayout); ro.observe(heroPanel); ro.observe(endPanel); }
+  window.addEventListener("resize", queueLayout);
+
+  // the type slides and the clouds drift while a scene is on screen; the horse stays still
+  if ("IntersectionObserver" in window) {
+    const vis = new IntersectionObserver((es) => es.forEach((e) => { const s = scenes.find((x) => x.host === e.target); if (s) s.visible = e.isIntersecting; }));
+    scenes.forEach((s) => vis.observe(s.host));
+  }
+  let last = 0;
+  const tick = (now) => {
+    requestAnimationFrame(tick);
+    if (!ready || reduce.matches || document.hidden || now - last < 80) return;
+    const dt = Math.min(0.25, (now - last) / 1000); last = now; clock += dt;
+    for (const s of scenes) { if (!s.visible || !s.front || !s.sky) continue; s.time += dt; s.n++; if (s.p.ridge || s.n % 4 === 0) s.draw(s.n % 4 === 0); }
+  };
+  requestAnimationFrame(tick);
+})();
+</script>
+
+<div style="position:fixed;left:12px;bottom:12px;z-index:9999;font:500 12px/1 system-ui,sans-serif;background:#1B1A17;color:#F4EFE4;padding:8px 12px;border-radius:999px;opacity:.9">Preview. Not a live site.</div>
 </html>
