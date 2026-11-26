@@ -457,27 +457,47 @@ video.shot { object-fit: cover; background: var(--ink); }
 /* Horse from Anthony's own artwork (References/images/2026-11-25-wrkhrse-dusk-gallop-hero.webp).
    To swap the horse, replace this one data URI and the HORSE numbers in the script. */
 
-/* ---------- Demo teaser (Home, Connected systems): the agent moment ---------- */
-.teaser { display: grid; gap: 32px; align-items: center; padding: clamp(28px, 4.4vw, 64px); border-radius: var(--r-panel); background: var(--surface); }
-@media (min-width: 900px) { .teaser { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 56px; } }
-.tz-copy p { margin: 14px 0 28px; color: var(--muted); font-size: var(--fs-lead); max-width: 30ch; }
-.tz-copy .pill { background: var(--ink); color: var(--paper); }
-.tz-frame { overflow: hidden; border-radius: 14px; background: #fff; box-shadow: 0 0 0 1px rgba(20, 21, 24, 0.1), 0 24px 48px -28px rgba(20, 21, 24, 0.35); }
-.tz-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 44px; padding: 0 14px; border-bottom: 1px solid rgba(20, 21, 24, 0.08); background: var(--paper); font-size: 0.8125rem; font-weight: 600; }
-.tz-bar small { font-weight: 400; color: var(--muted); }
-.tz-chip { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 999px; background: #fff; box-shadow: inset 0 0 0 1px rgba(20, 21, 24, 0.14); font-size: 0.75rem; font-weight: 500; white-space: nowrap; }
-.tz-chat { display: grid; justify-items: start; align-content: start; gap: 12px; min-height: 236px; padding: 20px 18px 22px; }
-.tz-b { max-width: 88%; margin: 0; padding: 11px 14px; border-radius: 14px 14px 14px 4px; background: var(--paper); box-shadow: inset 0 0 0 1px rgba(20, 21, 24, 0.1); font-size: 0.9375rem; line-height: 1.4; animation: 9s var(--ease-out) infinite both; }
-.tz-c { justify-self: end; padding: 9px 14px; border-radius: 999px; background: #fff; box-shadow: inset 0 0 0 1px rgba(20, 21, 24, 0.16); font-size: 0.875rem; font-weight: 500; animation: tzc 9s var(--ease-out) infinite both; }
-.tz-b1 { animation-name: tzb1; } .tz-b3 { animation-name: tzb3; }
-@keyframes tzb1 { 0% { opacity: 0; transform: translate3d(0, 8px, 0); } 6%, 90% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
-@keyframes tzc { 0%, 24% { opacity: 0; transform: translate3d(0, 8px, 0); } 30%, 44% { opacity: 1; transform: none; } 48% { transform: scale(0.94); background: var(--ink); color: var(--paper); box-shadow: none; } 54%, 90% { opacity: 1; transform: none; background: var(--ink); color: var(--paper); box-shadow: none; } 97%, 100% { opacity: 0; background: var(--ink); color: var(--paper); } }
-@keyframes tzb3 { 0%, 58% { opacity: 0; transform: translate3d(0, 8px, 0); } 64%, 90% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .tz-b, .tz-c { animation: none; } .tz-c { background: var(--ink); color: var(--paper); box-shadow: none; } }
+/* ---------- Product loops (Home, AI implementation, Business OS) ---------- */
+.loop { margin: 0; }
+.loop-frame { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border-radius: var(--r-panel); background: var(--blue); box-shadow: 0 0 0 1px rgba(20, 21, 24, 0.1), 0 30px 60px -30px rgba(20, 21, 24, 0.45); }
+.loop-v { display: block; width: 100%; height: 100%; object-fit: cover; }
+.loop-play { position: absolute; right: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 12px; border-radius: var(--r-pill); background: rgba(20, 21, 24, 0.82); color: var(--paper); font-size: 0.875rem; font-weight: 500; }
+.loop-play svg { width: 16px; height: 16px; }
+.loop-play:focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; }
+.loop figcaption { margin-top: 14px; max-width: 64ch; font-size: 0.9375rem; color: var(--muted); }
+.sec-tag { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: 0.04em; color: var(--muted); }
+.tt2 { color: var(--muted); }
+.see-head { display: grid; gap: 20px 56px; align-items: end; margin-bottom: clamp(28px, 3vw, 44px); }
+@media (min-width: 900px) { .see-head { grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); } }
+.see-copy p { margin-bottom: 22px; font-size: var(--fs-lead); color: var(--muted); max-width: 34ch; }
+.see-copy .pill { background: var(--ink); color: var(--paper); }
+.rail-wrap { display: grid; gap: 32px; margin-top: clamp(32px, 4vw, 56px); }
+@media (min-width: 900px) { .rail-wrap { grid-template-columns: 220px minmax(0, 1fr); gap: 56px; } .rail { position: sticky; top: 96px; align-self: start; } }
+.rail ol { display: grid; border-left: 1px solid var(--rule); }
+.rail a { display: block; margin-left: -1px; padding: 10px 16px; border-left: 2px solid transparent; color: var(--muted); font-weight: 500; transition: color 0.2s ease, border-color 0.2s ease; }
+.rail a:hover { color: var(--ink); }
+.rail a[aria-current="true"] { color: var(--ink); border-left-color: var(--ink); }
+@media (max-width: 899.98px) { .rail { display: none; } }
+.chapter { scroll-margin-top: 96px; }
+.chapter + .chapter { margin-top: clamp(64px, 7vw, 112px); }
+.chapter h3 { margin-bottom: 24px; font-size: clamp(1.6rem, 2.4vw, 2.2rem); line-height: 1.12; max-width: 26ch; }
+@media (min-width: 900px) { main { background: linear-gradient(rgba(20, 21, 24, 0.08), rgba(20, 21, 24, 0.08)) calc(50% - min(80vw, 1180px) / 2 - 32px) 0 / 1px 100% no-repeat, linear-gradient(rgba(20, 21, 24, 0.08), rgba(20, 21, 24, 0.08)) calc(50% + min(80vw, 1180px) / 2 + 32px) 0 / 1px 100% no-repeat; }
+  main > .sec > .col { position: relative; }
+  main > .sec > .col::before { content: ""; position: absolute; left: -32px; right: -32px; top: calc(-0.5 * clamp(104px, 11vw, 168px)); height: 1px; background: rgba(20, 21, 24, 0.08); } }
 .demo-link { margin-top: 28px; }
 .demo-link a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 500; text-decoration: underline; text-decoration-color: var(--rule); }
 .demo-link a:hover { text-decoration-color: currentColor; }
 .demo-link svg { width: 16px; height: 16px; }
+
+/* booking card: the whole card is the link; the embed replaces it on the homepage when ready */
+a.book-card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+a.book-card .book-meta { font-size: 0.875rem; color: var(--muted); }
+a.book-card .book-load { min-height: 1.2em; font-family: var(--font-mono); font-size: var(--fs-mono); color: var(--muted); }
+a.book-card .book-go { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 14px; font-weight: 500; color: var(--ink); }
+a.book-card .book-go svg { width: 14px; height: 14px; transition: transform 0.2s ease; }
+a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { a.book-card:hover { transform: translate3d(0, -3px, 0); box-shadow: 0 1px 2px rgba(20, 21, 24, 0.08), 0 30px 54px -22px rgba(20, 21, 24, 0.45); } a.book-card:hover .book-go svg { transform: translate3d(2px, -2px, 0); } }
+#book:has(#cal-inline) a.book-card { min-height: clamp(320px, 34vw, 440px); }
 
 /* ---------- One system page ---------- */
 .map .hub-label { position: absolute; left: 50%; top: calc(50% + 36px); transform: translateX(-50%); display: grid; justify-items: center; gap: 4px; padding: 6px 12px; border-radius: var(--r-ctl); background: var(--ink); color: var(--paper); font-weight: 500; text-align: center; white-space: nowrap; }
@@ -518,7 +538,7 @@ video.shot { object-fit: cover; background: var(--ink); }
             <ul class="menu-list" id="svc-menu" hidden>
               <li><a href="/ai-implementation/">AI implementation</a></li>
               <li><a href="/websites/">Websites &amp; funnels</a></li>
-              <li><a href="/one-system/">One system</a></li>
+              <li><a href="/os/">Business OS</a></li>
             </ul></li>
           <li><a class="link" href="#how">How it works</a></li>
           <li><a class="link" href="/demo/">Demo</a></li>
@@ -541,7 +561,8 @@ video.shot { object-fit: cover; background: var(--ink); }
 <main id="main">
   <section class="sec band" id="what" data-rv aria-labelledby="what-title">
     <div class="col">
-      <h2 class="statement rv" id="what-title">Less chasing. More moving forward.</h2>
+      <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>What we do</p>
+      <h2 class="statement rv" id="what-title">Less chasing. <span class="tt2">More moving forward.</span></h2>
       <ul class="cards">
         <li class="card rv" style="--i:1">
           <div class="card-art" aria-hidden="true">
@@ -579,37 +600,37 @@ video.shot { object-fit: cover; background: var(--ink); }
           </div>
           <div class="card-body">
             <p class="mono-label"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>Too many tools?</p>
-            <h3>One system</h3>
+            <h3>Business OS</h3>
             <p>Bookings, customer records and follow-ups in one place, with less manual work between them.</p>
-            <a class="more" href="/one-system/" aria-label="See how: One system">See how<svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M2.5 7h9M8 3.5 11.5 7 8 10.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+            <a class="more" href="/os/" aria-label="See how: Business OS">See how<svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M2.5 7h9M8 3.5 11.5 7 8 10.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
           </div>
         </li>
       </ul>
     </div>
   </section>
 
-  <section class="sec band" id="demo-teaser" data-rv aria-labelledby="demo-teaser-title">
+  <section class="sec band" id="see" data-rv aria-labelledby="see-title">
     <div class="col">
-      <div class="teaser rv">
-        <div class="tz-copy">
-          <h2 class="statement" id="demo-teaser-title">Ask your agent.</h2>
-          <p>Talk to your business. Your agent does the work. You say yes.</p>
-          <a class="pill" href="/demo/">Try the demo</a>
-        </div>
-        <div class="tz-frame" aria-hidden="true">
-          <div class="tz-bar"><span>Maple <small>&middot; Maple Ridge&rsquo;s agent</small></span><span class="tz-chip">Scripted demo</span></div>
-          <div class="tz-chat">
-            <p class="tz-b tz-b1">Morning, Sam. Three things need you.</p>
-            <span class="tz-c">Send the Tran reply</span>
-            <p class="tz-b tz-b3">Sent. Visit held for Thursday 1:00.</p>
-          </div>
-        </div>
+      <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>The demo</p>
+      <div class="see-head rv">
+        <h2 class="statement" id="see-title">Ask your agent.</h2>
+        <div class="see-copy"><p>Talk to your business. Your agent does the work. You say yes.</p><a class="pill" href="/demo/">Try the demo</a></div>
       </div>
+      <figure class="loop rv">
+        <div class="loop-frame">
+          <video class="loop-v" muted loop playsinline preload="none" width="1600" height="1000" poster="/loops/a-whats-pressing-poster.webp" aria-label="Sample system: Maple, the agent, posts what is pressing and drafts a reply">
+            <source src="/loops/a-whats-pressing.webm" type="video/webm"><source src="/loops/a-whats-pressing.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="loop-play" data-label="Sample system: Maple, the agent, posts what is pressing and drafts a reply"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4v16l13 -8z" fill="currentColor"/></svg><span>Play</span></button>
+        </div>
+        <figcaption>Maple posts what&rsquo;s pressing. One tap drafts the reply, and nothing sends without your yes. Scripted demo, made-up data.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="sec band" id="work" data-rv aria-labelledby="work-title">
     <div class="work-wrap">
+      <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>Selected work</p>
       <h2 class="statement rv" id="work-title">Our work.</h2>
       <div class="tiles">
         <a class="tile tile--feat rv" style="--i:0" href="https://www.unlockthe25th.com/" target="_blank" rel="noopener" aria-label="The 25th Hour, live site, opens in a new tab">
@@ -638,6 +659,7 @@ video.shot { object-fit: cover; background: var(--ink); }
 
   <section class="sec band" id="how" data-rv aria-labelledby="how-title">
     <div class="col">
+      <p class="sec-tag rv"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>The process</p>
       <h2 class="statement rv" id="how-title">How it works.</h2>
       <ol class="how-grid">
         <li class="rv" style="--i:1"><span class="how-num"><svg class="bullet" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>01</span><h3>Find the friction</h3><p>We identify where time gets lost and opportunities stall.</p></li>
@@ -662,10 +684,12 @@ video.shot { object-fit: cover; background: var(--ink); }
         <a class="pill" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Let&rsquo;s talk</a>
       </div>
       <div class="book" id="book">
-        <div class="book-card" id="book-card">
-          <div class="book-who"><span class="cal-avatar" aria-hidden="true">AB</span><span>Anthony Balatti</span></div>
+        <a class="book-card" id="book-card" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" aria-label="Book a 15 minute call with Anthony on Cal.com, opens in a new tab">
+          <span class="book-who"><span class="cal-avatar" aria-hidden="true">AB</span><span>Anthony Balatti</span></span>
           <h3>15 minute call</h3>
-        </div>
+          <span class="book-meta">Google Meet &middot; America/Toronto</span><span class="book-load" id="book-load" aria-live="polite"></span>
+          <span class="book-go">Pick a time<svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M4 10 10 4M5 4h5v5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        </a>
           <div class="book-embed" id="cal-inline" aria-label="Book a call"></div>
       </div>
     </div>
@@ -678,7 +702,7 @@ video.shot { object-fit: cover; background: var(--ink); }
     <ul aria-label="Site">
       <li><a class="link" href="/ai-implementation/">AI implementation</a></li>
       <li><a class="link" href="/websites/">Websites &amp; funnels</a></li>
-      <li><a class="link" href="/one-system/">One system</a></li>
+      <li><a class="link" href="/os/">Business OS</a></li>
       <li><a class="link" href="/demo/">Demo</a></li>
     </ul>
     <small>&copy; 2026 WRKHRSE</small>
@@ -762,7 +786,7 @@ video.shot { object-fit: cover; background: var(--ink); }
   const C = { sky: tok("--blue"), paper: tok("--paper"), sand: tok("--surface"), ink: tok("--ink"), deep: tok("--blue-deep"), far: tok("--blue-far"), work: tok("--work"), light: tok("--work"), tint: tok("--blue-tint") };
   const TINT32 = hexToABGR(C.tint), PAPER32 = hexToABGR(C.paper), INK32 = hexToABGR(C.ink), DEEP32 = hexToABGR(C.deep), FAR32 = hexToABGR(C.far), WORK32 = hexToABGR(C.work), LIGHT32 = hexToABGR(C.light), SCAN32 = ((30 << 24) | (hexToABGR(C.deep) & 0xffffff)) >>> 0;
   const monoFont = (px) => px.toFixed(1) + 'px "Geist Mono", ui-monospace, Menlo, monospace';
-  const FIELD_TEXT = "ai agents \u00b7 websites \u00b7 one system \u00b7 ";
+  const FIELD_TEXT = "ai agents \u00b7 websites \u00b7 business os \u00b7 ";
 
   const SCREEN_CSS = 4; // the sky's halftone cell, in CSS pixels
   const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => (v + 0.5) / 16);
@@ -1112,13 +1136,29 @@ video.shot { object-fit: cover; background: var(--ink); }
 })();
 </script>
 
-<!-- Cal.com inline embed (their documented snippet). The link card above stays until the calendar reports it is ready. -->
+<!-- Cal.com inline embed (their documented snippet). The link card above stays until the calendar reports it is ready; after 6 seconds or a load error the card simply stays. -->
 <script type="text/javascript">
+  (function () { var l = document.getElementById("book-load"); l.textContent = "Loading the calendar…"; var stop = function () { if (window.__calDone) return; window.__calDone = 1; l.textContent = ""; }; window.__calT = setTimeout(stop, 6000); window.__calFail = stop; })();
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", "wrkhrse-15min", { origin: "https://cal.com" });
+  (function () { var sc = [].slice.call(document.scripts).filter(function (x) { return /app\.cal\.com\/embed\/embed\.js$/.test(x.src); })[0]; if (sc) sc.addEventListener("error", window.__calFail); })();
   Cal.ns["wrkhrse-15min"]("inline", { elementOrSelector: "#cal-inline", calLink: "anthony-balatti-c9qhw5/15min", config: { layout: "month_view", theme: "light" } });
   Cal.ns["wrkhrse-15min"]("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#3C63C7" } }, hideEventTypeDetails: false, layout: "month_view" });
-  Cal.ns["wrkhrse-15min"]("on", { action: "linkReady", callback: () => { document.getElementById("book").classList.add("is-live"); } });
+  Cal.ns["wrkhrse-15min"]("on", { action: "linkReady", callback: () => { if (window.__calDone) return; window.__calDone = 1; clearTimeout(window.__calT); document.getElementById("book-load").textContent = ""; document.getElementById("book").classList.add("is-live"); } });
+</script>
+<script>
+(() => { // product loops: play at half in view, pause out of view; under reduced motion the poster stays until Play is pressed
+  const vids = [...document.querySelectorAll("video.loop-v")], rm = matchMedia("(prefers-reduced-motion: reduce)");
+  const btn = (v) => v.parentElement.querySelector(".loop-play");
+  const sync = (v) => { const b = btn(v), p = v.paused; b.querySelector("span").textContent = p ? "Play" : "Pause"; b.setAttribute("aria-label", (p ? "Play: " : "Pause: ") + b.dataset.label); b.querySelector("svg").innerHTML = p ? '<path d="M7 4v16l13 -8z" fill="currentColor"/>' : '<path d="M7 5h3v14h-3zM14 5h3v14h-3z" fill="currentColor"/>'; };
+  vids.forEach((v) => { sync(v); v.addEventListener("play", () => sync(v)); v.addEventListener("pause", () => sync(v));
+    btn(v).addEventListener("click", () => { v.dataset.user = "1"; if (v.paused) { v.preload = "auto"; v.play().catch(() => {}); } else v.pause(); }); });
+  if ("IntersectionObserver" in window) { const io = new IntersectionObserver((es) => es.forEach((e) => { const v = e.target; if (e.isIntersecting && !rm.matches && !v.dataset.user) { v.preload = "auto"; v.play().catch(() => {}); } else if (!e.isIntersecting) v.pause(); }), { threshold: 0.5 }); vids.forEach((v) => io.observe(v)); }
+  rm.addEventListener("change", () => { if (rm.matches) vids.forEach((v) => v.pause()); });
+  const rail = [...document.querySelectorAll(".rail a")]; if (!rail.length || !("IntersectionObserver" in window)) return;
+  const io2 = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) rail.forEach((a) => a.setAttribute("aria-current", a.hash === "#" + e.target.id ? "true" : "false")); }), { rootMargin: "-45% 0px -45% 0px" });
+  document.querySelectorAll(".chapter").forEach((c) => io2.observe(c));
+})();
 </script>
 
 <div style="position:fixed;left:12px;bottom:12px;z-index:9999;font:500 12px/1 system-ui,sans-serif;background:#141518;color:#F7F6F3;padding:8px 12px;border-radius:999px;opacity:.9">Preview. Not a live site.</div>
