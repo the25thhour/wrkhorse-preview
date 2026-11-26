@@ -43,6 +43,7 @@
   --paper:   #F7F6F3;      /* page ground; text and buttons on blue */
   --surface: #ECEBE6;      /* cards */
   --surface-2: #E2E1DB;    /* deeper surface */
+  --stage:   #EEEDE9;      /* the quiet stage behind each site in Our work */
   --rule:    #D6D5CF;      /* dividers */
   --ink:     #141518;      /* text; the night ground of Connected systems */
   --muted:   #5D5E63;      /* secondary text: 5.98:1 on page, 5.42:1 on cards */
@@ -258,10 +259,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .chip { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--r-ctl); background: var(--paper); color: var(--ink); font-size: 0.8125rem; font-weight: 500; line-height: 1.2; white-space: nowrap; box-shadow: 0 1px 2px rgba(20, 21, 24, 0.12), 0 10px 22px -12px rgba(20, 21, 24, 0.5); }
 .chip .dot { width: 7px; height: 7px; }
 .chip-arrow { position: absolute; color: var(--paper); font-size: 1rem; }
-.frame { position: absolute; left: 14%; right: 14%; top: 16%; bottom: -8%; border-radius: 8px 8px 0 0; overflow: hidden; background: var(--paper); box-shadow: 0 18px 40px -18px rgba(20, 21, 24, 0.7); }
+.frame { position: absolute; left: 14%; right: 14%; top: 18%; border-radius: 8px; overflow: hidden; background: var(--paper); box-shadow: 0 18px 40px -18px rgba(20, 21, 24, 0.7); }
 .frame-bar { display: flex; align-items: center; gap: 5px; height: 18px; padding: 0 8px; background: var(--surface-2); }
 .frame-bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--rule); }
-.frame canvas { display: block; width: 100%; height: calc(100% - 18px); }
+.frame img { display: block; width: 100%; height: auto; }
 .links-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 /* ---------- Our work: real sites in colour inside a thin browser frame, on a dithered ground ---------- */
@@ -305,7 +306,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (min-width: 900px) { .promises { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .promises li { display: flex; align-items: center; gap: 12px; font-weight: 500; }
 
-/* ---------- Lists, FAQs, next link ---------- */
+/* ---------- Lists, questions, next link ---------- */
 .ticks { display: grid; gap: 0; margin-top: clamp(32px, 3.6vw, 52px); border-bottom: 1px solid var(--rule); }
 .ticks li { display: flex; align-items: center; gap: 14px; padding-top: 18px; padding-bottom: 20px; border-top: 1px solid var(--rule); font-family: var(--font-display); font-size: var(--fs-row); line-height: 1.2; letter-spacing: -0.015em; }
 .faqs { margin-top: clamp(28px, 3vw, 44px); border-bottom: 1px solid var(--rule); }
@@ -358,7 +359,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .map svg.lines { position: absolute; inset: 0; width: 100%; height: 100%; }
 .map .hub { position: absolute; left: 50%; top: 50%; width: 40px; height: 48px; transform: translate(-50%, -50%); color: var(--work); }
 .map .node { position: absolute; transform: translate(-50%, -50%); padding: 12px 18px; border-radius: var(--r-card); background: var(--paper); color: var(--ink); font-weight: 500; white-space: nowrap; }
-.map-list { display: none; }
 @media (max-width: 719.98px) {
   .map { display: none; }
   .map-list { display: grid; gap: 22px; position: relative; padding-left: 30px; }
@@ -401,6 +401,35 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .foot ul { display: flex; flex-wrap: wrap; gap: 0 26px; }
 .foot .link { color: var(--ink); }
 .foot small { font-size: var(--fs-util); color: var(--muted); }
+/* ---------- Our work: one object shown the same way five times ---------- */
+.work-wrap { width: min(100%, 1152px); margin-inline: auto; }
+.tiles { display: grid; gap: 56px 24px; margin-top: clamp(36px, 4vw, 56px); }
+@media (min-width: 900px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tile--feat { grid-column: 1 / -1; } }
+.tile { display: grid; gap: 16px; color: var(--ink); border-radius: 20px; }
+.tile:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.stage { position: relative; isolation: isolate; display: grid; place-items: center; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 20px; background: var(--stage); }
+.stage--blue { background: var(--blue); }
+@media (min-width: 900px) { .tile--feat .stage { aspect-ratio: 16 / 9; } }
+.stage > .dither { z-index: -1; }
+.shot { display: block; width: 80%; height: auto; aspect-ratio: 16 / 10; border-radius: 10px; transform: translate3d(0, -2%, 0);
+  box-shadow: 0 0 0 1px rgba(20, 21, 24, 0.10), 0 1px 2px rgba(20, 21, 24, 0.06), 0 24px 48px -24px rgba(20, 21, 24, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.tile--feat .shot { border-radius: 14px; }
+video.shot { object-fit: cover; background: var(--ink); }
+@media (min-width: 900px) { .tile--feat .shot { width: 68%; } }
+@media (max-width: 899.98px) { .shot { width: 86%; } }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .tile:hover .shot { transform: translate3d(0, calc(-2% - 4px), 0); box-shadow: 0 0 0 1px rgba(20, 21, 24, 0.10), 0 2px 4px rgba(20, 21, 24, 0.08), 0 32px 56px -24px rgba(20, 21, 24, 0.32); }
+}
+.cap { display: grid; gap: 6px; }
+.cap-name { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 1.375rem; line-height: 1.15; letter-spacing: -0.01em; }
+.tile--feat .cap-name { font-size: 1.75rem; }
+.cap-name svg { width: 14px; height: 14px; transition: transform 0.2s ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .tile:hover .cap-name svg { transform: translate3d(3px, 0, 0); } }
+.cap-meta { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--muted); }
+.dot--concept { background: transparent; box-shadow: inset 0 0 0 1.5px var(--muted); }
+/* the diagram's labels exist once for screen readers: the list, visually hidden on wide screens */
+@media (min-width: 720px) { .map-list { display: block; position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; } }
 /* ---------- Reveals: a short rise from an already-readable state ---------- */
 .rv { transition: opacity 0.9s ease, transform 1.1s var(--ease-out); transition-delay: calc(var(--i, 0) * 95ms); }
 .js-anim [data-rv]:not(.in) .rv { opacity: 0.28; transform: translate3d(0, 22px, 0); transition-delay: 0s; }
@@ -461,9 +490,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       <div class="col">
         <h2 id="ex-title">Example, not a client result.</h2>
         <div class="tabs" role="tablist" aria-label="Example jobs"><button type="button" role="tab" id="tab-enq" aria-controls="tp-enq" aria-selected="true">Inquiries</button><button type="button" role="tab" id="tab-fol" aria-controls="tp-fol" aria-selected="false">Follow-ups</button><button type="button" role="tab" id="tab-adm" aria-controls="tp-adm" aria-selected="false">Admin</button></div>
-        <div class="tp" role="tabpanel" id="tp-enq" aria-labelledby="tab-enq" tabindex="0"><p class="tp-title">Inquiries</p><ol class="nodes"><li><span class="n">01</span>Inquiry lands</li><li><span class="n">02</span>Details gathered</li><li><span class="n">03</span>Time booked</li><li><span class="n">04</span>Summary ready before the call</li></ol></div>
-        <div class="tp" role="tabpanel" id="tp-fol" aria-labelledby="tab-fol" tabindex="0"><p class="tp-title">Follow-ups</p><ol class="nodes"><li><span class="n">01</span>Quote sent</li><li><span class="n">02</span>No reply in 3 days</li><li><span class="n">03</span>Reminder drafted</li><li><span class="n">04</span>You approve, it sends</li></ol></div>
-        <div class="tp" role="tabpanel" id="tp-adm" aria-labelledby="tab-adm" tabindex="0"><p class="tp-title">Admin</p><ol class="nodes"><li><span class="n">01</span>Job done</li><li><span class="n">02</span>Record updated</li><li><span class="n">03</span>Invoice drafted</li><li><span class="n">04</span>You check it</li></ol></div>
+        <div class="tp" role="tabpanel" id="tp-enq" aria-labelledby="tab-enq" tabindex="0"><p class="sr-only">Inquiries</p><ol class="nodes"><li><span class="n">01</span>Inquiry lands</li><li><span class="n">02</span>Details gathered</li><li><span class="n">03</span>Time booked</li><li><span class="n">04</span>Summary ready before the call</li></ol></div>
+        <div class="tp" role="tabpanel" id="tp-fol" aria-labelledby="tab-fol" tabindex="0"><p class="sr-only">Follow-ups</p><ol class="nodes"><li><span class="n">01</span>Quote sent</li><li><span class="n">02</span>No reply in 3 days</li><li><span class="n">03</span>Reminder drafted</li><li><span class="n">04</span>You approve, it sends</li></ol></div>
+        <div class="tp" role="tabpanel" id="tp-adm" aria-labelledby="tab-adm" tabindex="0"><p class="sr-only">Admin</p><ol class="nodes"><li><span class="n">01</span>Job done</li><li><span class="n">02</span>Record updated</li><li><span class="n">03</span>Invoice drafted</li><li><span class="n">04</span>You check it</li></ol></div>
       </div>
     </div>
   </section>
@@ -481,10 +510,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
   <section class="sec band" id="faqs" data-rv aria-labelledby="faqs-title">
     <div class="col">
-      <h2 class="rv" id="faqs-title">FAQs</h2>
+      <h2 class="rv" id="faqs-title">Questions</h2>
       <div class="faqs rv" style="--i:1">
-        <details><summary><h3>Do I need to know what to automate?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">No. Start with what keeps taking up your time. We will help you work out whether AI, a simpler automation, or a change to the process is the right fit.</p></details>
-        <details><summary><h3>How much control does my team keep?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">We agree on what the system can do on its own, what needs approval, and when it should hand work to a person. Those rules are part of the build.</p></details>
+        <details><summary><h3>Do I need to know what to automate?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">No. Tell us what eats your time. We&rsquo;ll tell you if AI is the right fix, or if something simpler is.</p></details>
+        <details><summary><h3>How much control does my team keep?</h3><svg class="toggle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary><p class="answer">You set the rules: what it does alone, what needs your OK, and when it hands off to a person.</p></details>
       </div>
     </div>
   </section>
@@ -500,15 +529,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       <div class="end-copy rv">
         <svg class="big-star" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>
         <h2 id="end-title">Ready to put us to work?</h2>
-        <p class="end-line">Pick a time. Tell us what&rsquo;s slowing you down.</p>
+        <p class="end-line">Tell us what&rsquo;s slowing you down.</p>
         <a class="pill" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Let&rsquo;s talk</a>
       </div>
       <div class="book" id="book">
         <div class="book-card" id="book-card">
           <div class="book-who"><span class="cal-avatar" aria-hidden="true">AB</span><span>Anthony Balatti</span></div>
-          <h3>15 min call with Anthony</h3>
-          <p class="book-help">A 15 minute call. No prep needed.</p>
-          <a class="pill pill--ink" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Pick a time<svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M2.5 7h9M8 3.5 11.5 7 8 10.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <h3>15 minute call</h3>
         </div>
       </div>
     </div>
@@ -523,7 +550,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       <li><a class="link" href="/websites/">Websites &amp; funnels</a></li>
       <li><a class="link" href="/connected-systems/">Connected systems</a></li>
     </ul>
-    <small>&copy; 2026 WRKHRSE &middot; wrkhrse.ai</small>
+    <small>&copy; 2026 WRKHRSE</small>
   </div>
 </footer>
 
@@ -549,6 +576,19 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     sections.forEach((s) => s.classList.add("in", "settled"));
   }
 
+
+  /* ---------- Featured work video: plays only while on screen; under reduced motion the poster stays ---------- */
+  (() => {
+    const vids = [...document.querySelectorAll("video.shot")]; if (!vids.length) return;
+    const stop = () => vids.forEach((v) => v.pause());
+    if (!("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting && !reduce.matches) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
+    }), { threshold: 0.25 });
+    vids.forEach((v) => io.observe(v));
+    reduce.addEventListener?.("change", () => { if (reduce.matches) stop(); });
+  })();
 
   /* ---------- Tabs: arrow keys move between them; with no script every panel shows ---------- */
   document.querySelectorAll('[role="tablist"]').forEach((list) => {
@@ -577,7 +617,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     wrap.addEventListener("focusout", (e) => { if (e.relatedTarget && !wrap.contains(e.relatedTarget)) set(false); });
   });
 
-  /* ---------- In-page links scroll in place, so they work inside any preview frame ---------- */
+  /* ---------- In-page links scroll in place, so they work inside any embedding frame ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", (e) => {
     const target = document.getElementById(a.getAttribute("href").slice(1)); if (!target) return;
     e.preventDefault();
@@ -819,6 +859,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     ground: { bg: "--surface", fg: "--surface-2", hi: "--rule", scale: 260, cover: 0.12, seed: 21 },
     tabs:   { bg: "--blue", fg: "--blue-tint", hi: "--paper", scale: 300, cover: 0.02, seed: 31 },
     light:  { bg: "--surface", fg: "--blue-tint", hi: "--blue-tint", scale: 260, cover: 0.06, seed: 37, clearLeft: true },
+    stagefeat: { bg: "--blue", fg: "--blue-shade", hi: "--blue-tint", flat: 0.16, seed: 41 },   // fine dots only: no clouds, no orange
+    stage:     { bg: "--stage", fg: "--blue-tint", hi: "--blue-tint", flat: 0.24, rise: true, seed: 43 }, // about 12%, rising from the bottom edge
   };
   function paintDither(cv) {
     const o = DITHER[cv.dataset.dither]; if (!o) return;
@@ -835,8 +877,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       return smooth(0.48 - cv0, 0.72 - cv0, fbm(px, py, sd) * 0.8 + fbm(px * 5.3, py * 5.3, sd + 7) * 0.2);
     };
     for (let j = 0; j < gh; j++) for (let i = 0; i < gw; i++) {
-      const x = (i + 0.5) * cs, y = (j + 0.5) * cs, keep = !o.clearLeft ? 1 : W < 700 ? smooth(H * 0.7, H * 0.86, y) : smooth(W * 0.34, W * 0.66, x); // the words always sit on a clean ground
-      const d = at(x, y) * keep, lit = d - at(x, y - 12) * keep, b = bayer(i, j);
+      const x = (i + 0.5) * cs, y = (j + 0.5) * cs, b = bayer(i, j);
+      if (o.flat) { const k = o.rise ? smooth(H * 0.5, H, y) : 1, d = o.flat * k * (0.6 + 0.8 * vnoise(x / 60, y / 60, sd)); u[j * gw + i] = d > b ? (hash(i, j, sd) > 0.75 ? HI : FG) : BG; continue; }
+      const keep = !o.clearLeft ? 1 : W < 700 ? smooth(H * 0.7, H * 0.86, y) : smooth(W * 0.34, W * 0.66, x); // the words always sit on a clean ground
+      const d = at(x, y) * keep, lit = d - at(x, y - 12) * keep;
       u[j * gw + i] = d > b ? (d > 0.7 && lit * 9 > b ? HI : FG) : BG;
     }
     g.putImageData(img, 0, 0);
