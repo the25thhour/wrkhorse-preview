@@ -6,20 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WRKHRSE | Websites, AI agents and one system to run them</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="We build websites, AI agents and the one system behind them, to help service businesses win work and handle what comes next. Start with a 15 minute call.">
+<meta name="description" content="We help service businesses get found online, reply to inquiries faster and stop typing the same job twice. Start with a short call about one job.">
 <link rel="canonical" href="https://wrkhrse.ai/">
 <meta property="og:site_name" content="WRKHRSE">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wrkhrse.ai/">
 <meta property="og:title" content="WRKHRSE | Websites, AI agents and one system to run them">
-<meta property="og:description" content="We build websites, AI agents and the one system behind them, to help service businesses win work and handle what comes next. Start with a 15 minute call.">
+<meta property="og:description" content="We help service businesses get found online, reply to inquiries faster and stop typing the same job twice. Start with a short call about one job.">
 <meta property="og:image" content="https://wrkhrse.ai/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="WRKHRSE: Turn work into momentum. A horse galloping under a halftone blue sky.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="WRKHRSE | Websites, AI agents and one system to run them">
-<meta name="twitter:description" content="We build websites, AI agents and the one system behind them, to help service businesses win work and handle what comes next. Start with a 15 minute call.">
+<meta name="twitter:description" content="We help service businesses get found online, reply to inquiries faster and stop typing the same job twice. Start with a short call about one job.">
 <meta name="twitter:image" content="https://wrkhrse.ai/og-image.png">
 <meta name="twitter:image:alt" content="WRKHRSE: Turn work into momentum. A horse galloping under a halftone blue sky.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -35,7 +35,7 @@
   "url": "https://wrkhrse.ai/",
   "logo": "https://wrkhrse.ai/icon-512.png",
   "image": "https://wrkhrse.ai/og-image.png",
-  "description": "We build websites, AI agents and the one system behind them, to help service businesses win work and handle what comes next. Start with a 15 minute call.",
+  "description": "We help service businesses get found online, reply to inquiries faster and stop typing the same job twice. Start with a short call about one job.",
   "areaServed": {
     "@type": "City",
     "name": "Ottawa"
@@ -388,12 +388,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* ---------- Closing band ---------- */
 .end { padding-top: clamp(104px, 11vw, 168px); }
-.end .panel { display: grid; gap: 40px 64px; align-items: center; padding: clamp(56px, 7vw, 104px) clamp(20px, 4vw, 64px); background: var(--blue); }
-@media (min-width: 1000px) { .end .panel { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); } }
-.end-copy { display: grid; justify-items: start; gap: 18px; }
+.end .panel { display: grid; place-items: center; gap: 40px 64px; align-items: center; text-align: center; min-height: clamp(300px, 52vh, 560px); padding: clamp(56px, 7vw, 104px) clamp(20px, 4vw, 64px); background: var(--blue); }
+
+.end-copy { display: grid; justify-items: center; gap: 18px; }
+@media (max-width: 719.98px) { .end .panel { min-height: 0; } }
 .end-copy .big-star { width: 28px; height: 34px; color: var(--work); }
 .end h2 { font-size: clamp(2.5rem, 4.6vw, 4.5rem); font-weight: 350; line-height: 1.02; }
-.end-line { max-width: 30ch; font-size: var(--fs-lead); color: var(--paper); }
+.end-line { max-width: 44ch; font-size: var(--fs-lead); color: var(--paper); text-wrap: balance; }
 /* booking: a finished link card; on the homepage Cal.com's inline calendar replaces it once it reports ready */
 .book { display: grid; }
 .book-card { display: grid; justify-items: start; gap: 12px; padding: clamp(24px, 3vw, 36px); border-radius: var(--r-card); background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
@@ -543,15 +544,15 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
           <li><a class="link" href="#how">How it works</a></li>
           <li><a class="link" href="/demo/">Demo</a></li>
         </ul>
-        <a class="pill pill--nav" href="#contact">Let&rsquo;s talk</a>
+        <a class="pill pill--nav" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" data-cal-link="anthony-balatti-c9qhw5/15min" data-cal-namespace="wrkhrse-15min" data-cal-config='{"layout":"month_view","theme":"light"}'>Let&rsquo;s talk</a>
       </div>
     </nav>
     <div class="hero-horse" id="hero-horse" role="img" aria-label="A silver horse galloping across a hillside at dusk, mountains behind"></div>
     <div class="hero-copy">
       <h1><span>Turn work into</span> <span>momentum.</span></h1>
-      <p class="hero-line">We build websites, AI agents and the one system behind them, to help service businesses win work and handle what comes next.</p>
+      <p class="hero-line">We help service businesses get found online, reply to inquiries faster and stop typing the same job twice.</p>
       <div class="hero-actions">
-        <a class="pill" href="#contact">Put us to work</a>
+        <a class="pill" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" data-cal-link="anthony-balatti-c9qhw5/15min" data-cal-namespace="wrkhrse-15min" data-cal-config='{"layout":"month_view","theme":"light"}'>Put us to work</a>
         <span class="helper">A 15 minute call. No prep needed.</span>
       </div>
     </div>
@@ -680,17 +681,8 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
       <div class="end-copy rv">
         <svg class="big-star" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>
         <h2 id="end-title">Ready to put us to work?</h2>
-        <p class="end-line">Tell us what&rsquo;s slowing you down.</p>
-        <a class="pill" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Let&rsquo;s talk</a>
-      </div>
-      <div class="book" id="book">
-        <a class="book-card" id="book-card" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" aria-label="Book a 15 minute call with Anthony on Cal.com, opens in a new tab">
-          <span class="book-who"><span class="cal-avatar" aria-hidden="true">AB</span><span>Anthony Balatti</span></span>
-          <h3>15 minute call</h3>
-          <span class="book-meta">Google Meet &middot; America/Toronto</span><span class="book-load" id="book-load" aria-live="polite"></span>
-          <span class="book-go">Pick a time<svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M4 10 10 4M5 4h5v5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
-        </a>
-          <div class="book-embed" id="cal-inline" aria-label="Book a call"></div>
+        <p class="end-line">Bring one job your team still does by hand. In 15 minutes we&rsquo;ll tell you what we&rsquo;d change, what you keep, and whether it&rsquo;s worth building.</p>
+        <a class="pill" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" data-cal-link="anthony-balatti-c9qhw5/15min" data-cal-namespace="wrkhrse-15min" data-cal-config='{"layout":"month_view","theme":"light"}'>Let&rsquo;s talk</a>
       </div>
     </div>
   </section>
@@ -1091,7 +1083,7 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
   }));
   // close: sky only, kept well clear of the words and the booking card
   scenes.push(new Scene(endPanel, document.getElementById("end-art"), (s) => {
-    const rects = [document.querySelector(".end-copy"), document.getElementById("book")].map((el) => { const b = el.getBoundingClientRect(); return { x0: b.left - s.box.left - 24, y0: b.top - s.box.top - 24, x1: b.right - s.box.left + 24, y1: b.bottom - s.box.top + 24 }; });
+    const rects = [document.querySelector(".end-copy"), document.getElementById("book")].filter(Boolean).map((el) => { const b = el.getBoundingClientRect(); return { x0: b.left - s.box.left - 24, y0: b.top - s.box.top - 24, x1: b.right - s.box.left + 24, y1: b.bottom - s.box.top + 24 }; });
     return { seed: 5, cover: 0.04, cloudScale: 2.6, clear: (x, y) => { let m = 1; for (const r of rects) { m = Math.min(m, smooth(0, 110, Math.hypot(Math.max(r.x0 - x, 0, x - r.x1), Math.max(r.y0 - y, 0, y - r.y1)))); if (!m) break; } return m; } };
   }));
   const heroScene = scenes.length > 1 ? scenes[0] : null;
@@ -1136,15 +1128,33 @@ a.book-card:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px
 })();
 </script>
 
-<!-- Cal.com inline embed (their documented snippet). The link card above stays until the calendar reports it is ready; after 6 seconds or a load error the card simply stays. -->
-<script type="text/javascript">
-  (function () { var l = document.getElementById("book-load"); l.textContent = "Loading the calendar…"; var stop = function () { if (window.__calDone) return; window.__calDone = 1; l.textContent = ""; }; window.__calT = setTimeout(stop, 6000); window.__calFail = stop; })();
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "wrkhrse-15min", { origin: "https://cal.com" });
-  (function () { var sc = [].slice.call(document.scripts).filter(function (x) { return /app\.cal\.com\/embed\/embed\.js$/.test(x.src); })[0]; if (sc) sc.addEventListener("error", window.__calFail); })();
-  Cal.ns["wrkhrse-15min"]("inline", { elementOrSelector: "#cal-inline", calLink: "anthony-balatti-c9qhw5/15min", config: { layout: "month_view", theme: "light" } });
-  Cal.ns["wrkhrse-15min"]("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#3C63C7" } }, hideEventTypeDetails: false, layout: "month_view" });
-  Cal.ns["wrkhrse-15min"]("on", { action: "linkReady", callback: () => { if (window.__calDone) return; window.__calDone = 1; clearTimeout(window.__calT); document.getElementById("book-load").textContent = ""; document.getElementById("book").classList.add("is-live"); } });
+<!-- Cal.com pop-up (their embed.js, loaded lazily). Every "Let's talk" and "Put us to work" stays a real link to cal.com until the script is ready. -->
+<script>
+(() => {
+  const SEL = "a[data-cal-link]", NS = "wrkhrse-15min"; let state = 0, last = null; // 0 idle, 1 loading, 2 ready, 3 failed
+  function load() {
+    if (state) return; state = 1;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", NS, { origin: "https://cal.com" });
+    Cal.ns[NS]("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#3C63C7" } }, hideEventTypeDetails: false, layout: "month_view" });
+    Cal.ns[NS]("on", { action: "__closeIframe", callback: () => { if (last && document.contains(last)) last.focus(); } });
+    const sc = [].slice.call(document.scripts).filter((x) => /app\.cal\.com\/embed\/embed\.js$/.test(x.src))[0];
+    if (sc) { sc.addEventListener("load", () => { state = 2; }); sc.addEventListener("error", () => { state = 3; }); }
+  }
+  const near = (e) => e.target && e.target.closest && e.target.closest(SEL);
+  document.addEventListener("pointerover", (e) => { if (near(e)) load(); }, { passive: true });
+  document.addEventListener("focusin", (e) => { if (near(e)) load(); });
+  document.addEventListener("click", (e) => { // ready: the pop-up opens in place; not ready or blocked: the link opens cal.com in a new tab
+    const a = near(e); if (!a) return;
+    if (state === 2) { e.preventDefault(); last = a; } else load();
+  }, true);
+  document.addEventListener("keydown", (e) => { // Esc closes the pop-up too, and focus goes back to the button that opened it
+    if (e.key !== "Escape") return; const box = [].slice.call(document.querySelectorAll("cal-modal-box")).filter((b) => b.getAttribute("state") !== "closed" && b.isConnected)[0];
+    if (box) { box.setAttribute("state", "closed"); if (last && document.contains(last)) setTimeout(() => last.focus(), 50); }
+  }, true);
+  if (document.getElementById("app")) return; // the demo makes no requests until someone reaches for a booking button
+  if (window.requestIdleCallback) requestIdleCallback(load, { timeout: 4000 }); else setTimeout(load, 3000);
+})();
 </script>
 <script>
 (() => { // product loops: play at half in view, pause out of view; under reduced motion the poster stays until Play is pressed
