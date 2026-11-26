@@ -185,62 +185,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .hero-horse { right: 6%; bottom: 15%; width: 82%; }
 }
 
-/* Booking preview, laid out like a Cal.com month view. Nothing books. */
-.cal-wrap { width: 100%; max-width: 880px; margin-top: clamp(36px, 4vw, 56px); display: grid; gap: 12px; text-align: left; }
-.cal-label { color: var(--paper); text-transform: uppercase; letter-spacing: 0.06em; }
-.cal { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--paper); color: var(--ink); border-radius: var(--r-card); box-shadow: var(--shadow); }
-.cal > * { padding: 24px; min-width: 0; }
-.cal > * + * { border-top: 1px solid var(--rule); }
-@media (min-width: 820px) {
-  .cal { grid-template-columns: 220px minmax(0, 1fr) 208px; }
-  .cal > * + * { border-top: 0; border-left: 1px solid var(--rule); }
-}
-.cal-host { display: grid; gap: 10px; align-content: start; }
-.cal-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font: 500 0.875rem/1 var(--font-body); letter-spacing: 0.02em; }
-.cal-host .who { color: var(--muted); font-size: 0.95rem; }
-.cal-host h3 { font-size: 1.5rem; font-weight: 450; line-height: 1.1; letter-spacing: -0.01em; }
-.cal-meta { display: grid; gap: 8px; margin-top: 6px; font-size: 0.95rem; color: var(--muted); }
-.cal-meta li { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.cal-meta svg { width: 16px; height: 16px; flex: none; color: var(--ink); }
-.cal-meta .tz { overflow-wrap: anywhere; }
-.cal-month-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
-.cal-month-head h3, .cal-slots h3 { font-family: var(--font-body); font-size: 1rem; font-weight: 500; letter-spacing: 0; line-height: 1.3; }
-.cal-month-head h3 span, .cal-slots h3 span { color: var(--muted); font-weight: 400; }
-.cal-nav { display: flex; gap: 4px; }
-.cal-btn {
-  display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0;
-  border: 0; border-radius: var(--r-ctl); background: transparent; color: var(--ink);
-  font: 500 0.95rem/1 var(--font-body); font-variant-numeric: tabular-nums; cursor: pointer;
-  transition: background-color .15s, color .15s;
-}
-.cal-btn svg { width: 16px; height: 16px; }
-.cal-btn:hover:not(:disabled) { background: var(--surface); }
-.cal-btn:disabled { color: var(--rule); cursor: default; }
-.cal-btn:focus-visible, .cal-slot:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.cal-dow, .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
-@media (max-width: 479.98px) { .cal > * { padding: 16px; } .cal-dow, .cal-grid { gap: 0; } .cal-btn { min-width: 0; } }
-.cal-dow { margin-bottom: 4px; }
-.cal-dow span { text-align: center; color: var(--muted); font-size: 0.75rem; }
-.cal-grid .cal-btn { width: 100%; aspect-ratio: 1; max-width: 100%; }
-.cal-grid .cal-btn.is-open { background: var(--surface); }
-.cal-grid .cal-btn.is-open:hover { background: var(--rule); }
-.cal-grid .cal-btn.is-today { box-shadow: inset 0 0 0 1.5px var(--ink); }
-.cal-grid .cal-btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.cal-slots { display: grid; gap: 10px; align-content: start; }
-.cal-slots h3 { margin-bottom: 2px; }
-.cal-slot-list { display: grid; gap: 8px; }
-.cal-slot {
-  width: 100%; min-height: 44px; padding: 10px 16px; text-align: center;
-  border: 1px solid var(--muted); border-radius: var(--r-ctl); background: var(--paper); color: var(--ink);
-  font: 500 0.95rem/1.2 var(--font-body); font-variant-numeric: tabular-nums; cursor: pointer;
-  transition: background-color .15s, color .15s, border-color .15s;
-}
-.cal-slot:hover { border-color: var(--ink); }
-.cal-slot[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.cal-note { font-size: 0.9rem; line-height: 1.45; color: var(--ink); }
-.cal-note:empty { display: none; }
-.cal-note:not(:empty) { padding: 12px 14px; background: var(--surface); border-radius: var(--r-ctl); }
-
 /* "What we do": a small disclosure menu of the four service pages */
 .site-nav .menu { position: relative; }
 .menu-btn { display: inline-flex; align-items: center; gap: 6px; }
@@ -435,7 +379,18 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .end-copy .big-star { width: 28px; height: 34px; color: var(--work); }
 .end h2 { font-size: clamp(2.5rem, 4.6vw, 4.5rem); font-weight: 350; line-height: 1.02; }
 .end-line { max-width: 30ch; font-size: var(--fs-lead); color: var(--paper); }
-.cal-wrap { margin-top: 0 !important; max-width: none !important; }
+/* booking: a finished link card; on the homepage Cal.com's inline calendar replaces it once it reports ready */
+.book { display: grid; }
+.book-card { display: grid; justify-items: start; gap: 12px; padding: clamp(24px, 3vw, 36px); border-radius: var(--r-card); background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
+.book-who { display: inline-flex; align-items: center; gap: 12px; color: var(--muted); }
+.cal-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font: 500 0.875rem/1 var(--font-body); letter-spacing: 0.02em; }
+.book-card h3 { font-size: clamp(1.6rem, 2.4vw, 2.2rem); line-height: 1.1; }
+.book-help { color: var(--muted); font-size: var(--fs-lead); }
+.book-card .pill { gap: 8px; margin-top: 6px; }
+.book-card .pill svg { width: 14px; height: 14px; }
+.book-embed { height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }  /* loading quietly behind the card; never a blank box */
+.book.is-live .book-card { display: none; }
+.book.is-live .book-embed { height: auto; min-height: 560px; opacity: 1; pointer-events: auto; overflow: auto; border-radius: var(--r-card); background: var(--paper); }
 
 /* ---------- Footer ---------- */
 .foot { padding-top: clamp(56px, 6vw, 88px); padding-bottom: 28px; }
@@ -485,14 +440,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
             </ul></li>
           <li><a class="link" href="/#how">How it works</a></li>
         </ul>
-        <a class="pill pill--nav" href="#contact">Let&rsquo;s talk</a>
+        <a class="pill pill--nav" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Let&rsquo;s talk</a>
       </div>
     </nav>
     <div class="hero-copy">
       <h1><span>Make your tools</span> <span>work as one.</span></h1>
       <p class="hero-line">Your website, inbox, bookings and customer records should pass work to each other. We connect them.</p>
       <div class="hero-actions">
-        <a class="pill" href="#contact">Put us to work</a>
+        <a class="pill" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Put us to work</a>
         <span class="helper">A 15 minute call. No prep needed.</span>
       </div>
     </div>
@@ -544,37 +499,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
         <svg class="big-star" viewBox="0 0 135 162" aria-hidden="true" focusable="false"><use href="#star"/></svg>
         <h2 id="end-title">Ready to put us to work?</h2>
         <p class="end-line">Pick a time. Tell us what&rsquo;s slowing you down.</p>
-        <a class="pill" href="#cal-wrap">Let&rsquo;s talk</a>
+        <a class="pill" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Let&rsquo;s talk</a>
       </div>
-      <div class="cal-wrap" id="cal-wrap">
-        <p class="cal-label mono">Booking preview &middot; Cal.com</p>
-        <div class="cal" role="group" aria-label="Book an intro call (preview)">
-          <div class="cal-host">
-            <div class="cal-avatar" aria-hidden="true">AB</div>
-            <p class="who">Anthony Balatti</p>
-            <h3>Intro call</h3>
-            <ul class="cal-meta">
-              <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8l2.5 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>15 min</li>
-              <li><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="4" width="9" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 7l4-2.25v6.5l-4-2.25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Video call</li>
-              <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.75 8h12.5M8 1.75c1.9 2 1.9 10.5 0 12.5M8 1.75c-1.9 2-1.9 10.5 0 12.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span class="tz" id="cal-tz">Your time zone</span></li>
-            </ul>
-          </div>
-          <div class="cal-month">
-            <div class="cal-month-head">
-              <h3 id="cal-month-title">Month</h3>
-              <div class="cal-nav">
-                <button class="cal-btn" type="button" id="cal-prev" aria-label="Previous month"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-                <button class="cal-btn" type="button" id="cal-next" aria-label="Next month"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-              </div>
-            </div>
-            <div class="cal-dow" aria-hidden="true" id="cal-dow"></div>
-            <div class="cal-grid" id="cal-grid"></div>
-          </div>
-          <div class="cal-slots">
-            <h3 id="cal-day-title">Pick a day</h3>
-            <div class="cal-slot-list" id="cal-slots"></div>
-            <p class="cal-note" id="cal-note" role="status"></p>
-          </div>
+      <div class="book" id="book">
+        <div class="book-card" id="book-card">
+          <div class="book-who"><span class="cal-avatar" aria-hidden="true">AB</span><span>Anthony Balatti</span></div>
+          <h3>15 min call with Anthony</h3>
+          <p class="book-help">A 15 minute call. No prep needed.</p>
+          <a class="pill pill--ink" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener">Pick a time<svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M2.5 7h9M8 3.5 11.5 7 8 10.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
         </div>
       </div>
     </div>
@@ -649,69 +581,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     e.preventDefault();
     target.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "start" });
   }));
-
-  /* ---------- Booking preview (looks like a Cal.com month view; nothing books) ---------- */
-  (() => {
-    const grid = document.getElementById("cal-grid");
-    if (!grid) return;
-    const title = document.getElementById("cal-month-title"), dow = document.getElementById("cal-dow");
-    const slotsEl = document.getElementById("cal-slots"), dayTitle = document.getElementById("cal-day-title");
-    const note = document.getElementById("cal-note"), prev = document.getElementById("cal-prev"), next = document.getElementById("cal-next");
-    const locale = undefined;
-    try { document.getElementById("cal-tz").textContent = Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, " "); } catch (e) {}
-    const today = new Date(); today.setHours(0, 0, 0, 0);
-    const isOpen = (d) => d >= today && d.getDay() !== 0 && d.getDay() !== 6;
-    const SLOTS = [[9, 0], [9, 30], [10, 30], [13, 0], [14, 30], [16, 0]];
-    let view = new Date(today.getFullYear(), today.getMonth(), 1);
-    let selected = new Date(today); while (!isOpen(selected)) selected.setDate(selected.getDate() + 1);
-    const sameDay = (a, b) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-    // Monday-first weekday labels
-    for (let i = 0; i < 7; i++) { const d = new Date(2024, 0, 1 + i); const s = document.createElement("span"); s.textContent = d.toLocaleDateString(locale, { weekday: "short" }).toUpperCase(); dow.append(s); }
-    function renderMonth() {
-      const m = view.getMonth(), y = view.getFullYear();
-      const name = view.toLocaleDateString(locale, { month: "long" });
-      title.innerHTML = ""; title.append(name + " "); const ys = document.createElement("span"); ys.textContent = String(y); title.append(ys);
-      prev.disabled = y === today.getFullYear() && m === today.getMonth();
-      const limit = new Date(today.getFullYear(), today.getMonth() + 2, 1);
-      next.disabled = new Date(y, m + 1, 1) >= limit;
-      grid.innerHTML = "";
-      const lead = (new Date(y, m, 1).getDay() + 6) % 7;
-      for (let i = 0; i < lead; i++) grid.append(document.createElement("span"));
-      const days = new Date(y, m + 1, 0).getDate();
-      for (let n = 1; n <= days; n++) {
-        const d = new Date(y, m, n), b = document.createElement("button");
-        b.type = "button"; b.className = "cal-btn"; b.textContent = String(n);
-        b.setAttribute("aria-label", d.toLocaleDateString(locale, { weekday: "long", month: "long", day: "numeric" }) + (isOpen(d) ? ", available" : ", unavailable"));
-        if (sameDay(d, today)) { b.classList.add("is-today"); b.setAttribute("aria-current", "date"); }
-        if (isOpen(d)) {
-          b.classList.add("is-open");
-          b.setAttribute("aria-pressed", String(sameDay(d, selected)));
-          b.addEventListener("click", () => { selected = d; note.textContent = ""; renderMonth(); renderSlots(); grid.querySelector('[aria-pressed="true"]')?.focus(); });
-        } else b.disabled = true;
-        grid.append(b);
-      }
-    }
-    function renderSlots() {
-      dayTitle.innerHTML = ""; dayTitle.append(selected.toLocaleDateString(locale, { weekday: "short" }) + " ");
-      const ds = document.createElement("span"); ds.textContent = selected.toLocaleDateString(locale, { month: "short", day: "numeric" }); dayTitle.append(ds);
-      slotsEl.innerHTML = "";
-      for (const [h, mi] of SLOTS) {
-        const t = new Date(selected); t.setHours(h, mi, 0, 0);
-        const b = document.createElement("button");
-        b.type = "button"; b.className = "cal-slot"; b.setAttribute("aria-pressed", "false");
-        b.textContent = t.toLocaleTimeString(locale, { hour: "numeric", minute: "2-digit" });
-        b.addEventListener("click", () => {
-          slotsEl.querySelectorAll(".cal-slot").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-          note.textContent = "";
-          requestAnimationFrame(() => { note.textContent = "Preview only. Booking isn\u2019t connected yet, so nothing was booked."; });
-        });
-        slotsEl.append(b);
-      }
-    }
-    prev.addEventListener("click", () => { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); renderMonth(); });
-    next.addEventListener("click", () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); renderMonth(); });
-    renderMonth(); renderSlots();
-  })();
 
   /* ---------- Art: one halftone printer for the sky, the ridge and the horse ---------- */
   const css = getComputedStyle(doc);
@@ -1002,7 +871,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   const scenes = [];
   // close: sky only, kept well clear of the words and the booking card
   scenes.push(new Scene(endPanel, document.getElementById("end-art"), (s) => {
-    const rects = [document.querySelector(".end-copy"), document.getElementById("cal-wrap")].map((el) => { const b = el.getBoundingClientRect(); return { x0: b.left - s.box.left - 24, y0: b.top - s.box.top - 24, x1: b.right - s.box.left + 24, y1: b.bottom - s.box.top + 24 }; });
+    const rects = [document.querySelector(".end-copy"), document.getElementById("book")].map((el) => { const b = el.getBoundingClientRect(); return { x0: b.left - s.box.left - 24, y0: b.top - s.box.top - 24, x1: b.right - s.box.left + 24, y1: b.bottom - s.box.top + 24 }; });
     return { seed: 5, cover: 0.04, cloudScale: 2.6, clear: (x, y) => { let m = 1; for (const r of rects) { m = Math.min(m, smooth(0, 110, Math.hypot(Math.max(r.x0 - x, 0, x - r.x1), Math.max(r.y0 - y, 0, y - r.y1)))); if (!m) break; } return m; } };
   }));
   const heroScene = scenes.length > 1 ? scenes[0] : null;
