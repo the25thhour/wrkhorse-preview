@@ -752,6 +752,15 @@ html.gsap-on { scroll-behavior: auto; }   /* ScrollTrigger re-measures by jumpin
 
 /* Preview badge (fix 8): the footer keeps 64px under its last line, so the fixed preview label never sits on it */
 .foot { padding-bottom: 64px; }
+
+/* ---------- Full bleed (Anthony, 2026-11-27): the hero and the closing band run edge to edge, square corners.
+   The panel's own inner padding grows by the old gutter, so every word and the fixed nav stay where they were. ---------- */
+.hero.band, .end.band { padding-left: 0; padding-right: 0; }
+.hero { padding-top: 0; }
+.hero .panel, .end .panel { border-radius: 0; }
+.hero .panel { padding-top: var(--edge); --hero-pad: calc(clamp(20px, 5.6vw, 80px) + max(var(--edge), env(safe-area-inset-left, 0px))); }
+.end .panel { padding-left: calc(clamp(20px, 4vw, 64px) + max(var(--edge), env(safe-area-inset-left, 0px))); padding-right: calc(clamp(20px, 4vw, 64px) + max(var(--edge), env(safe-area-inset-right, 0px))); }
+@media (max-width: 379.98px) { .hero .site-nav { padding-inline: calc(var(--edge) + 16px); } }
 </style>
 
 <!-- ---------- Motion layer: GSAP 3.13.0 core and ScrollTrigger from cdnjs, deferred. Everything renders in its final state without them. ---------- -->
