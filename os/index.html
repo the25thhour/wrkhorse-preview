@@ -686,6 +686,31 @@ html.gsap-on { scroll-behavior: auto; }   /* ScrollTrigger re-measures by jumpin
 .hero .panel { padding-top: var(--edge); --hero-pad: calc(clamp(20px, 5.6vw, 80px) + max(var(--edge), env(safe-area-inset-left, 0px))); }
 .end .panel { padding-left: calc(clamp(20px, 4vw, 64px) + max(var(--edge), env(safe-area-inset-left, 0px))); padding-right: calc(clamp(20px, 4vw, 64px) + max(var(--edge), env(safe-area-inset-right, 0px))); }
 @media (max-width: 379.98px) { .hero .site-nav { padding-inline: calc(var(--edge) + 16px); } }
+
+/* ---------- Phone nav (Anthony, 2026-11-27): under 1000px the top right is one classic three-line button, no "Let's talk" pill.
+   It opens the same drop-down sheet, which now ends with "Let's talk". Light lines over the dark heroes, ink over the light
+   ones and once the bar turns solid. The lines fold into an X while the sheet is open. Desktop is unchanged. ---------- */
+.burger { position: relative; display: block; width: 22px; height: 16px; }
+.burger i { position: absolute; left: 0; right: 0; height: 2px; border-radius: 2px; background: currentColor; transition: transform 0.25s var(--ease-out), opacity 0.2s ease; }
+.burger i:nth-child(1) { top: 0; } .burger i:nth-child(2) { top: 7px; } .burger i:nth-child(3) { top: 14px; }
+.nav-menu-btn[aria-expanded="true"] .burger i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-menu-btn[aria-expanded="true"] .burger i:nth-child(2) { opacity: 0; }
+.nav-menu-btn[aria-expanded="true"] .burger i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .burger i { transition: none; } }
+.nav-sheet .sheet-cta { justify-content: center; min-height: 48px; margin-top: 6px; border-radius: var(--r-pill); background: var(--ink); color: var(--paper); font-weight: 500; }
+.nav-sheet .sheet-cta:hover { background: var(--ink); opacity: 0.9; }
+.nav-sheet .sheet-cta:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; background: var(--ink); }
+@media (max-width: 999.98px) {
+  .topnav .pill--nav { display: none; }
+  .topnav .nav-menu-btn, .topnav .nav-menu-btn[aria-expanded] {
+    display: inline-flex; justify-content: center; align-items: center; width: 44px; min-width: 44px; height: 44px; min-height: 44px;
+    padding: 0; margin-right: -11px; border: 0; border-radius: var(--r-ctl); background: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+    color: var(--ink);
+  }
+  body:has(.hero.on-sky) .topnav .nav-menu-btn { color: var(--paper); }
+  html.bar-solid body:has(.hero) .topnav .nav-menu-btn { color: var(--ink); }
+  .topnav .nav-menu-btn:focus-visible { outline: 2px solid currentColor; outline-offset: 0; }
+}
 </style>
 
 <!-- ---------- Motion layer: GSAP 3.13.0 core and ScrollTrigger from cdnjs, deferred. Everything renders in its final state without them. ---------- -->
@@ -771,7 +796,7 @@ html.gsap-on { scroll-behavior: auto; }   /* ScrollTrigger re-measures by jumpin
     <li><a class="link" href="/demo/">Demo</a></li>
   </ul>
   <div class="nav-right">
-    <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="nav-sheet">Menu<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+    <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="nav-sheet" aria-label="Menu"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
     <a class="pill pill--nav" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" data-cal-link="anthony-balatti-c9qhw5/15min" data-cal-namespace="wrkhrse-15min" data-cal-config='{"layout":"month_view","theme":"light"}'>Let&rsquo;s talk</a>
   </div>
   <div class="nav-sheet" id="nav-sheet" hidden>
@@ -782,6 +807,7 @@ html.gsap-on { scroll-behavior: auto; }   /* ScrollTrigger re-measures by jumpin
       <li><a href="/#how">How it works</a></li>
       <li><a href="/pricing/">Pricing</a></li>
       <li><a href="/demo/">Demo</a></li>
+      <li><a class="sheet-cta" href="https://cal.com/anthony-balatti-c9qhw5/15min" target="_blank" rel="noopener" data-cal-link="anthony-balatti-c9qhw5/15min" data-cal-namespace="wrkhrse-15min" data-cal-config='{"layout":"month_view","theme":"light"}'>Let&rsquo;s talk</a></li>
     </ul>
   </div>
 </nav>
